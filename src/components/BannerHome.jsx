@@ -23,9 +23,7 @@ export default function BannerHome() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="absolute" color="primary" enableColorOnDark elevation="0" >
                 <StyledToolbar>
-                    <Box sx={{ flexGrow: 1 }} />
-                    <img src={LastandDevelopmentLogo} className="LDLogo" alt="logo" style={{ height: 150 }} component="div" sx={{ flexGrow: 1 }} />
-                    <Box sx={{ flexGrow: 1 }} height />
+                    <img class="logo" src={LastandDevelopmentLogo} alt="logo" style={{ height: 120 }} component="div" sx={{ flexGrow: 1 }} />
                 </StyledToolbar>
             </AppBar>
         </Box>

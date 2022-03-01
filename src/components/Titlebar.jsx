@@ -1,22 +1,12 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import MenuRounded from '@mui/icons-material/MenuRounded';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
+import { AppBar, Box, Toolbar, IconButton, Button, Menu, MenuItem, ListItemText, ListItemIcon } from '@mui/material';
 
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import MenuRounded from '@mui/icons-material/MenuRounded';
 
 import LastandDevelopmentLogo from './icons/LastandDevelopmentLogo.svg';
-
-import 'fontsource-roboto';
 
 
 export default function TitleBar() {
