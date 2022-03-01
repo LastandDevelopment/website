@@ -11,7 +11,7 @@ import 'fontsource-roboto';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     alignItems: 'flex-start',
-    paddingTop: theme.spacing(12),
+    paddingTop: theme.spacing(14),
     paddingBottom: theme.spacing(12),
     '@media all': {
         minHeight: 128,
