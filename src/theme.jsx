@@ -39,6 +39,10 @@ const getTheme = (mode) => ({
       fontSize: 25,
       fontWeight: 550,
     },
+    h6: {
+      fontSize: 14,
+      fontWeight: 700,
+    },
   },
   shape: {
     borderRadius: 10,
@@ -108,10 +112,10 @@ const getTheme = (mode) => ({
           fontFamily: font,
           fontSize: "20px",
           a: {
-            color: primary.main,
+            color: secondary.main,
           },
           "a:hover": {
-            color: primary.light,
+            color: secondary.main,
           },
           mode,
           ...(mode === "dark"

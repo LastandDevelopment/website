@@ -1,4 +1,5 @@
 import * as React from "react";
+//import { Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -9,6 +10,7 @@ import {
   MenuItem,
   ListItemText,
   ListItemIcon,
+  Typography,
 } from "@mui/material";
 
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
@@ -41,7 +43,10 @@ export default function TitleBar() {
             flexGrow={1}>
             <Button
               color="secondary"
-              sx={{ p: 1 }}>
+              sx={{ p: 1 }}
+              //component={Link}
+              // to={"/"}
+            >
               <img
                 src={LastandDevelopmentLogo}
                 className="LDLogo"
@@ -69,6 +74,7 @@ export default function TitleBar() {
             }}
             id="basic-menu"
             backgroundColor="primary"
+            elevation={3}
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
@@ -89,7 +95,14 @@ export default function TitleBar() {
               <ListItemIcon>
                 <EmailRoundedIcon fontSize="medium" />
               </ListItemIcon>
-              <ListItemText>Contact</ListItemText>
+              <ListItemText>
+                <Typography
+                //component={Link}
+                //to={"/contact"}
+                >
+                  Contact
+                </Typography>
+              </ListItemText>
             </MenuItem>
           </Menu>
         </Toolbar>

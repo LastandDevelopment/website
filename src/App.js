@@ -2,9 +2,9 @@ import "./App.css";
 import getTheme from "./theme";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import TitleBar from "./components/Titlebar";
-import BannerHome from "./components/BannerHome";
 import Home from "./components/Home";
 
 function App() {
@@ -15,9 +15,14 @@ function App() {
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
       <div className="App">
-        <BannerHome />
         <TitleBar />
-        <Home />
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}></Route>
+          </Routes>
+        </BrowserRouter>
       </div>
     </ThemeProvider>
   );
