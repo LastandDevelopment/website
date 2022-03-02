@@ -6,8 +6,7 @@
   color: #61dafb;
 }
 
-.container {
-  height: calc(100vh - 56px);
+.containerHome {
   width: 450px;
   top: 400px;
   position: relative;
