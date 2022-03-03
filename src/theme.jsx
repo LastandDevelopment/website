@@ -23,7 +23,7 @@ const getTheme = (mode) => ({
   typography: {
     fontFamily: font,
     subtitle1: {
-      fontSize: 20,
+      fontSize: 14,
     },
     body1: {
       fontSize: 20,
@@ -32,12 +32,16 @@ const getTheme = (mode) => ({
       fontSize: 16,
     },
     h1: {
-      fontSize: 30,
-      fontWeight: 650,
+      fontSize: 40,
+      fontWeight: 700,
     },
     h2: {
       fontSize: 25,
       fontWeight: 550,
+    },
+    h3: {
+      fontSize: 20,
+      fontWeight: 700,
     },
     h6: {
       fontSize: 14,

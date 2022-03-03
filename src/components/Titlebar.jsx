@@ -50,7 +50,7 @@ export default function TitleBar() {
               <img
                 src={LastandDevelopmentLogo}
                 className="LDLogo"
-                alt="logo"
+                alt="Lastand Development"
                 style={{ height: 30 }}
               />
             </Button>

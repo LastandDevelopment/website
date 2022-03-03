@@ -11,6 +11,25 @@
   text-align: center;
 }
 
+.containerDownloadME {
+  position: relative;
+  text-align: left;
+}
+
+.imageScroller {
+  display: flex;
+  overflow-x: auto;
+  height: 35vw;
+}
+
+.imageContenStartAndMiddle {
+  margin-right: 2vw;
+}
+
+.imageScroller::-webkit-scrollbar {
+  background: transparent;
+}
+
 .logo {
   justify-content: center;
   background-color: black;

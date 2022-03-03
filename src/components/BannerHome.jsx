@@ -20,7 +20,7 @@ export default function BannerHome() {
       <StyledToolbar className="logo">
         <img
           src={LastandDevelopmentLogo}
-          alt="logo"
+          alt="Lastand Development"
           style={{ height: 120 }}
           component="div"
           sx={{ flexGrow: 1 }}

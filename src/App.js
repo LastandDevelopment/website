@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import TitleBar from "./components/Titlebar";
 import Home from "./components/Home";
+import MeteorExtinctionHome from "./components/MeteorExtinctionHome";
+import MeteorExtinctionDownload from "./components/MeteorExtinctionDownload";
 
 function App() {
   const activeTheme = "dark";
@@ -21,6 +23,14 @@ function App() {
             <Route
               path="/"
               element={<Home />}></Route>
+            <Route
+              path="meteorextinction"
+              element={<MeteorExtinctionHome />}
+            ></Route>
+            <Route
+              path="meteorextinction/download"
+              element={<MeteorExtinctionDownload />}
+            ></Route>
           </Routes>
         </BrowserRouter>
       </div>

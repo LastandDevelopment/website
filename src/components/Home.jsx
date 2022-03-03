@@ -22,17 +22,20 @@ export default function Home() {
       <BannerHome />
       <Container className="containerHome">
         <Box sx={{ flexGrow: 1, pb: 4 }}>
-          <Typography
-            variant="body1"
-            sx={{ paddingBottom: 1, paddingTop: 10 }}>
-            The Official Website of Lastand Development.
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{ pb: 10 }}>
-            Here you can find all my projects and programs, straight from the
-            developer.
-          </Typography>
+          <Box sx={{ px: 2 }}>
+            <Typography
+              variant="body1"
+              sx={{ paddingBottom: 1, paddingTop: 10 }}
+            >
+              The Official Website of Lastand Development.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ pb: 10 }}>
+              Here you can find all my projects and programs, straight from the
+              developer.
+            </Typography>
+          </Box>
           <Grid
             container
             spacing={4}>
@@ -49,7 +52,7 @@ export default function Home() {
                 <img
                   className="meimg"
                   src={MEImage}
-                  alt="meimg"
+                  alt="Meteor Extinction"
                   style={{ width: 330 }}
                   component="div"
                   sx={{ flexGrow: 1 }}
@@ -83,7 +86,7 @@ export default function Home() {
                   Wooden GUI
                 </Typography>
                 <img
-                  className="wgimg"
+                  className="Wooden GUI"
                   src={WGUIImage}
                   alt="wgimg"
                   style={{ width: 330 }}
