@@ -3,6 +3,7 @@ import getTheme from "./theme";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./scrollToTop";
 
 import TitleBar from "./components/Titlebar";
 import Home from "./components/Home";
@@ -19,6 +20,7 @@ function App() {
       <div className="App">
         <TitleBar />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route
               path="/"
