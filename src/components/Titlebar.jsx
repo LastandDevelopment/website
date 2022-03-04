@@ -1,5 +1,5 @@
 import * as React from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -36,7 +36,7 @@ export default function TitleBar() {
         position="fixed"
         color="primary"
         enableColorOnDark
-        elevation="0">
+        elevation={0}>
         <Toolbar>
           <Box
             display="flex"
@@ -44,9 +44,8 @@ export default function TitleBar() {
             <Button
               color="secondary"
               sx={{ p: 1 }}
-              //component={Link}
-              // to={"/"}
-            >
+              component={Link}
+              to={"/"}>
               <img
                 src={LastandDevelopmentLogo}
                 className="LDLogo"
@@ -73,7 +72,6 @@ export default function TitleBar() {
               },
             }}
             id="basic-menu"
-            backgroundColor="primary"
             elevation={3}
             anchorEl={anchorEl}
             open={open}
@@ -91,17 +89,15 @@ export default function TitleBar() {
                 <ArrowForwardIosRoundedIcon fontSize="small" />
               </ListItemIcon>
             </MenuItem>
-            <MenuItem onClick={handleClose}>
+            <MenuItem
+              onClick={handleClose}
+              component={Link}
+              to={"/contact"}>
               <ListItemIcon>
                 <EmailRoundedIcon fontSize="medium" />
               </ListItemIcon>
               <ListItemText>
-                <Typography
-                //component={Link}
-                //to={"/contact"}
-                >
-                  Contact
-                </Typography>
+                <Typography>Contact</Typography>
               </ListItemText>
             </MenuItem>
           </Menu>

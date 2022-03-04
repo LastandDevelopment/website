@@ -44,7 +44,7 @@ export default function MeteorExtinctionDownload() {
           sx={{ paddingTop: 1 }}>
           Download
         </Typography>
-        <Container className="containerDownloadME">
+        <Container className="containerLeft">
           <Typography
             variant="h2"
             sx={{ paddingTop: 12, paddingBottom: 4, marginLeft: 1 }}
@@ -83,7 +83,7 @@ export default function MeteorExtinctionDownload() {
                   <img
                     src={WindowsIcon}
                     className="windowsic"
-                    alt="windows"
+                    alt="Windows"
                     style={{ height: 18 }}
                   />
                   <Typography
@@ -136,7 +136,7 @@ export default function MeteorExtinctionDownload() {
                   <img
                     src={WindowsIcon}
                     className="windowsic"
-                    alt="windows"
+                    alt="Windows"
                     style={{ height: 18 }}
                   />
                   <Typography
@@ -189,7 +189,7 @@ export default function MeteorExtinctionDownload() {
                   <img
                     src={WindowsIcon}
                     className="windowsic"
-                    alt="windows"
+                    alt="Windows"
                     style={{ height: 18 }}
                   />
                   <Typography

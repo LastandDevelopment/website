@@ -13,6 +13,8 @@ import Alpha010Changelog from "./components/changelogs/alpha-0.1";
 import Alpha011Changelog from "./components/changelogs/alpha-0.1.1";
 import Alpha012Changelog from "./components/changelogs/alpha-0.1.2";
 import WoodenGUIHome from "./components/WoodenGUIHome";
+import WoodenGUIDownload from "./components/WoodenGUIDownload";
+import Contact from "./components/contact";
 
 function App() {
   const activeTheme = "dark";
@@ -22,8 +24,8 @@ function App() {
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
       <div className="App">
-        <TitleBar />
         <BrowserRouter>
+          <TitleBar />
           <ScrollToTop />
           <Routes>
             <Route
@@ -52,6 +54,13 @@ function App() {
             <Route
               path="woodengui"
               element={<WoodenGUIHome />}></Route>
+            <Route
+              path="woodengui/download"
+              element={<WoodenGUIDownload />}
+            ></Route>
+            <Route
+              path="contact"
+              element={<Contact />}></Route>
           </Routes>
         </BrowserRouter>
       </div>

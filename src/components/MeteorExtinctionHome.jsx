@@ -14,6 +14,8 @@ import RocketExploding from "./images/rocketexplode.png";
 import Pause from "./images/pausemenu.png";
 import GameOver from "./images/gameover.png";
 
+import GitHub from "./icons/GitHubIcon.svg";
+
 export default function MeteorExtinctionHome() {
   return (
     <Container className="containerHome">
@@ -107,8 +109,19 @@ export default function MeteorExtinctionHome() {
           sx={{ paddingY: 1, paddingX: 4, marginY: 3 }}
           href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
           target="_blank"
+          rel="noreferrer noopener"
         >
-          <Typography variant="h6">Report an issue</Typography>
+          <img
+            src={GitHub}
+            className="githubic"
+            alt="GitHub"
+            style={{ height: 18 }}
+          />
+          <Typography
+            variant="h6"
+            sx={{ marginLeft: 1.5 }}>
+            Report an issue
+          </Typography>
         </Button>
       </Box>
     </Container>

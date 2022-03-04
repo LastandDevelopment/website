@@ -43,6 +43,10 @@ const getTheme = (mode) => ({
       fontSize: 20,
       fontWeight: 700,
     },
+    h5: {
+      fontSize: 20,
+      fontWeight: 1000,
+    },
     h6: {
       fontSize: 14,
       fontWeight: 700,
@@ -102,9 +106,9 @@ const getTheme = (mode) => ({
         },
         text: {
           primary: "rgba(255, 255, 255, 1)",
-          secondary: "rgba(207, 207, 207, 1)",
+          secondary: "rgba(255, 255, 255, 1)",
           disabled: "rgba(155, 155, 155, 1)",
-          hint: "rgba(255, 255, 255, 1)",
+          hint: "rgba(200, 200, 200, 1)",
         },
         rowHover: "#1b1b1b",
       }),
