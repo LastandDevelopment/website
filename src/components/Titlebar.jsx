@@ -15,7 +15,6 @@ import {
 
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
-import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import MenuRounded from "@mui/icons-material/MenuRounded";
 
 import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
@@ -28,6 +27,14 @@ export default function TitleBar() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const openGitHubRepo = () => {
+    setAnchorEl(null);
+    const link = document.createElement("a");
+    link.href = "https://github.com/LastandDevelopment/website";
+    link.target = "_blank";
+    link.rel = "noreferrer noopener";
+    link.click();
   };
 
   return (
@@ -57,8 +64,8 @@ export default function TitleBar() {
           <IconButton
             size="large"
             color="secondary"
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
+            id="menu-button"
+            aria-controls={open ? "main-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
@@ -71,24 +78,15 @@ export default function TitleBar() {
                 width: 230,
               },
             }}
-            id="basic-menu"
+            id="main-menu"
             elevation={3}
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
             MenuListProps={{
-              "aria-labelledby": "basic-button",
+              "aria-labelledby": "menu-button",
             }}
           >
-            <MenuItem onClick={handleClose}>
-              <ListItemIcon>
-                <CodeRoundedIcon fontSize="medium" />
-              </ListItemIcon>
-              <ListItemText>Projects</ListItemText>
-              <ListItemIcon>
-                <ArrowForwardIosRoundedIcon fontSize="small" />
-              </ListItemIcon>
-            </MenuItem>
             <MenuItem
               onClick={handleClose}
               component={Link}
@@ -99,6 +97,12 @@ export default function TitleBar() {
               <ListItemText>
                 <Typography>Contact</Typography>
               </ListItemText>
+            </MenuItem>
+            <MenuItem onClick={openGitHubRepo}>
+              <ListItemIcon>
+                <CodeRoundedIcon fontSize="medium" />
+              </ListItemIcon>
+              <ListItemText>Code</ListItemText>
             </MenuItem>
           </Menu>
         </Toolbar>

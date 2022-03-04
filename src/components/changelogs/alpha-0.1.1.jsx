@@ -16,7 +16,7 @@ export default function Alpha011Changelog() {
           sx={{ paddingTop: 1 }}>
           Changelog
         </Typography>
-        <Container className="containerDownloadME">
+        <Container className="containerLeft">
           <Typography
             variant="h2"
             sx={{ paddingTop: 12, paddingBottom: 5, marginLeft: 1 }}
