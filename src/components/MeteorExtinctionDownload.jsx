@@ -10,11 +10,25 @@ import Alpha0_1_2 from "./downloads/MeteorExtinctionAlpha0.1.2.zip";
 import Alpha0_1_1 from "./downloads/MeteorExtinctionAlpha0.1.1.zip";
 import Alpha0_1_0 from "./downloads/MeteorExtinctionAlpha0.1.zip";
 
+import { saveAs } from "file-saver";
+
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   height: 250,
 }));
+
+const downloadAlpha012 = () => {
+  saveAs(Alpha0_1_2, "Meteor Extinction Alpha 0.1.2.zip");
+};
+
+const downloadAlpha011 = () => {
+  saveAs(Alpha0_1_1, "Meteor Extinction Alpha 0.1.1.zip");
+};
+
+const downloadAlpha010 = () => {
+  saveAs(Alpha0_1_0, "Meteor Extinction Alpha 0.1.zip");
+};
 
 export default function MeteorExtinctionDownload() {
   return (
@@ -64,8 +78,7 @@ export default function MeteorExtinctionDownload() {
                     px: 10,
                     mt: 3,
                   }}
-                  href={Alpha0_1_2}
-                  download
+                  onClick={downloadAlpha012}
                 >
                   <img
                     src={WindowsIcon}
@@ -118,8 +131,7 @@ export default function MeteorExtinctionDownload() {
                     px: 10,
                     mt: 3,
                   }}
-                  href={Alpha0_1_1}
-                  download
+                  onClick={downloadAlpha011}
                 >
                   <img
                     src={WindowsIcon}
@@ -172,8 +184,7 @@ export default function MeteorExtinctionDownload() {
                     px: 10,
                     mt: 3,
                   }}
-                  href={Alpha0_1_0}
-                  download
+                  onClick={downloadAlpha010}
                 >
                   <img
                     src={WindowsIcon}

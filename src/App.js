@@ -9,6 +9,10 @@ import TitleBar from "./components/Titlebar";
 import Home from "./components/Home";
 import MeteorExtinctionHome from "./components/MeteorExtinctionHome";
 import MeteorExtinctionDownload from "./components/MeteorExtinctionDownload";
+import Alpha010Changelog from "./components/changelogs/alpha-0.1";
+import Alpha011Changelog from "./components/changelogs/alpha-0.1.1";
+import Alpha012Changelog from "./components/changelogs/alpha-0.1.2";
+import WoodenGUIHome from "./components/WoodenGUIHome";
 
 function App() {
   const activeTheme = "dark";
@@ -33,6 +37,21 @@ function App() {
               path="meteorextinction/download"
               element={<MeteorExtinctionDownload />}
             ></Route>
+            <Route
+              path="meteorextinction/download/changelog/alpha-0.1.0"
+              element={<Alpha010Changelog />}
+            ></Route>
+            <Route
+              path="meteorextinction/download/changelog/alpha-0.1.1"
+              element={<Alpha011Changelog />}
+            ></Route>
+            <Route
+              path="meteorextinction/download/changelog/alpha-0.1.2"
+              element={<Alpha012Changelog />}
+            ></Route>
+            <Route
+              path="woodengui"
+              element={<WoodenGUIHome />}></Route>
           </Routes>
         </BrowserRouter>
       </div>
