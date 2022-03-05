@@ -1,5 +1,5 @@
 const background = {
-  light: { paper: "#ffffff", default: "#ffffff" },
+  light: { paper: "#121212", default: "#121212" },
   dark: { paper: "#121212", default: "#121212" },
 };
 
@@ -78,12 +78,12 @@ const getTheme = (mode) => ({
           contrastText: secondary.contrastText,
         },
         text: {
-          primary: "rgba(0, 0, 0, 0.87)",
-          secondary: "rgba(0, 0, 0, 0.54)",
-          disabled: "rgba(0, 0, 0, 0.38)",
-          hint: "rgba(0, 0, 0, 0.38)",
+          primary: "rgba(255, 255, 255, 1)",
+          secondary: "rgba(255, 255, 255, 1)",
+          disabled: "rgba(155, 155, 155, 1)",
+          hint: "rgba(200, 200, 200, 1)",
         },
-        rowHover: "#e9e9e9",
+        rowHover: "#1b1b1b",
       }
       : {
         // palette values for dark mode
