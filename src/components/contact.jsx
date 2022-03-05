@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Typography, Container, Box, Link } from "@mui/material";
+import { Typography, Container, Box, Link, Button } from "@mui/material";
 
 export default function Contact() {
   return (
@@ -28,22 +28,34 @@ export default function Contact() {
           </Link>
           <Typography
             variant="body1"
-            sx={{ paddingTop: 10, paddingBottom: 1 }}>
-            If you want to report an issue or create a feature request for
-            Meteor Extinction, please consider creating an issue on
-            <Link
-              underline="none"
-              sx={{ marginLeft: 0.8 }}
-              variant="h5"
-              color="gray"
-              href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              GitHub
-            </Link>
-            .
+            sx={{ paddingTop: 10, paddingBottom: 2 }}>
+            If you want to report an issue or create a feature request for this
+            website or Meteor Extinction and you have a GitHub account, please
+            consider creating an issue on GitHub in the corresponding
+            repository.
           </Typography>
+          <Button
+            underline="none"
+            sx={{ marginBottom: 5, marginRight: 2, paddingY: 0.5, paddingX: 5 }}
+            variant="outlined"
+            color="secondary"
+            href="https://github.com/LastandDevelopment/website/issues/new/choose"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Typography variant="h6">Website</Typography>
+          </Button>
+          <Button
+            underline="none"
+            sx={{ marginBottom: 5, marginRight: 2, paddingY: 0.5, paddingX: 5 }}
+            variant="outlined"
+            color="secondary"
+            href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Typography variant="h6">Meteor Extinction</Typography>
+          </Button>
           <Typography
             variant="body1"
             sx={{ paddingTop: 5, paddingBottom: 1 }}>
