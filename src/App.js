@@ -1,8 +1,10 @@
+import React from "react";
+
 import "./App.css";
 import getTheme from "./theme";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./scrollToTop";
 
 import TitleBar from "./components/Titlebar";
@@ -20,13 +22,15 @@ function App() {
   const activeTheme = "dark";
   const appliedTheme = createTheme(getTheme(activeTheme));
 
+  const location = useLocation();
+
   return (
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
       <div className="App">
         <TitleBar />
         <ScrollToTop />
-        <Routes>
+        <Routes location={location}>
           <Route
             path="/"
             element={<Home />}></Route>
