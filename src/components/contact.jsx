@@ -59,7 +59,8 @@ export default function Contact() {
           <Typography
             variant="body1"
             sx={{ paddingTop: 8, paddingBottom: 1 }}>
-            Otherwise, please write an email with the following information:
+            Otherwise, please write an email that includes the following
+            information:
           </Typography>
           <Box sx={{ paddingX: 3 }}>
             <Typography
