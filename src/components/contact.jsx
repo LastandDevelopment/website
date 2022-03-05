@@ -36,7 +36,7 @@ export default function Contact() {
           </Typography>
           <Button
             underline="none"
-            sx={{ marginBottom: 5, marginRight: 2, paddingY: 0.5, paddingX: 5 }}
+            sx={{ marginBottom: 2, marginRight: 2, paddingY: 0.5, paddingX: 3 }}
             variant="outlined"
             color="secondary"
             href="https://github.com/LastandDevelopment/website/issues/new/choose"
@@ -47,7 +47,7 @@ export default function Contact() {
           </Button>
           <Button
             underline="none"
-            sx={{ marginBottom: 5, marginRight: 2, paddingY: 0.5, paddingX: 5 }}
+            sx={{ marginBottom: 2, marginRight: 2, paddingY: 0.5, paddingX: 3 }}
             variant="outlined"
             color="secondary"
             href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
@@ -58,7 +58,7 @@ export default function Contact() {
           </Button>
           <Typography
             variant="body1"
-            sx={{ paddingTop: 5, paddingBottom: 1 }}>
+            sx={{ paddingTop: 8, paddingBottom: 1 }}>
             Otherwise, please write an email with the following information:
           </Typography>
           <Box sx={{ paddingX: 3 }}>
