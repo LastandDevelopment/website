@@ -102,7 +102,7 @@ export default function TitleBar() {
               <ListItemIcon>
                 <CodeRoundedIcon fontSize="medium" />
               </ListItemIcon>
-              <ListItemText>Code</ListItemText>
+              <ListItemText>Source Code</ListItemText>
             </MenuItem>
           </Menu>
         </Toolbar>

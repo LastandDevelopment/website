@@ -24,7 +24,7 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <Typography variant="h2">lastand.development@gmail.com</Typography>
+            <Typography variant="h5">lastand.development@gmail.com</Typography>
           </Link>
           <Typography
             variant="body1"
