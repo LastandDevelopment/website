@@ -42,8 +42,7 @@ export default function Home() {
             <Grid
               item
               xs={12}
-              md={6}
-              sm={6}>
+              md={6}>
               <Item elevation={3}>
                 <Typography
                   variant="h2"
@@ -79,8 +78,7 @@ export default function Home() {
             <Grid
               item
               xs={12}
-              md={6}
-              sm={6}>
+              md={6}>
               <Item elevation={3}>
                 <Typography
                   variant="h2"
