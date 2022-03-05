@@ -65,7 +65,7 @@ export default function Home() {
                   meteors. Alone or in offline multiplayer with friends!
                 </Typography>
                 <Button
-                  color="primary"
+                  color="secondary"
                   variant="contained"
                   endIcon={<ArrowForwardIosRoundedIcon />}
                   sx={{ py: 1, px: 14, my: 2 }}
@@ -102,7 +102,7 @@ export default function Home() {
                   Edition. Enjoy a fully wood-based Minecraft interface!
                 </Typography>
                 <Button
-                  color="primary"
+                  color="secondary"
                   variant="contained"
                   endIcon={<ArrowForwardIosRoundedIcon />}
                   sx={{ py: 1, px: 14, my: 2 }}

@@ -71,7 +71,7 @@ export default function MeteorExtinctionDownload() {
                   01/19/2022
                 </Typography>
                 <Button
-                  color="primary"
+                  color="secondary"
                   variant="contained"
                   sx={{
                     py: 1,
@@ -93,7 +93,7 @@ export default function MeteorExtinctionDownload() {
                   </Typography>
                 </Button>
                 <Button
-                  color="secondary"
+                  color="primary"
                   variant="text"
                   sx={{
                     py: 1,
@@ -124,7 +124,7 @@ export default function MeteorExtinctionDownload() {
                   01/18/2022
                 </Typography>
                 <Button
-                  color="primary"
+                  color="secondary"
                   variant="contained"
                   sx={{
                     py: 1,
@@ -146,7 +146,7 @@ export default function MeteorExtinctionDownload() {
                   </Typography>
                 </Button>
                 <Button
-                  color="secondary"
+                  color="primary"
                   variant="text"
                   sx={{
                     py: 1,
@@ -177,7 +177,7 @@ export default function MeteorExtinctionDownload() {
                   01/17/2022
                 </Typography>
                 <Button
-                  color="primary"
+                  color="secondary"
                   variant="contained"
                   sx={{
                     py: 1,
@@ -199,7 +199,7 @@ export default function MeteorExtinctionDownload() {
                   </Typography>
                 </Button>
                 <Button
-                  color="secondary"
+                  color="primary"
                   variant="text"
                   sx={{
                     py: 1,

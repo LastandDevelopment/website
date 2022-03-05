@@ -41,15 +41,16 @@ export default function TitleBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="fixed"
-        color="primary"
+        color="secondary"
         enableColorOnDark
-        elevation={0}>
+        elevation={0}
+      >
         <Toolbar>
           <Box
             display="flex"
             flexGrow={1}>
             <Button
-              color="secondary"
+              color="primary"
               sx={{ p: 1 }}
               component={Link}
               to={"/"}>
@@ -63,7 +64,7 @@ export default function TitleBar() {
           </Box>
           <IconButton
             size="large"
-            color="secondary"
+            color="primary"
             id="menu-button"
             aria-controls={open ? "main-menu" : undefined}
             aria-haspopup="true"

@@ -38,7 +38,7 @@ export default function Contact() {
             underline="none"
             sx={{ marginBottom: 2, marginRight: 2, paddingY: 0.5, paddingX: 3 }}
             variant="outlined"
-            color="secondary"
+            color="primary"
             href="https://github.com/LastandDevelopment/website/issues/new/choose"
             target="_blank"
             rel="noreferrer noopener"
@@ -49,7 +49,7 @@ export default function Contact() {
             underline="none"
             sx={{ marginBottom: 2, marginRight: 2, paddingY: 0.5, paddingX: 3 }}
             variant="outlined"
-            color="secondary"
+            color="primary"
             href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
             target="_blank"
             rel="noreferrer noopener"

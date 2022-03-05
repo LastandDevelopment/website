@@ -48,7 +48,7 @@ export default function WoodenGUIHome() {
         <Button
           size="large"
           variant="contained"
-          color="primary"
+          color="secondary"
           sx={{ py: 2, px: 10, my: 2 }}
           startIcon={<DownloadRounded />}
           component={Link}
