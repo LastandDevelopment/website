@@ -91,7 +91,7 @@ export default function Contact() {
             <Typography
               variant="body1"
               sx={{ paddingTop: 1 }}>
-              For Meteor Extinction and Wooden GUI: Version
+              Version
             </Typography>
             <Typography
               variant="h2"

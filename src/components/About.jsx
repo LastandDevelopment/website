@@ -35,14 +35,19 @@ export default function AboutDialog(props) {
           <Typography
             color="secondary"
             variant="h1"
-            sx={{ paddingLeft: 3, paddingRight: 10, paddingTop: 3 }}
+            sx={{
+              paddingLeft: 3,
+              paddingRight: 10,
+              paddingTop: 3,
+              fontSize: 30,
+            }}
           >
             About this Website
           </Typography>
           <Typography
             color="secondary"
             variant="h2"
-            sx={{ paddingLeft: 3, paddingTop: 1 }}
+            sx={{ paddingLeft: 3, paddingTop: 1, fontSize: 20 }}
           >
             Version {version}
           </Typography>
