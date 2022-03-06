@@ -8,9 +8,9 @@ body:
     attributes:
       value: |
         Before opening a bug report, please search for the behaviour in the existing issues. 
-        
+
         ---
-        
+
         Thank you for taking the time to file a bug report. To address this bug as fast as possible, we need some information.
   - type: input
     id: browser
@@ -20,7 +20,7 @@ body:
       placeholder: "Google Chrome 99.0.4844.51"
     validations:
       required: true
-- type: input
+  - type: input
     id: version
     attributes:
       label: Version
