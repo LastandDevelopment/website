@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   AppBar,
@@ -15,9 +15,12 @@ import {
 
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
+import { InfoRounded } from "@mui/icons-material";
 import MenuRounded from "@mui/icons-material/MenuRounded";
 
 import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
+
+import AboutDialog from "./About";
 
 export default function TitleBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -36,6 +39,8 @@ export default function TitleBar() {
     link.rel = "noreferrer noopener";
     link.click();
   };
+
+  const [openAboutDialog, setOpenAboutDialog] = useState(false);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -104,9 +109,24 @@ export default function TitleBar() {
               </ListItemIcon>
               <ListItemText>Source Code</ListItemText>
             </MenuItem>
+            <MenuItem
+              onClick={() => {
+                setOpenAboutDialog(true);
+                setAnchorEl(null);
+              }}
+            >
+              <ListItemIcon>
+                <InfoRounded fontSize="medium" />
+              </ListItemIcon>
+              <ListItemText>About</ListItemText>
+            </MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
+      <AboutDialog
+        openAboutDialog={openAboutDialog}
+        setOpenAboutDialog={setOpenAboutDialog}
+      />
     </Box>
   );
 }
