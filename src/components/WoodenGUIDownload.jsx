@@ -58,7 +58,7 @@ export default function WoodenGUIDownload() {
                   Beta 0.1
                 </Typography>
                 <Button
-                  color="secondary"
+                  color="primary"
                   variant="contained"
                   sx={{
                     py: 1,
@@ -70,7 +70,7 @@ export default function WoodenGUIDownload() {
                   <Typography variant="h6">Download for 1.18</Typography>
                 </Button>
                 <Button
-                  color="secondary"
+                  color="primary"
                   variant="contained"
                   sx={{
                     py: 1,

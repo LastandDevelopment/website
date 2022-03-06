@@ -4,17 +4,17 @@ const background = {
 };
 
 const secondary = {
-  light: "#000",
-  main: "#000",
-  dark: "#000",
-  contrastText: "#fff",
-};
-
-const primary = {
   light: "#fff",
   main: "#fff",
   dark: "#fff",
   contrastText: "#000",
+};
+
+const primary = {
+  light: "#000",
+  main: "#000",
+  dark: "#000",
+  contrastText: "#fff",
 };
 
 const font = "\"Roboto\", \"Helvetica\", \"Arial\", cursive";
@@ -120,42 +120,42 @@ const getTheme = (mode) => ({
           fontFamily: font,
           fontSize: "20px",
           a: {
-            color: primary.main,
+            color: secondary.main,
           },
           "a:hover": {
-            color: primary.main,
+            color: secondary.main,
           },
           mode,
           ...(mode === "dark"
             ? {
-              scrollbarColor: `${primary.dark} ${background.dark.default}`,
+              scrollbarColor: `${secondary.dark} ${background.dark.default}`,
               "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
                 backgroundColor: background.dark.default,
               },
               "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
                 borderRadius: 8,
-                backgroundColor: primary.dark,
+                backgroundColor: secondary.dark,
                 minHeight: 24,
                 border: `3px solid ${background.dark.default}`,
               },
               "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
                   {
-                    backgroundColor: primary.main,
+                    backgroundColor: secondary.main,
                   },
               "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
                   {
-                    backgroundColor: primary.main,
+                    backgroundColor: secondary.main,
                   },
               "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
                   {
-                    backgroundColor: primary.main,
+                    backgroundColor: secondary.main,
                   },
               "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
                 backgroundColor: background.dark.default,
               },
             }
             : {
-              scrollbarColor: `${secondary.dark} ${background.light.default}`,
+              scrollbarColor: `${primary.dark} ${background.light.default}`,
               "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
                 backgroundColor: background.light.default,
               },
@@ -167,15 +167,15 @@ const getTheme = (mode) => ({
               },
               "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
                   {
-                    backgroundColor: secondary.main,
+                    backgroundColor: primary.main,
                   },
               "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
                   {
-                    backgroundColor: secondary.main,
+                    backgroundColor: primary.main,
                   },
               "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
                   {
-                    backgroundColor: secondary.main,
+                    backgroundColor: primary.main,
                   },
               "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
                 backgroundColor: background.light.default,

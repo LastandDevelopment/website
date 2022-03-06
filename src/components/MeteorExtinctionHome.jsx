@@ -44,7 +44,7 @@ export default function MeteorExtinctionHome() {
         <Button
           size="large"
           variant="contained"
-          color="secondary"
+          color="primary"
           sx={{ py: 2, px: 10, my: 2 }}
           startIcon={<DownloadRounded />}
           component={Link}
@@ -105,7 +105,7 @@ export default function MeteorExtinctionHome() {
 
         <Button
           variant="outlined"
-          color="primary"
+          color="secondary"
           sx={{ paddingY: 1, paddingX: 4, marginY: 3 }}
           href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
           target="_blank"
