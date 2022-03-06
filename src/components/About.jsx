@@ -19,7 +19,7 @@ export default function AboutDialog(props) {
     props.setOpenAboutDialog(false);
   };
 
-  const version = "1.1.1";
+  const version = "1.1.2";
 
   return (
     <div>
@@ -34,12 +34,11 @@ export default function AboutDialog(props) {
         <DialogContent>
           <Typography
             color="secondary"
-            variant="h1"
+            variant="h2"
             sx={{
               paddingLeft: 3,
-              paddingRight: 10,
+              paddingRight: 7,
               paddingTop: 3,
-              fontSize: 30,
             }}
           >
             About this Website
@@ -47,7 +46,7 @@ export default function AboutDialog(props) {
           <Typography
             color="secondary"
             variant="h2"
-            sx={{ paddingLeft: 3, paddingTop: 1, fontSize: 20 }}
+            sx={{ paddingLeft: 3, paddingTop: 1, fontSize: 16 }}
           >
             Version {version}
           </Typography>
@@ -58,9 +57,9 @@ export default function AboutDialog(props) {
             variant="contained"
             color="primary"
             onClick={handleClose}
-            sx={{ paddingX: 6, paddingY: 1.5, marginRight: 2, marginBottom: 2 }}
+            sx={{ paddingX: 4, paddingY: 1, marginRight: 1, marginBottom: 1 }}
           >
-            <Typography variant="h3">Ok</Typography>
+            <Typography variant="h6">Ok</Typography>
           </Button>
         </DialogActions>
       </Dialog>
