@@ -1,7 +1,7 @@
 {
   "homepage": "http://lastanddevelopment.github.io/website",
   "name": "lastand-development",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.1",
