@@ -16,8 +16,8 @@ viewBox="0 0 9211.88 9211.87"
    ]]>
   </style>
   <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="-0" y1="4605.93" x2="9211.87" y2="4605.93">
-   <stop offset="0" style="stop-opacity:0; stop-color:white"/>
-   <stop offset="1" style="stop-opacity:0; stop-color:#FEFEFE"/>
+   <stop offset="0" style="stop-opacity:0; stop-color:black"/>
+   <stop offset="1" style="stop-opacity:0; stop-color:#1F1B20"/>
   </linearGradient>
   <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="1280.86" y1="5596.63" x2="3317.59" y2="5596.63">
    <stop offset="0" style="stop-opacity:0; stop-color:#FEFEFE"/>
