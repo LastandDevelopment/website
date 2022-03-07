@@ -50,22 +50,18 @@ export default function TitleBar() {
         enableColorOnDark
         elevation={0}>
         <Toolbar>
-          <Box
-            display="flex"
-            flexGrow={1}>
-            <Button
-              color="secondary"
-              sx={{ p: 1 }}
-              component={Link}
-              to={"/"}>
-              <img
-                src={LastandDevelopmentLogo}
-                className="LDLogo"
-                alt="Lastand Development"
-                style={{ height: 30 }}
-              />
-            </Button>
-          </Box>
+          <Button
+            color="secondary"
+            sx={{ p: 1 }}
+            component={Link}
+            to={"/"}>
+            <img
+              src={LastandDevelopmentLogo}
+              className="LDLogo"
+              alt="Lastand Development"
+              style={{ height: 30 }}
+            />
+          </Button>
           <IconButton
             size="large"
             color="secondary"
@@ -74,6 +70,7 @@ export default function TitleBar() {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
+            sx={{ marginLeft: "auto" }}
           >
             <MenuRounded />
           </IconButton>
