@@ -12,7 +12,7 @@ body:
         ---
         
         Thank you for taking the time to file a bug report. To address this bug as fast as possible, we need some information.
-  - type: input
+- type: input
     id: browser
     attributes:
       label: Browser
