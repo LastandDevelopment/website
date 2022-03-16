@@ -19,26 +19,36 @@ export default function Alpha010Changelog() {
         <Container className="containerLeft">
           <Typography
             variant="h2"
-            sx={{ paddingTop: 12, paddingBottom: 5, marginLeft: 1 }}
+            sx={{ paddingTop: 12, paddingBottom: 3, marginLeft: 1 }}
           >
             Alpha 0.1
           </Typography>
-          <Typography
-            variant="body2"
-            sx={{ paddingBottom: 2, marginLeft: 3 }}>
-            Basic Gameplay: Shield to defend the Earth, Meteors falling, Rocket
-            available after 10 points
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{ paddingBottom: 2, marginLeft: 3 }}>
-            Main Menu to start the Game
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{ paddingBottom: 2, marginLeft: 3 }}>
-            Game-Over Screen with Highscore System
-          </Typography>
+          <Box sx={{ marginLeft: 3 }}>
+            <ul>
+              <li>
+                <Typography
+                  variant="body2"
+                  sx={{ marginBottom: 1 }}>
+                  Basic Gameplay: Shield to defend the Earth, Meteors falling,
+                  Rocket available after 10 points
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  variant="body2"
+                  sx={{ marginBottom: 1 }}>
+                  Main Menu to start the Game
+                </Typography>
+              </li>
+              <li>
+                <Typography
+                  variant="body2"
+                  sx={{ marginBottom: 1 }}>
+                  Game-Over Screen with Highscore System
+                </Typography>
+              </li>
+            </ul>
+          </Box>
         </Container>
       </Box>
     </Container>
