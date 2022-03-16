@@ -55,6 +55,15 @@ const getTheme = (mode) => ({
   shape: {
     borderRadius: 10,
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 730,
+      md: 880,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   palette: {
     mode,
     ...(mode === "light"

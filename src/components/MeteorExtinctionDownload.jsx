@@ -57,8 +57,9 @@ export default function MeteorExtinctionDownload() {
             <Grid
               item
               xs={12}
-              md={4}
-              sm={6}>
+              sm={6}
+              lg={4}
+              xl={4}>
               <Item elevation={3}>
                 <Typography
                   variant="h2"
@@ -92,6 +93,7 @@ export default function MeteorExtinctionDownload() {
                     Download
                   </Typography>
                 </Button>
+                <Box />
                 <Button
                   color="secondary"
                   variant="text"
@@ -110,8 +112,9 @@ export default function MeteorExtinctionDownload() {
             <Grid
               item
               xs={12}
-              md={4}
-              sm={6}>
+              sm={6}
+              lg={4}
+              xl={4}>
               <Item elevation={3}>
                 <Typography
                   variant="h2"
@@ -145,6 +148,7 @@ export default function MeteorExtinctionDownload() {
                     Download
                   </Typography>
                 </Button>
+                <Box />
                 <Button
                   color="secondary"
                   variant="text"
@@ -163,8 +167,9 @@ export default function MeteorExtinctionDownload() {
             <Grid
               item
               xs={12}
-              md={4}
-              sm={6}>
+              sm={6}
+              lg={4}
+              xl={4}>
               <Item elevation={3}>
                 <Typography
                   variant="h2"
@@ -198,6 +203,7 @@ export default function MeteorExtinctionDownload() {
                     Download
                   </Typography>
                 </Button>
+                <Box />
                 <Button
                   color="secondary"
                   variant="text"

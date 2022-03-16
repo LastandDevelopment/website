@@ -49,8 +49,9 @@ export default function WoodenGUIDownload() {
             <Grid
               item
               xs={12}
-              md={4}
-              sm={6}>
+              sm={6}
+              lg={4}
+              xl={4}>
               <Item elevation={3}>
                 <Typography
                   variant="h2"
@@ -62,19 +63,20 @@ export default function WoodenGUIDownload() {
                   variant="contained"
                   sx={{
                     py: 1,
-                    px: 10,
+                    px: 8,
                     mt: 5,
                   }}
                   onClick={downloadBeta01118}
                 >
                   <Typography variant="h6">Download for 1.18</Typography>
                 </Button>
+                <Box />
                 <Button
                   color="primary"
                   variant="contained"
                   sx={{
                     py: 1,
-                    px: 10,
+                    px: 8,
                     mt: 2,
                   }}
                   onClick={downloadBeta01117}

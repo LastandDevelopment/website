@@ -30,9 +30,8 @@
   background: transparent;
 }
 
-.logo {
+.mui-fixed {
   justify-content: center;
-  background-color: black;
 }
 
 .slideIn {
