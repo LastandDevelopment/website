@@ -66,6 +66,7 @@ export default function TitleBar() {
             size="large"
             color="secondary"
             id="menu-button"
+            aria-label="Menu"
             aria-controls={open ? "main-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
