@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+.linkWrapper {
+  width: fit-content;
+}
+
 .containerLeft {
   position: relative;
   text-align: left;

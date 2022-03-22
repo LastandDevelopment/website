@@ -17,15 +17,19 @@ export default function Contact() {
             If you want to contact me, please write an email to the following
             email address:
           </Typography>
-          <Link
-            underline="none"
-            color="gray"
-            href="mailto:lastand.development@gmail.com"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <Typography variant="h5">lastand.development@gmail.com</Typography>
-          </Link>
+          <Box className="linkWrapper">
+            <Link
+              underline="none"
+              color="gray"
+              href="mailto:lastand.development@gmail.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <Typography variant="h5">
+                lastand.development@gmail.com
+              </Typography>
+            </Link>
+          </Box>
           <Typography
             variant="body1"
             sx={{ paddingTop: 10, paddingBottom: 2 }}>
