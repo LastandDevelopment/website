@@ -40,3 +40,5 @@ body:
     attributes:
       label: Steps to reproduce
       description: Which steps do I need to take to reproduce this bug?
+    validations:
+      required: true
