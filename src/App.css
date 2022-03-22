@@ -44,11 +44,11 @@
 }
 
 .slideIn {
-  animation: 0.4s slideIn forwards;
+  animation: 0.3s slideIn forwards;
 }
 
 .slideOut {
-  animation: 0.4s slideOut forwards;
+  animation: 0.6s slideOut forwards;
 }
 
 @keyframes slideIn {

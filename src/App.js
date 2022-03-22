@@ -29,7 +29,9 @@ function App() {
   const [transitionStage, setTransistionStage] = useState("slideIn");
 
   useEffect(() => {
-    if (location !== displayLocation) setTransistionStage("slideOut");
+    if (location.pathname !== displayLocation.pathname) {
+      setTransistionStage("slideOut");
+    }
   }, [location, displayLocation]);
 
   return (
