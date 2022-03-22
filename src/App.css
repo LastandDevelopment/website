@@ -34,6 +34,11 @@
   background: transparent;
 }
 
+.imageScroller::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border: 3px solid #252525;
+}
+
 .mui-fixed {
   justify-content: center;
 }
