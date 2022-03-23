@@ -20,7 +20,7 @@ export default function Contact() {
           <Box className="linkWrapper">
             <Link
               underline="none"
-              color="gray"
+              color="secondary.hover"
               href="mailto:lastand.development@gmail.com"
               target="_blank"
               rel="noreferrer noopener"

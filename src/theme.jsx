@@ -7,6 +7,7 @@ const secondary = {
   light: "#fff",
   main: "#fff",
   dark: "#fff",
+  hover: "#808080",
   contrastText: "#000",
 };
 
@@ -84,6 +85,7 @@ const getTheme = (mode) => ({
           light: secondary.light,
           main: secondary.main,
           dark: secondary.dark,
+          hover: secondary.hover,
           contrastText: secondary.contrastText,
         },
         text: {
@@ -111,6 +113,7 @@ const getTheme = (mode) => ({
           light: secondary.light,
           main: secondary.main,
           dark: secondary.dark,
+          hover: secondary.hover,
           contrastText: secondary.contrastText,
         },
         text: {
@@ -143,9 +146,9 @@ const getTheme = (mode) => ({
               },
               "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
                 borderRadius: 8,
-                backgroundColor: secondary.dark,
+                backgroundColor: secondary.main,
                 minHeight: 24,
-                border: `3px solid ${background.dark.default}`,
+                border: `4px solid ${background.dark.default}`,
               },
               "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
                   {
@@ -153,11 +156,11 @@ const getTheme = (mode) => ({
                   },
               "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
                   {
-                    backgroundColor: secondary.main,
+                    backgroundColor: secondary.hover,
                   },
               "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
                   {
-                    backgroundColor: secondary.main,
+                    backgroundColor: secondary.hover,
                   },
               "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
                 backgroundColor: background.dark.default,
@@ -170,21 +173,21 @@ const getTheme = (mode) => ({
               },
               "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
                 borderRadius: 8,
-                backgroundColor: "#dadce0",
+                backgroundColor: secondary.main,
                 minHeight: 24,
-                border: `3px solid ${background.light.default}`,
+                border: `4px solid ${background.light.default}`,
               },
               "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
                   {
-                    backgroundColor: primary.main,
+                    backgroundColor: secondary.main,
                   },
               "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
                   {
-                    backgroundColor: primary.main,
+                    backgroundColor: secondary.hover,
                   },
               "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
                   {
-                    backgroundColor: primary.main,
+                    backgroundColor: secondary.hover,
                   },
               "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
                 backgroundColor: background.light.default,

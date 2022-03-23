@@ -32,11 +32,12 @@
 
 .imageScroller::-webkit-scrollbar {
   background: transparent;
+  height: 0.5vw;
 }
 
 .imageScroller::-webkit-scrollbar-thumb {
   background-color: #ffffff;
-  border: 3px solid #252525;
+  border: 0px solid #252525;
 }
 
 .mui-fixed {
