@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
-import MEImage from "./icons/MeteorExtinctionLogo.png";
-import WGUIImage from "./icons/WoodenGUIBanner.png";
+import MEImage from "./icons/MeteorExtinctionBanner.svg";
+import WGUIImage from "./icons/WoodenGUIBanner.svg";
 
 import BannerHome from "./BannerHome";
 
@@ -53,7 +53,7 @@ export default function Home() {
                   Meteor Extinction
                 </Typography>
                 <img
-                  className="meimg"
+                  className="Banner"
                   src={MEImage}
                   alt="Meteor Extinction"
                   style={{ width: 330 }}
@@ -92,9 +92,9 @@ export default function Home() {
                   Wooden GUI
                 </Typography>
                 <img
-                  className="Wooden GUI"
+                  className="Banner"
                   src={WGUIImage}
-                  alt="wgimg"
+                  alt="Wooden GUI"
                   style={{ width: 330 }}
                   component="div"
                   sx={{ flexGrow: 1 }}

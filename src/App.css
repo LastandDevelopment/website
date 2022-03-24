@@ -73,3 +73,7 @@
 li {
   list-style-type: disc;
 }
+
+img.Banner {
+  border-radius: 10px;
+}
