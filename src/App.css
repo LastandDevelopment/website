@@ -25,7 +25,7 @@
   overflow-x: auto;
   overflow-x: overlay;
   height: 35vw;
-  border-radius: 8px;
+  border-radius: 5px;
   scrollbar-color: white transparent;
 }
 
@@ -91,9 +91,9 @@ img.Banner {
 }
 
 img.imageContenStartAndMiddle {
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 img.imageContentEnd {
-  border-radius: 8px;
+  border-radius: 5px;
 }
