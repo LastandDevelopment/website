@@ -56,7 +56,7 @@ export default function Home() {
                   className="Banner"
                   src={MEImage}
                   alt="Meteor Extinction"
-                  style={{ width: 330 }}
+                  style={{ width: 330, height: 206.25 }}
                   component="div"
                   sx={{ flexGrow: 1 }}
                 />
@@ -95,7 +95,7 @@ export default function Home() {
                   className="Banner"
                   src={WGUIImage}
                   alt="Wooden GUI"
-                  style={{ width: 330 }}
+                  style={{ width: 330, height: 206.25 }}
                   component="div"
                   sx={{ flexGrow: 1 }}
                 />

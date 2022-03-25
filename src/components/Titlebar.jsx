@@ -59,7 +59,7 @@ export default function TitleBar() {
               src={LastandDevelopmentLogo}
               className="LDLogo"
               alt="Lastand Development"
-              style={{ height: 30 }}
+              style={{ height: 30, width: 76.84 }}
             />
           </Button>
           <IconButton

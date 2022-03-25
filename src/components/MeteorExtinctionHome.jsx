@@ -98,6 +98,7 @@ export default function MeteorExtinctionHome() {
               alt="Pause Menu"
             />
             <img
+              className="imageContentEnd"
               src={GameOver}
               alt="Game Over" />
           </Box>

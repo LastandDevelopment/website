@@ -96,8 +96,10 @@ export default function WoodenGUIHome() {
               alt="Trading"
             />
             <img
+              className="imageContentEnd"
               src={GamemodeSwitcher}
-              alt="Gamemode Switcher" />
+              alt="Gamemode Switcher"
+            />
           </Box>
         </Paper>
       </Box>

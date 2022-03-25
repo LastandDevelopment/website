@@ -28,7 +28,7 @@ export default function BannerHome() {
           <img
             src={LastandDevelopmentLogo}
             alt="Lastand Development"
-            style={{ height: 120 }}
+            style={{ height: 120, width: 307.34 }}
             component="div"
             sx={{ flexGrow: 1 }}
           />
