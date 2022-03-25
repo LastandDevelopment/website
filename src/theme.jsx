@@ -137,62 +137,8 @@ const getTheme = (mode) => ({
           "a:hover": {
             color: secondary.main,
           },
-          mode,
-          ...(mode === "dark"
-            ? {
-              scrollbarColor: `${secondary.dark} ${background.dark.default}`,
-              "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
-                backgroundColor: background.dark.default,
-              },
-              "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
-                borderRadius: 8,
-                backgroundColor: secondary.main,
-                minHeight: 24,
-                border: `4px solid ${background.dark.default}`,
-              },
-              "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
-                  {
-                    backgroundColor: secondary.main,
-                  },
-              "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
-                  {
-                    backgroundColor: secondary.hover,
-                  },
-              "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
-                  {
-                    backgroundColor: secondary.hover,
-                  },
-              "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
-                backgroundColor: background.dark.default,
-              },
-            }
-            : {
-              scrollbarColor: `${primary.dark} ${background.light.default}`,
-              "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
-                backgroundColor: background.light.default,
-              },
-              "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
-                borderRadius: 8,
-                backgroundColor: secondary.main,
-                minHeight: 24,
-                border: `4px solid ${background.light.default}`,
-              },
-              "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
-                  {
-                    backgroundColor: secondary.main,
-                  },
-              "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
-                  {
-                    backgroundColor: secondary.hover,
-                  },
-              "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
-                  {
-                    backgroundColor: secondary.hover,
-                  },
-              "&::-webkit-scrollbar-corner, & *::-webkit-scrollbar-corner": {
-                backgroundColor: background.light.default,
-              },
-            }),
+
+          scrollbarColor: `${secondary.dark} ${background.dark.default}`,
         },
       },
     },

@@ -12,6 +12,7 @@ import {
   ListItemIcon,
   Typography,
 } from "@mui/material";
+import { isMobile, browserName } from "react-device-detect";
 
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
@@ -21,6 +22,14 @@ import MenuRounded from "@mui/icons-material/MenuRounded";
 import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
 
 import AboutDialog from "./About";
+
+function MenuMargin() {
+  if (isMobile === false && !(browserName === "Firefox")) {
+    return 1.9;
+  } else {
+    return 0;
+  }
+}
 
 export default function TitleBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -71,7 +80,7 @@ export default function TitleBar() {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
-            sx={{ marginLeft: "auto" }}
+            sx={{ marginLeft: "auto", marginRight: MenuMargin }}
           >
             <MenuRounded />
           </IconButton>
