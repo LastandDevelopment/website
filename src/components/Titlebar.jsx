@@ -12,7 +12,13 @@ import {
   ListItemIcon,
   Typography,
 } from "@mui/material";
-import { isMobile, browserName } from "react-device-detect";
+import {
+  isMobile,
+  isFirefox,
+  isSafari,
+  isIE,
+  isMobileSafari,
+} from "react-device-detect";
 
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
@@ -24,7 +30,13 @@ import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
 import AboutDialog from "./About";
 
 function MenuMargin() {
-  if (isMobile === false && !(browserName === "Firefox")) {
+  if (
+    isMobile === false &&
+    isFirefox === false &&
+    isSafari === false &&
+    isIE === false &&
+    isMobileSafari === false
+  ) {
     return 1.9;
   } else {
     return 0;
