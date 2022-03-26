@@ -84,24 +84,28 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .slideOut {
-  animation: 0.6s slideOut forwards;
+  animation: 0.3s slideOut forwards;
 }
 
 @keyframes slideIn {
   from {
     opacity: 0;
+    filter: blur(10px);
   }
   to {
     opacity: 1;
+    filter: blur(0px);
   }
 }
 
 @keyframes slideOut {
   from {
     opacity: 1;
+    filter: blur(0px);
   }
   to {
     opacity: 0;
+    filter: blur(10px);
   }
 }
 
@@ -110,8 +114,14 @@ li {
 }
 
 img.Banner {
-  filter: drop-shadow(0px 2.5px 2px rgb(0 0 0 / 0.25));
+  filter: drop-shadow(0px 2.5px 2px rgb(0 0 0 / 0.35));
   border-radius: 10px;
+  transition: filter 0.5s;
+}
+
+img.Banner:hover {
+  filter: drop-shadow(0px 5px 4px rgb(0 0 0 / 0.35));
+  transition: filter 0.5s;
 }
 
 img.imageContenStartAndMiddle {
@@ -120,4 +130,14 @@ img.imageContenStartAndMiddle {
 
 img.imageContentEnd {
   border-radius: 5px;
+}
+
+.blurBackgroundOpened {
+  backdrop-filter: blur(10px);
+  transition: backdrop-filter 0.3s;
+}
+
+.blurBackgroundClosed {
+  backdrop-filter: blur(0px);
+  transition: backdrop-filter 0.3s;
 }

@@ -52,14 +52,17 @@ export default function Home() {
                   sx={{ p: 3 }}>
                   Meteor Extinction
                 </Typography>
-                <img
-                  className="Banner"
-                  src={MEImage}
-                  alt="Meteor Extinction"
-                  style={{ width: 330, height: 206.25 }}
-                  component="div"
-                  sx={{ flexGrow: 1 }}
-                />
+                <Box
+                  component={Link}
+                  to={"/meteorextinction"}>
+                  <img
+                    className="Banner"
+                    src={MEImage}
+                    alt="Meteor Extinction"
+                    style={{ width: 330, height: 206.25 }}
+                    sx={{ flexGrow: 1 }}
+                  />
+                </Box>
                 <Typography
                   variant="body2"
                   sx={{ p: 2 }}>
@@ -91,14 +94,17 @@ export default function Home() {
                   sx={{ p: 3 }}>
                   Wooden GUI
                 </Typography>
-                <img
-                  className="Banner"
-                  src={WGUIImage}
-                  alt="Wooden GUI"
-                  style={{ width: 330, height: 206.25 }}
-                  component="div"
-                  sx={{ flexGrow: 1 }}
-                />
+                <Box
+                  component={Link}
+                  to={"/woodengui"}>
+                  <img
+                    className="Banner"
+                    src={WGUIImage}
+                    alt="Wooden GUI"
+                    style={{ width: 330, height: 206.25 }}
+                    sx={{ flexGrow: 1 }}
+                  />
+                </Box>
                 <Typography
                   variant="body2"
                   sx={{ p: 2 }}>
