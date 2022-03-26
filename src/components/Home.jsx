@@ -47,7 +47,7 @@ export default function Home() {
               >
                 <Typography
                   variant="h2"
-                  sx={{ pt: 3, pb: 2 }}>
+                  sx={{ pt: 2, pb: 3 }}>
                   Meteor Extinction
                 </Typography>
                 <Box
@@ -93,7 +93,7 @@ export default function Home() {
               >
                 <Typography
                   variant="h2"
-                  sx={{ pt: 3, pb: 2 }}>
+                  sx={{ pt: 2, pb: 3 }}>
                   Wooden GUI
                 </Typography>
                 <Box
