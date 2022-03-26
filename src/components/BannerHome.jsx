@@ -10,9 +10,6 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: "flex-start",
   paddingTop: theme.spacing(14),
   paddingBottom: theme.spacing(12),
-  "@media all": {
-    minHeight: 128,
-  },
 }));
 
 export default function BannerHome() {
@@ -26,9 +23,9 @@ export default function BannerHome() {
       >
         <StyledToolbar className="mui-fixed">
           <img
+            className="BannerLogo"
             src={LastandDevelopmentLogo}
             alt="Lastand Development"
-            style={{ height: 120, width: 307.34 }}
             component="div"
             sx={{ flexGrow: 1 }}
           />

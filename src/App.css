@@ -79,6 +79,28 @@ body::-webkit-scrollbar-thumb:hover {
   justify-content: center;
 }
 
+@media screen and (min-width: 450px) {
+  .BannerLogo {
+    height: 120px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .BannerLogo {
+    height: 27vw;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .TopPaddingHome {
+    padding-top: 90px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .TopPaddingHome {
+    padding-top: 20vw;
+  }
+}
+
 .slideIn {
   animation: 0.3s slideIn forwards;
 }

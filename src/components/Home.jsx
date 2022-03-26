@@ -18,7 +18,8 @@ export default function Home() {
           <Box sx={{ px: 2 }}>
             <Typography
               variant="body1"
-              sx={{ paddingBottom: 1, paddingTop: 10 }}
+              className="TopPaddingHome"
+              sx={{ paddingBottom: 1 }}
             >
               The Official Website of Lastand Development.
             </Typography>
