@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { Typography, Box, Grid, Paper, Button, Container } from "@mui/material";
-import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
@@ -9,12 +8,6 @@ import MEImage from "./icons/MeteorExtinctionBanner.svg";
 import WGUIImage from "./icons/WoodenGUIBanner.svg";
 
 import BannerHome from "./BannerHome";
-
-const Item = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(1),
-  textAlign: "center",
-  height: 480,
-}));
 
 export default function Home() {
   return (
@@ -46,7 +39,11 @@ export default function Home() {
               md={6}
               lg={6}
               xl={6}>
-              <Item elevation={3}>
+              <Paper
+                elevation={3}
+                style={{ padding: 20 }}
+                className="HomePaper"
+              >
                 <Typography
                   variant="h2"
                   sx={{ p: 3 }}>
@@ -59,7 +56,6 @@ export default function Home() {
                     className="Banner"
                     src={MEImage}
                     alt="Meteor Extinction"
-                    style={{ width: 330, height: 206.25 }}
                     sx={{ flexGrow: 1 }}
                   />
                 </Box>
@@ -70,16 +66,17 @@ export default function Home() {
                   meteors. Alone or in offline multiplayer with friends!
                 </Typography>
                 <Button
+                  className="HomeButton"
                   color="primary"
                   variant="contained"
                   endIcon={<ArrowForwardIosRoundedIcon />}
-                  sx={{ py: 1, px: 14, my: 2 }}
+                  sx={{ py: 1, my: 2 }}
                   component={Link}
                   to={"/meteorextinction"}
                 >
                   <Typography variant="h6">Learn More</Typography>
                 </Button>
-              </Item>
+              </Paper>
             </Grid>
             <Grid
               item
@@ -88,7 +85,11 @@ export default function Home() {
               md={6}
               lg={6}
               xl={6}>
-              <Item elevation={3}>
+              <Paper
+                className="HomePaper"
+                style={{ padding: 20 }}
+                elevation={3}
+              >
                 <Typography
                   variant="h2"
                   sx={{ p: 3 }}>
@@ -101,7 +102,6 @@ export default function Home() {
                     className="Banner"
                     src={WGUIImage}
                     alt="Wooden GUI"
-                    style={{ width: 330, height: 206.25 }}
                     sx={{ flexGrow: 1 }}
                   />
                 </Box>
@@ -112,16 +112,17 @@ export default function Home() {
                   Edition. Enjoy a fully wood-based Minecraft interface!
                 </Typography>
                 <Button
+                  className="HomeButton"
                   color="primary"
                   variant="contained"
                   endIcon={<ArrowForwardIosRoundedIcon />}
-                  sx={{ py: 1, px: 14, my: 2 }}
+                  sx={{ py: 1, my: 2 }}
                   component={Link}
                   to={"/woodengui"}
                 >
                   <Typography variant="h6">Learn More</Typography>
                 </Button>
-              </Item>
+              </Paper>
             </Grid>
           </Grid>
         </Box>

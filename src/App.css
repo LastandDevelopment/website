@@ -150,6 +150,34 @@ img.Banner:hover {
   transition: filter 0.5s;
 }
 
+@media screen and (min-width: 387px) {
+  img.Banner {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 387px) {
+  img.Banner {
+    width: 77.5vw;
+  }
+}
+
+@media screen and (min-width: 387px) {
+  .HomeButton {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 387px) {
+  .HomeButton {
+    width: 77.5vw;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .HomePaper {
+    height: 485px;
+  }
+}
+
 img.imageContenStartAndMiddle {
   border-radius: 5px;
 }
