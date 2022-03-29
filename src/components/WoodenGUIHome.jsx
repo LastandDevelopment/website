@@ -31,18 +31,17 @@ export default function WoodenGUIHome() {
           <Typography
             variant="body1"
             sx={{ paddingBottom: 2 }}>
-            It's mission is to bring a cozy wood look to all of Minecraft's
-            interface content. It's vibrant and perfectly optimized for optimal
-            item visibility despite the darker colors. Wooden GUI fits perfectly
-            with the vanilla textures of Minecraft, as it is based on and uses
-            the wood textures from Mojang Studios.
+            It brings a cozy wood look to all of Minecraft's user interface. It
+            is vibrant and perfectly optimized for optimal item visibility. In
+            addition, Wooden GUI fits perfectly with the vanilla textures of
+            Minecraft, as it is based on these textures.
           </Typography>
           <Typography
             variant="body1"
             sx={{ paddingBottom: 5 }}>
             It is still a beta version. Especially in the later survival game,
-            some menus that have not yet been edited can be found. The resource
-            pack will therefore be updated regularly.
+            some menus that have not yet been edited can be found. Therefore,
+            the resource pack will be updated regularly.
           </Typography>
         </Box>
         <Button

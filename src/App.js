@@ -18,7 +18,7 @@ import WoodenGUIHome from "./components/WoodenGUIHome";
 import WoodenGUIDownload from "./components/WoodenGUIDownload";
 import Contact from "./components/contact";
 
-import CustomLinearProgress from "./components/SuspenseFallback";
+import CustomProgress from "./components/SuspenseFallback";
 
 function App() {
   const activeTheme = "dark";
@@ -50,7 +50,7 @@ function App() {
 
   return (
     <ThemeProvider theme={appliedTheme}>
-      <Suspense fallback={<CustomLinearProgress />}>
+      <Suspense fallback={<CustomProgress />}>
         <CssBaseline />
         <TitleBar />
         <div

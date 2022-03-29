@@ -34,10 +34,10 @@ export default function MeteorExtinctionHome() {
           <Typography
             variant="body1"
             sx={{ paddingBottom: 5 }}>
-            The goal of the game is to keep meteors from the earth using a
-            shield and rockets. It is also possible to do that in the offline
-            multiplayer with friends. There's also a single player mode where
-            upgrades can be purchased to help you conquer increasingly difficult
+            The goal of the game is to prevent meteors from hitting the earth
+            using a shield and rockets. There's a freeplay mode where you can
+            try to beat your or your friend's highscore and a level mode where
+            upgrades can be purchased to help you master increasingly difficult
             levels.
           </Typography>
         </Box>

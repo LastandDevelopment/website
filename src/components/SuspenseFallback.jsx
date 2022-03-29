@@ -1,7 +1,7 @@
 import React from "react";
-import { LinearProgress, Box } from "@mui/material";
+import { CircularProgress, Box } from "@mui/material";
 
-export default function CustomLinearProgress() {
+export default function CustomProgress() {
   return (
     <Box
       sx={{
@@ -11,11 +11,10 @@ export default function CustomLinearProgress() {
         minHeight: "100vh",
       }}
     >
-      <LinearProgress
-        sx={{
-          width: "50%",
-        }}
-        color="primary"
+      <CircularProgress
+        color="secondary"
+        size="5%"
+        sx={{ strokeLinecap: "round" }}
       />
     </Box>
   );

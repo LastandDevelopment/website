@@ -14,7 +14,7 @@ export default function Contact() {
           <Typography
             variant="body1"
             sx={{ paddingTop: 5, paddingBottom: 1 }}>
-            If you want to contact me, please write an email to the following
+            If you want to contact me, please send an email to the following
             email address:
           </Typography>
           <Box className="linkWrapper">

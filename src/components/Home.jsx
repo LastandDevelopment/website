@@ -64,7 +64,7 @@ export default function Home() {
                   variant="body2"
                   sx={{ p: 2 }}>
                   The arcade game by Lastand Development. Protect the earth from
-                  meteors. Alone or in offline multiplayer with friends!
+                  meteors and buy upgrades to destroy more meteors!
                 </Typography>
                 <Button
                   className="HomeButton"
