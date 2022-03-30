@@ -56,18 +56,18 @@ export default function LanguageMenu(props) {
             width: 150,
           },
         }}
-        id="main-menu"
+        id="language-menu"
         elevation={3}
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: props.isLarge ? "bottom" : "top",
-          horizontal: props.isLarge ? "center" : "left",
+          vertical: "top",
+          horizontal: "top",
         }}
         transformOrigin={{
-          vertical: props.isLarge ? "top" : "top",
-          horizontal: props.isLarge ? "center" : "right",
+          vertical: "top",
+          horizontal: 135,
         }}
       >
         {languageItems.map((l, i) => (

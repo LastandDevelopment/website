@@ -12,6 +12,16 @@ import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const [t] = useTranslation();
+  const { i18n } = useTranslation();
+
+  const checkLanguageClass = (() => {
+    if (i18n.language === "de") {
+      return "HomePaperGerman";
+    } else if (i18n.language === "en") {
+      return "HomePaperEnglish";
+    }
+  })();
+
   return (
     <Fragment>
       <BannerHome />
@@ -42,7 +52,7 @@ export default function Home() {
               lg={6}
               xl={6}>
               <Paper
-                className="HomePaper"
+                className={checkLanguageClass}
                 elevation={3}
                 style={{ padding: 20 }}
               >
@@ -87,7 +97,7 @@ export default function Home() {
               lg={6}
               xl={6}>
               <Paper
-                className="HomePaper"
+                className={checkLanguageClass}
                 style={{ padding: 20 }}
                 elevation={3}
               >

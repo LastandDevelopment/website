@@ -194,13 +194,29 @@ img.Banner:hover {
   }
 }
 
-@media screen and (min-width: 880px) and (max-width: 1198px) {
-  .HomePaper {
+@media screen and (min-width: 880px) and (max-width: 921px) {
+  .HomePaperGerman {
+    height: 499px;
+  }
+}
+@media screen and (min-width: 921px) and (max-width: 1198px) {
+  .HomePaperGerman {
     height: 477px;
   }
 }
 @media screen and (min-width: 1198px) {
-  .HomePaper {
+  .HomePaperGerman {
+    height: 455px;
+  }
+}
+
+@media screen and (min-width: 880px) and (max-width: 1085px) {
+  .HomePaperEnglish {
+    height: 477px;
+  }
+}
+@media screen and (min-width: 1085px) {
+  .HomePaperEnglish {
     height: 455px;
   }
 }
