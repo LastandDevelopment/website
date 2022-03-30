@@ -66,8 +66,8 @@ export default function LanguageMenu(props) {
           horizontal: "top",
         }}
         transformOrigin={{
-          vertical: "top",
-          horizontal: 135,
+          vertical: 15,
+          horizontal: 145,
         }}
       >
         {languageItems.map((l, i) => (
