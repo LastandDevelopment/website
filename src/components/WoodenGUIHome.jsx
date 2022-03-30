@@ -12,8 +12,10 @@ import Loom from "./imagesWGUI/Loom.png";
 import EnchantingTable from "./imagesWGUI/EnchantingTable.png";
 import Trading from "./imagesWGUI/Trading.png";
 import GamemodeSwitcher from "./imagesWGUI/GamemodeSwitcher.png";
+import { useTranslation } from "react-i18next";
 
 export default function WoodenGUIHome() {
+  const [t] = useTranslation();
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -26,22 +28,17 @@ export default function WoodenGUIHome() {
           <Typography
             variant="body1"
             sx={{ paddingBottom: 4, paddingTop: 10 }}>
-            Wooden GUI is a resource pack for Minecraft: Java Edition.
+            {t("woodenGUIHome.text1")}
           </Typography>
           <Typography
             variant="body1"
             sx={{ paddingBottom: 2 }}>
-            It brings a cozy wood look to all of Minecraft's user interface. It
-            is vibrant and perfectly optimized for optimal item visibility. In
-            addition, Wooden GUI fits perfectly with the vanilla textures of
-            Minecraft, as it is based on these textures.
+            {t("woodenGUIHome.description")}
           </Typography>
           <Typography
             variant="body1"
             sx={{ paddingBottom: 5 }}>
-            It is still a beta version. Especially in the later survival game,
-            some menus that have not yet been edited can be found. Therefore,
-            the resource pack will be updated regularly.
+            {t("woodenGUIHome.betaWarning")}
           </Typography>
         </Box>
         <Button
@@ -53,12 +50,11 @@ export default function WoodenGUIHome() {
           component={Link}
           to={"/woodengui/download"}
         >
-          <Typography variant="h3">Download</Typography>
+          <Typography variant="h3">{t("woodenGUIHome.download")}</Typography>
         </Button>
         <Paper
           elevation={3}
-          sx={{ marginY: 10, padding: "3vw", textAlign: "left" }}
-        >
+          sx={{ marginY: 10, padding: "3vw" }}>
           <Box className="imageScroller">
             <img
               className="imageContenStartAndMiddle"

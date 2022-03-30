@@ -7,6 +7,7 @@ import {
   Grow,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Grow
@@ -16,11 +17,13 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function AboutDialog(props) {
+  const [t] = useTranslation();
+
   const handleClose = () => {
     props.setOpenAboutDialog(false);
   };
 
-  const version = "1.5.5";
+  const version = "1.6.0";
 
   const className = props.openAboutDialog
     ? "blurBackgroundOpened"
@@ -47,7 +50,7 @@ export default function AboutDialog(props) {
               paddingTop: 3,
             }}
           >
-            About this Website
+            {t("aboutDialog.about")}
           </Typography>
           <Typography
             color="secondary"

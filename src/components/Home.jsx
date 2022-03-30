@@ -8,8 +8,10 @@ import MEImage from "./icons/MeteorExtinctionBanner.svg";
 import WGUIImage from "./icons/WoodenGUIBanner.svg";
 
 import BannerHome from "./BannerHome";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const [t] = useTranslation();
   return (
     <Fragment>
       <BannerHome />
@@ -21,13 +23,12 @@ export default function Home() {
               className="TopPaddingHome"
               sx={{ paddingBottom: 1 }}
             >
-              The Official Website of Lastand Development.
+              {t("home.text1")}
             </Typography>
             <Typography
               variant="body1"
               sx={{ pb: 10 }}>
-              Here you can find all my projects and programs, straight from the
-              developer.
+              {t("home.text2")}
             </Typography>
           </Box>
           <Grid
@@ -41,9 +42,9 @@ export default function Home() {
               lg={6}
               xl={6}>
               <Paper
+                className="HomePaper"
                 elevation={3}
                 style={{ padding: 20 }}
-                className="HomePaper"
               >
                 <Typography
                   variant="h2"
@@ -63,8 +64,7 @@ export default function Home() {
                 <Typography
                   variant="body2"
                   sx={{ p: 2 }}>
-                  The arcade game by Lastand Development. Protect the earth from
-                  meteors and buy upgrades to destroy more meteors!
+                  {t("home.meteorExtinctionDescription")}
                 </Typography>
                 <Button
                   className="HomeButton"
@@ -75,7 +75,7 @@ export default function Home() {
                   component={Link}
                   to={"/meteorextinction"}
                 >
-                  <Typography variant="h6">Learn More</Typography>
+                  <Typography variant="h6">{t("home.moreInfo")}</Typography>
                 </Button>
               </Paper>
             </Grid>
@@ -109,8 +109,7 @@ export default function Home() {
                 <Typography
                   variant="body2"
                   sx={{ p: 2 }}>
-                  The resource pack by Lastand Development for Minecraft: Java
-                  Edition. Enjoy a fully wood-based Minecraft interface!
+                  {t("home.woodenGUIDescription")}
                 </Typography>
                 <Button
                   className="HomeButton"
@@ -121,7 +120,7 @@ export default function Home() {
                   component={Link}
                   to={"/woodengui"}
                 >
-                  <Typography variant="h6">Learn More</Typography>
+                  <Typography variant="h6">{t("home.moreInfo")}</Typography>
                 </Button>
               </Paper>
             </Grid>

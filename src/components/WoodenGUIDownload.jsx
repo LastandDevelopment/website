@@ -7,6 +7,7 @@ import Beta0_1_1_17 from "./downloads/WoodenGUIBeta0.1for1.17.zip";
 import Beta0_1_1_18 from "./downloads/WoodenGUIBeta0.1for1.18.zip";
 
 import { saveAs } from "file-saver";
+import { useTranslation } from "react-i18next";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -23,6 +24,7 @@ const downloadBeta01118 = () => {
 };
 
 export default function WoodenGUIDownload() {
+  const [t] = useTranslation();
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -34,14 +36,14 @@ export default function WoodenGUIDownload() {
         <Typography
           variant="h2"
           sx={{ paddingTop: 1 }}>
-          Download
+          {t("downloadPage.download")}
         </Typography>
         <Container className="containerLeft">
           <Typography
             variant="h2"
             sx={{ paddingTop: 12, paddingBottom: 4, marginLeft: 1 }}
           >
-            Beta Versions
+            {t("downloadPage.betaVersions")}
           </Typography>
           <Grid
             container
@@ -61,27 +63,31 @@ export default function WoodenGUIDownload() {
                 <Button
                   color="primary"
                   variant="contained"
+                  className="downloadButton"
                   sx={{
                     py: 1,
-                    px: 8,
                     mt: 5,
                   }}
                   onClick={downloadBeta01118}
                 >
-                  <Typography variant="h6">Download for 1.18</Typography>
+                  <Typography variant="h6">
+                    {t("downloadPage.downloadFor118")}
+                  </Typography>
                 </Button>
                 <Box />
                 <Button
                   color="primary"
                   variant="contained"
+                  className="downloadButton"
                   sx={{
                     py: 1,
-                    px: 8,
                     mt: 2,
                   }}
                   onClick={downloadBeta01117}
                 >
-                  <Typography variant="h6">Download for 1.17</Typography>
+                  <Typography variant="h6">
+                    {t("downloadPage.downloadFor117")}
+                  </Typography>
                 </Button>
               </Item>
             </Grid>

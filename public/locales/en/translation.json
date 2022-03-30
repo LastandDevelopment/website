@@ -1,0 +1,54 @@
+{
+    "home": {
+        "text1": "The Official Website of Lastand Development.",
+        "text2": "Here you can find all my projects and programs, straight from the developer.",
+        "meteorExtinctionDescription": "The arcade game by Lastand Development. Protect the earth from meteors and buy upgrades to destroy more meteors!",
+        "woodenGUIDescription": "The resource pack by Lastand Development for Minecraft: Java Edition. Enjoy a fully wood-based Minecraft interface!",
+        "moreInfo": "Learn More"
+    },
+    "menu": {
+        "contact": "Contact",
+        "source": "Source Code",
+        "about": "About",
+        "language": "Language"
+    },
+    "aboutDialog": {
+        "about": "About this Website"
+    },
+    "contact": {
+        "title": "Contact",
+        "emailAddress": "If you want to contact me, please send an email to the following email address:",
+        "issueReport": "If you want to report an issue or create a feature request for this website or Meteor Extinction and you have a GitHub account, please consider creating an issue on GitHub in the corresponding repository.",
+        "websiteButton": "Website",
+        "noGitHub": "Otherwise, please write an email that includes the following information:",
+        "environmentVersionMeteorExtinction": "For Meteor Extinction: Operating System (+ Version)",
+        "environmentVersionWoodenGUI": "For Wooden GUI: Minecraft Version and installed Modifications",
+        "environmentVersionWebsite": "For this Website: Browser (+ Version)",
+        "version": "Version",
+        "description": "Desciption of the Issue or the requested Feature",
+        "reproduce": "For Issues: Steps to reproduce the Issue"
+    },
+    "downloadPage": {
+        "download": "Download",
+        "downloadFor118": "Download for 1.18",
+        "downloadFor117": "Download for 1.17",
+        "betaVersions": "Beta Versions",
+        "alphaVersions": "Alpha Versions",
+        "changelog": "Changelog",
+        "releaseDateAlpha01": "01/17/2022",
+        "releaseDateAlpha011": "01/18/2022",
+        "releaseDateAlpha012": "01/19/2022"
+    },
+    "meteorExtinctionHome": {
+        "text1": "The first game by Lastand Development is now in development!",
+        "description": "The goal of the game is to prevent meteors from hitting the earth using a shield and rockets. There's a freeplay mode where you can try to beat your or your friend's highscore and a level mode where upgrades can be purchased to help you master increasingly difficult levels.",
+        "download": "Download",
+        "issueReport": "Report an Issue"
+    },
+    "woodenGUIHome": {
+        "text1": "Wooden GUI is a resource pack for Minecraft: Java Edition.",
+        "description": "It brings a cozy wood look to all of Minecraft's user interface. It is vibrant and optimized for optimal item visibility. Furthermore, Wooden GUI fits perfectly with the vanilla textures of Minecraft, as it is based on them.",
+        "betaWarning": "It is still a beta version. Especially in the later survival game, some menus that have not yet been edited can be found. Therefore, the resource pack will be updated regularly.",
+        "download": "Download"
+    }
+}

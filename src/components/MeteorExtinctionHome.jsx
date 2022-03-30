@@ -15,8 +15,10 @@ import Pause from "./images/pausemenu.png";
 import GameOver from "./images/gameover.png";
 
 import GitHub from "./icons/GitHubIcon.svg";
+import { useTranslation } from "react-i18next";
 
 export default function MeteorExtinctionHome() {
+  const [t] = useTranslation();
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -29,16 +31,12 @@ export default function MeteorExtinctionHome() {
           <Typography
             variant="body1"
             sx={{ paddingBottom: 4, paddingTop: 10 }}>
-            The first game by Lastand Development is now in development!
+            {t("meteorExtinctionHome.text1")}
           </Typography>
           <Typography
             variant="body1"
             sx={{ paddingBottom: 5 }}>
-            The goal of the game is to prevent meteors from hitting the earth
-            using a shield and rockets. There's a freeplay mode where you can
-            try to beat your or your friend's highscore and a level mode where
-            upgrades can be purchased to help you master increasingly difficult
-            levels.
+            {t("meteorExtinctionHome.description")}
           </Typography>
         </Box>
         <Button
@@ -50,12 +48,13 @@ export default function MeteorExtinctionHome() {
           component={Link}
           to={"/meteorextinction/download"}
         >
-          <Typography variant="h3">Download</Typography>
+          <Typography variant="h3">
+            {t("meteorExtinctionHome.download")}
+          </Typography>
         </Button>
         <Paper
           elevation={3}
-          sx={{ marginY: 10, padding: "3vw", textAlign: "left" }}
-        >
+          sx={{ marginY: 10, padding: "3vw" }}>
           <Box className="imageScroller">
             <img
               className="imageContenStartAndMiddle"
@@ -121,7 +120,7 @@ export default function MeteorExtinctionHome() {
           <Typography
             variant="h6"
             sx={{ marginLeft: 1.5 }}>
-            Report an issue
+            {t("meteorExtinctionHome.issueReport")}
           </Typography>
         </Button>
       </Box>

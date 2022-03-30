@@ -1,0 +1,54 @@
+{
+    "home": {
+        "text1": "Die offizielle Website von Lastand Development.",
+        "text2": "Hier finden Sie alle Projekte und Programme, direkt vom Entwickler.",
+        "meteorExtinctionDescription": "Das Arcade-Spiel von Lastand Development. Beschütze die Erde vor Meteoriten und kaufe Upgrades, um mehr Meteoriten zu zerstören!",
+        "woodenGUIDescription": "Das Ressourcen-Paket von Lastand Development für Minecraft: Java Edition. Genieße eine vollständig Holz-basierte Minecraft-Oberfläche!",
+        "moreInfo": "Mehr erfahren"
+    },
+    "menu": {
+        "contact": "Kontakt",
+        "source": "Quellcode",
+        "about": "Über",
+        "language": "Sprache"
+    },
+    "aboutDialog": {
+        "about": "Über diese Website"
+    },
+    "contact": {
+        "title": "Kontakt",
+        "emailAddress": "Wenn Sie mich kontaktieren möchten, senden Sie bitte eine E-Mail an die folgende E-Mail-Adresse:",
+        "issueReport": "Falls Sie ein Problem für diese Website oder Meteor Extinction melden möchten und Sie ein GitHub-Konto besitzen, melden Sie bitte ein Problem (\"issue\") in der zugehörigen GitHub-Repository.",
+        "websiteButton": "Website",
+        "noGitHub": "Ansonsten schreiben Sie bitte eine E-Mail, die die folgenden Informationen enthält:",
+        "environmentVersionMeteorExtinction": "Für Meteor Extinction: Betriebssystem (+ Version)",
+        "environmentVersionWoodenGUI": "Für Wooden GUI: Minecraft Version und installierte Modifikationen",
+        "environmentVersionWebsite": "Für diese Website: Browser (+ Version)",
+        "version": "Version",
+        "description": "Beschreibung des Problems oder der angeforderten Funktion",
+        "reproduce": "Für Probleme: Schritte, die notwendig sind, um das Problem zu reproduzieren"
+    },
+    "downloadPage": {
+        "download": "Herunterladen",
+        "downloadFor118": "Herunterladen für die 1.18",
+        "downloadFor117": "Herunterladen für die 1.17",
+        "betaVersions": "Beta Versionen",
+        "alphaVersions": "Alpha Versionen",
+        "changelog": "Änderungsprotokoll",
+        "releaseDateAlpha01": "17.01.2022",
+        "releaseDateAlpha011": "18.01.2022",
+        "releaseDateAlpha012": "19.01.2022"
+    },
+    "meteorExtinctionHome": {
+        "text1": "Das erste Spiel von Lastand Development ist nun in Entwicklung!",
+        "description": "Das Ziel des Spiel ist es, mithilfe eines Schildes und Raketen Meteoriten davon aufzuhalten, die Erde zu treffen. Es gibt einen Freeplay-Modus in dem Sie versuchen können, Ihren Highscore oder den Highscore Ihres Freundes zu schlagen, und einen Level-Modus, in dem Upgrades gekauft werden können, die dabei helfen, immer schwieriger werdende Level zu meistern.",
+        "download": "Herunterladen",
+        "issueReport": "Problem melden"
+    },
+    "woodenGUIHome": {
+        "text1": "Wooden GUI ist ein Ressourcen-Paket für Minecraft: Java Edition.",
+        "description": "Es verleiht Minecrafts Oberfläche einen gemütlichen Holz-Look. Es ist lebhaft und für optimale Item-Sichtbarkeit optimiert. Außerdem passt Wooden GUI perfekt zu den Vanilla-Texturen von Minecraft, da es auf ihnen basiert.",
+        "betaWarning": "Es handelt sich noch um eine Beta-Version. Vor allem im späteren Survival-Gameplay können noch nicht überarbeitete Menüs gefunden werden. Daher wird das Ressourcen-Paket regelmäßig aktualisiert werden.",
+        "download": "Herunterladen"
+    }
+}

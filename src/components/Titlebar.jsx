@@ -11,6 +11,7 @@ import {
   ListItemText,
   ListItemIcon,
   Typography,
+  Divider,
 } from "@mui/material";
 import {
   isMobile,
@@ -28,6 +29,8 @@ import MenuRounded from "@mui/icons-material/MenuRounded";
 import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
 
 import AboutDialog from "./About";
+import { useTranslation } from "react-i18next";
+import LanguageMenu from "./LanguageMenu";
 
 function MenuMargin() {
   if (
@@ -44,6 +47,7 @@ function MenuMargin() {
 }
 
 export default function TitleBar() {
+  const [t] = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -107,9 +111,6 @@ export default function TitleBar() {
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "menu-button",
-            }}
           >
             <MenuItem
               onClick={handleClose}
@@ -119,15 +120,10 @@ export default function TitleBar() {
                 <EmailRoundedIcon fontSize="medium" />
               </ListItemIcon>
               <ListItemText>
-                <Typography>Contact</Typography>
+                <Typography>{t("menu.contact")}</Typography>
               </ListItemText>
             </MenuItem>
-            <MenuItem onClick={openGitHubRepo}>
-              <ListItemIcon>
-                <CodeRoundedIcon fontSize="medium" />
-              </ListItemIcon>
-              <ListItemText>Source Code</ListItemText>
-            </MenuItem>
+            <LanguageMenu handleTopMenuClose={handleClose} />
             <MenuItem
               onClick={() => {
                 setOpenAboutDialog(true);
@@ -137,7 +133,14 @@ export default function TitleBar() {
               <ListItemIcon>
                 <InfoRounded fontSize="medium" />
               </ListItemIcon>
-              <ListItemText>About</ListItemText>
+              <ListItemText>{t("menu.about")}</ListItemText>
+            </MenuItem>
+            <Divider variant="middle" />
+            <MenuItem onClick={openGitHubRepo}>
+              <ListItemIcon>
+                <CodeRoundedIcon fontSize="medium" />
+              </ListItemIcon>
+              <ListItemText>{t("menu.source")}</ListItemText>
             </MenuItem>
           </Menu>
         </Toolbar>

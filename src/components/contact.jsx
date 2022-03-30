@@ -1,21 +1,22 @@
 import * as React from "react";
 import { Typography, Container, Box, Link, Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const [t] = useTranslation();
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"
           sx={{ paddingBottom: 10, paddingTop: 18 }}>
-          Contact
+          {t("contact.title")}
         </Typography>
         <Container className="containerLeft">
           <Typography
             variant="body1"
             sx={{ paddingTop: 5, paddingBottom: 1 }}>
-            If you want to contact me, please send an email to the following
-            email address:
+            {t("contact.emailAddress")}
           </Typography>
           <Box className="linkWrapper">
             <Link
@@ -33,10 +34,7 @@ export default function Contact() {
           <Typography
             variant="body1"
             sx={{ paddingTop: 10, paddingBottom: 2 }}>
-            If you want to report an issue or create a feature request for this
-            website or Meteor Extinction and you have a GitHub account, please
-            consider creating an issue on GitHub in the corresponding
-            repository.
+            {t("contact.issueReport")}
           </Typography>
           <Button
             underline="none"
@@ -47,7 +45,7 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <Typography variant="h6">Website</Typography>
+            <Typography variant="h6">{t("contact.websiteButton")}</Typography>
           </Button>
           <Button
             underline="none"
@@ -63,8 +61,7 @@ export default function Contact() {
           <Typography
             variant="body1"
             sx={{ paddingTop: 8, paddingBottom: 1 }}>
-            Otherwise, please write an email that includes the following
-            information:
+            {t("contact.noGitHub")}
           </Typography>
           <Box sx={{ paddingX: 3 }}>
             <Typography
@@ -75,17 +72,17 @@ export default function Contact() {
             <Typography
               variant="body1"
               sx={{ paddingTop: 1 }}>
-              For Meteor Extinction: Operating System
+              {t("contact.environmentVersionMeteorExtinction")}
             </Typography>
             <Typography
               variant="body1"
               sx={{ paddingTop: 1 }}>
-              For Wooden GUI: Minecraft Version and installed Modifications
+              {t("contact.environmentVersionWoodenGUI")}
             </Typography>
             <Typography
               variant="body1"
               sx={{ paddingTop: 1 }}>
-              For this Website: Browser (+ Version)
+              {t("contact.environmentVersionWebsite")}
             </Typography>
             <Typography
               variant="h2"
@@ -95,7 +92,7 @@ export default function Contact() {
             <Typography
               variant="body1"
               sx={{ paddingTop: 1 }}>
-              Version
+              {t("contact.version")}
             </Typography>
             <Typography
               variant="h2"
@@ -105,7 +102,7 @@ export default function Contact() {
             <Typography
               variant="body1"
               sx={{ paddingTop: 1 }}>
-              Desciption of the Issue or the requested Feature
+              {t("contact.description")}
             </Typography>
             <Typography
               variant="h2"
@@ -115,7 +112,7 @@ export default function Contact() {
             <Typography
               variant="body1"
               sx={{ paddingTop: 1 }}>
-              For Issues: Steps to reproduce the Issue
+              {t("contact.reproduce")}
             </Typography>
           </Box>
         </Container>

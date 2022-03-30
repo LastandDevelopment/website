@@ -194,9 +194,14 @@ img.Banner:hover {
   }
 }
 
-@media screen and (min-width: 880px) {
+@media screen and (min-width: 880px) and (max-width: 1198px) {
   .HomePaper {
-    height: 485px;
+    height: 477px;
+  }
+}
+@media screen and (min-width: 1198px) {
+  .HomePaper {
+    height: 455px;
   }
 }
 
@@ -216,4 +221,8 @@ img.imageContentEnd {
 .blurBackgroundClosed {
   backdrop-filter: blur(0px);
   transition: backdrop-filter 0.3s;
+}
+
+.downloadButton {
+  width: 270px;
 }

@@ -11,6 +11,7 @@ import Alpha0_1_1 from "./downloads/MeteorExtinctionAlpha0.1.1.zip";
 import Alpha0_1_0 from "./downloads/MeteorExtinctionAlpha0.1.zip";
 
 import { saveAs } from "file-saver";
+import { useTranslation } from "react-i18next";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -31,6 +32,7 @@ const downloadAlpha010 = () => {
 };
 
 export default function MeteorExtinctionDownload() {
+  const [t] = useTranslation();
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -42,14 +44,14 @@ export default function MeteorExtinctionDownload() {
         <Typography
           variant="h2"
           sx={{ paddingTop: 1 }}>
-          Download
+          {t("downloadPage.download")}
         </Typography>
         <Container className="containerLeft">
           <Typography
             variant="h2"
             sx={{ paddingTop: 12, paddingBottom: 4, marginLeft: 1 }}
           >
-            Alpha Versions
+            {t("downloadPage.alphaVersions")}
           </Typography>
           <Grid
             container
@@ -69,14 +71,14 @@ export default function MeteorExtinctionDownload() {
                 <Typography
                   variant="body2"
                   sx={{ pb: 2, pt: 1 }}>
-                  01/19/2022
+                  {t("downloadPage.releaseDateAlpha012")}
                 </Typography>
                 <Button
                   color="primary"
                   variant="contained"
+                  className="downloadButton"
                   sx={{
                     py: 1,
-                    px: 10,
                     mt: 3,
                   }}
                   onClick={downloadAlpha012}
@@ -90,22 +92,24 @@ export default function MeteorExtinctionDownload() {
                   <Typography
                     variant="h6"
                     sx={{ marginLeft: 2 }}>
-                    Download
+                    {t("downloadPage.download")}
                   </Typography>
                 </Button>
                 <Box />
                 <Button
                   color="secondary"
                   variant="text"
+                  className="downloadButton"
                   sx={{
                     py: 1,
-                    px: 11.8,
                     my: 2,
                   }}
                   component={Link}
                   to={"/meteorextinction/download/changelog/alpha-0.1.2"}
                 >
-                  <Typography variant="h6">Changelog</Typography>
+                  <Typography variant="h6">
+                    {t("downloadPage.changelog")}
+                  </Typography>
                 </Button>
               </Item>
             </Grid>
@@ -124,14 +128,14 @@ export default function MeteorExtinctionDownload() {
                 <Typography
                   variant="body2"
                   sx={{ pb: 2, pt: 1 }}>
-                  01/18/2022
+                  {t("downloadPage.releaseDateAlpha011")}
                 </Typography>
                 <Button
                   color="primary"
                   variant="contained"
+                  className="downloadButton"
                   sx={{
                     py: 1,
-                    px: 10,
                     mt: 3,
                   }}
                   onClick={downloadAlpha011}
@@ -145,22 +149,24 @@ export default function MeteorExtinctionDownload() {
                   <Typography
                     variant="h6"
                     sx={{ marginLeft: 2 }}>
-                    Download
+                    {t("downloadPage.download")}
                   </Typography>
                 </Button>
                 <Box />
                 <Button
                   color="secondary"
                   variant="text"
+                  className="downloadButton"
                   sx={{
                     py: 1,
-                    px: 11.8,
                     my: 2,
                   }}
                   component={Link}
                   to={"/meteorextinction/download/changelog/alpha-0.1.1"}
                 >
-                  <Typography variant="h6">Changelog</Typography>
+                  <Typography variant="h6">
+                    {t("downloadPage.changelog")}
+                  </Typography>
                 </Button>
               </Item>
             </Grid>
@@ -179,14 +185,14 @@ export default function MeteorExtinctionDownload() {
                 <Typography
                   variant="body2"
                   sx={{ pb: 2, pt: 1 }}>
-                  01/17/2022
+                  {t("downloadPage.releaseDateAlpha01")}
                 </Typography>
                 <Button
                   color="primary"
                   variant="contained"
+                  className="downloadButton"
                   sx={{
                     py: 1,
-                    px: 10,
                     mt: 3,
                   }}
                   onClick={downloadAlpha010}
@@ -200,22 +206,24 @@ export default function MeteorExtinctionDownload() {
                   <Typography
                     variant="h6"
                     sx={{ marginLeft: 2 }}>
-                    Download
+                    {t("downloadPage.download")}
                   </Typography>
                 </Button>
                 <Box />
                 <Button
                   color="secondary"
                   variant="text"
+                  className="downloadButton"
                   sx={{
                     py: 1,
-                    px: 11.8,
                     my: 2,
                   }}
                   component={Link}
                   to={"/meteorextinction/download/changelog/alpha-0.1.0"}
                 >
-                  <Typography variant="h6">Changelog</Typography>
+                  <Typography variant="h6">
+                    {t("downloadPage.changelog")}
+                  </Typography>
                 </Button>
               </Item>
             </Grid>
