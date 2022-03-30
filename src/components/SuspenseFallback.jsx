@@ -13,7 +13,7 @@ export default function CustomProgress() {
     >
       <CircularProgress
         color="secondary"
-        size="5%"
+        size="10%"
         sx={{ strokeLinecap: "round" }}
       />
     </Box>

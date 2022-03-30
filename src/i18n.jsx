@@ -36,7 +36,7 @@ i18n
       order: ["localStorage", "navigator"],
     },
     react: {
-      useSuspense: false, //   <---- this will do the magic
+      useSuspense: true, //   <---- this will do the magic
     },
   });
 
