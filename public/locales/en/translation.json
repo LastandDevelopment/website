@@ -50,5 +50,26 @@
         "description": "It brings a cozy wood look to all of Minecraft's user interface. It is vibrant and optimized for optimal item visibility. Furthermore, Wooden GUI fits perfectly with the vanilla textures of Minecraft, as it is based on them.",
         "betaWarning": "It is still a beta version. Especially in the later survival game, some menus that have not yet been edited can be found. Therefore, the resource pack will be updated regularly.",
         "download": "Download"
+    },
+    "changelog": {
+        "changelog": "Changelog"
+    },
+    "changelogAlpha01": {
+        "p1": "Basic Gameplay: Shield to defend the Earth, Meteors falling, Rockets available after 10 points",
+        "p2": "Main Menu to start the Game",
+        "p3": "Game-Over Screen with Highscore System"
+    },
+    "changelogAlpha011": {
+        "p1": "Added ability to pause the game (ESC key)",
+        "p2": "Added ability to stop or restart the game",
+        "p3": "Added FPS display (Hotkey: F3)",
+        "p4": "Added display of the text \"New Highscore\" when the highscore is broken",
+        "p5": "Bugs with the way buttons and scores have been displayed on different aspect ratios have been fixed"
+    },
+    "changelogAlpha012": {
+        "p1": "Crosshair is built in as a native mouse pointer, so it's more direct, no longer lags behind, and can be displayed over the score",
+        "p2": "Fixed a bug that sometimes prevented the remaining attempts from being displayed correctly after restarting the game in the pause menu",
+        "p3": "Fixed a bug that occurred when app info was opened and then closed again very quickly",
+        "p4": "Fixed a bug that prevented the correct crosshair from being displayed during the countdown if the game ended while being paused"
     }
 }

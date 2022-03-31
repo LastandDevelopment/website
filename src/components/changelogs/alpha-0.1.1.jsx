@@ -1,8 +1,11 @@
 import * as React from "react";
 
 import { Container, Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export default function Alpha011Changelog() {
+  const [t] = useTranslation();
+
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -14,7 +17,7 @@ export default function Alpha011Changelog() {
         <Typography
           variant="h2"
           sx={{ paddingTop: 1 }}>
-          Changelog
+          {t("changelog.changelog")}
         </Typography>
         <Container className="containerLeft">
           <Typography
@@ -29,37 +32,35 @@ export default function Alpha011Changelog() {
                 <Typography
                   variant="body2"
                   sx={{ marginBottom: 1 }}>
-                  Added ability to pause the game (ESC key)
+                  {t("changelogAlpha011.p1")}
                 </Typography>
               </li>
               <li>
                 <Typography
                   variant="body2"
                   sx={{ marginBottom: 1 }}>
-                  Added ability to cancel or restart the game
+                  {t("changelogAlpha011.p2")}
                 </Typography>
               </li>
               <li>
                 <Typography
                   variant="body2"
                   sx={{ marginBottom: 1 }}>
-                  Added FPS display (Hotkey: F3)
+                  {t("changelogAlpha011.p3")}
                 </Typography>
               </li>
               <li>
                 <Typography
                   variant="body2"
                   sx={{ marginBottom: 1 }}>
-                  Added display of the text "New Highscore" when the highscore
-                  is broken
+                  {t("changelogAlpha011.p4")}
                 </Typography>
               </li>
               <li>
                 <Typography
                   variant="body2"
                   sx={{ marginBottom: 1 }}>
-                  Bugs with the way buttons and scores have been displayed on
-                  different aspect ratios have been fixed
+                  {t("changelogAlpha011.p5")}
                 </Typography>
               </li>
             </ul>

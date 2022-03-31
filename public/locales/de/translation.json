@@ -50,5 +50,26 @@
         "description": "Es verleiht Minecrafts Oberfläche einen gemütlichen Holz-Look. Es ist lebhaft und für optimale Item-Sichtbarkeit optimiert. Außerdem passt Wooden GUI perfekt zu den Vanilla-Texturen von Minecraft, da es auf ihnen basiert.",
         "betaWarning": "Es handelt sich noch um eine Beta-Version. Vor allem im späteren Survival-Gameplay können noch nicht überarbeitete Menüs gefunden werden. Daher wird das Ressourcen-Paket regelmäßig aktualisiert werden.",
         "download": "Herunterladen"
+    },
+    "changelog": {
+        "changelog": "Änderungsprotokoll"
+    },
+    "changelogAlpha01": {
+        "p1": "Grundsätzliches Gameplay: Schild zum Verteidigen der Erde, fallende Meteoriten, nach 10 Punkten verfügbare Raketen",
+        "p2": "Hauptmenü zum Starten des Spiels",
+        "p3": "\"Game-Over\"-Anzeige mit Highscore-System"
+    },
+    "changelogAlpha011": {
+        "p1": "Möglichkeit, das Spiel zu pausieren, hinzugefügt (ESC-Taste)",
+        "p2": "Möglichkeit, das Spiel abzubrechen oder neu zu starten, hinzugefügt",
+        "p3": "FPS-Anzeige hinzugefügt (Hotkey: F3)",
+        "p4": "Anzeige des Textes \"New Highscore\" wenn der Highscore gebrochen wurde hinzugefügt",
+        "p5": "Fehler mit der Art und Weise, in der Buttons und Punktzahlen auf verschiedenen Seitenverhältnissen angezeigt wurden, wurden behoben"
+    },
+    "changelogAlpha012": {
+        "p1": "Fadenkreuz ist nun als nativer Mauszeiger integriert, sodass es direkter ist, nicht mehr hinterherhinkt und über der Punktzahl angezeigt werden kann",
+        "p2": "Fehler behoben, der manchmal die korrekte Anzeige der restlichen Versuche verhinderte, wenn das Spiel im Pause-Menü neugestartet wurde",
+        "p3": "Fehler behoben, der auftrat, wenn die App-Informationen geöffnet und sehr schnell wieder geschlossen wurden",
+        "p4": "Fehler behoben, der während des Countdowns die Anzeige des korrekten Fadenkreuzes verhinderte, wenn das Spiel endete, während es pausiert war"
     }
 }
