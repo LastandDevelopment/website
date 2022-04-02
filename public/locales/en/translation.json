@@ -20,13 +20,22 @@
         "emailAddress": "If you want to contact me, please send an email to the following email address:",
         "issueReport": "If you want to report an issue or create a feature request for this website or Meteor Extinction and you have a GitHub account, please consider creating an issue on GitHub in the corresponding repository.",
         "websiteButton": "Website",
-        "noGitHub": "Otherwise, please write an email that includes the following information:",
-        "environmentVersionMeteorExtinction": "For Meteor Extinction: Operating System (+ Version)",
-        "environmentVersionWoodenGUI": "For Wooden GUI: Minecraft Version and installed Modifications",
-        "environmentVersionWebsite": "For this Website: Browser (+ Version)",
-        "version": "Version",
-        "description": "Desciption of the Issue or the requested Feature",
-        "reproduce": "For Issues: Steps to reproduce the Issue"
+        "noGitHub": "Otherwise, please fill in the template to report an issue.",
+        "issueTemplate": "Report an Issue"
+    },
+    "issueTemplate": {
+        "title": "Report an Issue",
+        "send": "Send",
+        "chooseProgram": "Choose the program you want to report an issue on.",
+        "os": "Operating System (+ Version)",
+        "gameVersion": "Version of Meteor Extinction",
+        "issueDescription": "Description of the Issue",
+        "issueReproduction": "Steps to Reproduce the Issue",
+        "minecraftVersion": "Minecraft Version & installed Modifications",
+        "packVersion": "Version of Wooden GUI",
+        "browser": "Browser (+ Version)",
+        "websiteVersion": "Version of this Website",
+        "fillEverything": "Please fill in all the fields."
     },
     "downloadPage": {
         "download": "Download",

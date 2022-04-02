@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from "react";
+
 import { Typography, Button, Container, Box, Paper } from "@mui/material";
 import { Link } from "react-router-dom";
 

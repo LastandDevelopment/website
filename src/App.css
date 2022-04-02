@@ -11,10 +11,6 @@
   text-align: center;
 }
 
-.linkWrapper {
-  width: fit-content;
-}
-
 .containerLeft {
   position: relative;
   text-align: left;
@@ -241,4 +237,24 @@ img.imageContentEnd {
 
 .downloadButton {
   width: 270px;
+}
+
+.MuiSelect-icon {
+  transition: transform 0.3s !important;
+}
+
+.containerForm {
+  position: relative;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .containerForm {
+    width: 90vw !important;
+  }
+}
+@media screen and (min-width: 900px) {
+  .containerForm {
+    width: 820px !important;
+  }
 }

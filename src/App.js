@@ -17,6 +17,7 @@ import Alpha012Changelog from "./components/changelogs/alpha-0.1.2";
 import WoodenGUIHome from "./components/WoodenGUIHome";
 import WoodenGUIDownload from "./components/WoodenGUIDownload";
 import Contact from "./components/contact";
+import IssueTemplate from "./components/issueTemplate";
 
 import CustomProgress from "./components/SuspenseFallback";
 
@@ -103,6 +104,10 @@ function App() {
             <Route
               path="contact"
               element={<Contact />}></Route>
+            <Route
+              path="contact/issue-template"
+              element={<IssueTemplate />}
+            ></Route>
           </Routes>
         </div>
       </Suspense>

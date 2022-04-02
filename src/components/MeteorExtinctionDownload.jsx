@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import { Container, Box, Typography, Grid, Paper, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";

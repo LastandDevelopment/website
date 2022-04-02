@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from "react";
+
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import { styled } from "@mui/material/styles";

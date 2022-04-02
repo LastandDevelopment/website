@@ -1,10 +1,10 @@
-import * as React from "react";
+import React from "react";
 
 import { Container, Box, Typography, Grid, Paper, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-import Beta0_1_1_17 from "./downloads/WoodenGUIBeta0.1for1.17.zip";
-import Beta0_1_1_18 from "./downloads/WoodenGUIBeta0.1for1.18.zip";
+import Beta0_1_1_17 from "./downloads/WoodenGUIBeta1.0for1.17.zip";
+import Beta0_1_1_18 from "./downloads/WoodenGUIBeta1.0for1.18.zip";
 
 import { saveAs } from "file-saver";
 import { useTranslation } from "react-i18next";
@@ -16,11 +16,11 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const downloadBeta01117 = () => {
-  saveAs(Beta0_1_1_17, "Wooden GUI Beta 0.1 for 1.17.zip");
+  saveAs(Beta0_1_1_17, "Wooden GUI Beta 1.0 for 1.17.zip");
 };
 
 const downloadBeta01118 = () => {
-  saveAs(Beta0_1_1_18, "Wooden GUI Beta 0.1 for 1.18.zip");
+  saveAs(Beta0_1_1_18, "Wooden GUI Beta 1.0 for 1.18.zip");
 };
 
 export default function WoodenGUIDownload() {
@@ -58,7 +58,7 @@ export default function WoodenGUIDownload() {
                 <Typography
                   variant="h2"
                   sx={{ pt: 3 }}>
-                  Beta 0.1
+                  Beta 1.0
                 </Typography>
                 <Button
                   color="primary"

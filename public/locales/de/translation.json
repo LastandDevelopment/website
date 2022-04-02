@@ -20,13 +20,22 @@
         "emailAddress": "Wenn Sie mich kontaktieren möchten, senden Sie bitte eine E-Mail an die folgende E-Mail-Adresse:",
         "issueReport": "Falls Sie ein Problem für diese Website oder Meteor Extinction melden möchten und Sie ein GitHub-Konto besitzen, melden Sie bitte ein Problem (\"issue\") in der zugehörigen GitHub-Repository.",
         "websiteButton": "Website",
-        "noGitHub": "Ansonsten schreiben Sie bitte eine E-Mail, die die folgenden Informationen enthält:",
-        "environmentVersionMeteorExtinction": "Für Meteor Extinction: Betriebssystem (+ Version)",
-        "environmentVersionWoodenGUI": "Für Wooden GUI: Minecraft Version und installierte Modifikationen",
-        "environmentVersionWebsite": "Für diese Website: Browser (+ Version)",
-        "version": "Version",
-        "description": "Beschreibung des Problems oder der angeforderten Funktion",
-        "reproduce": "Für Probleme: Schritte, die notwendig sind, um das Problem zu reproduzieren"
+        "noGitHub": "Ansonsten füllen Sie bitte die Vorlage zum Melden eines Problems aus.",
+        "issueTemplate": "Problem melden"
+    },
+    "issueTemplate": {
+        "title": "Problem melden",
+        "send": "Senden",
+        "chooseProgram": "Wähle das Programm, für das Sie ein Problem melden möchten.",
+        "os": "Betriebssystem (+ Version)",
+        "gameVersion": "Version von Meteor Extinction",
+        "issueDescription": "Beschreibung des Problems",
+        "issueReproduction": "Schritte zum Reproduzieren des Problems",
+        "minecraftVersion": "Minecraft-Version & installierte Modifikationen",
+        "packVersion": "Version von Wooden GUI",
+        "browser": "Browser (+ Version)",
+        "websiteVersion": "Version von dieser Website",
+        "fillEverything": "Füllen Sie bitte alle Felder aus."
     },
     "downloadPage": {
         "download": "Herunterladen",
