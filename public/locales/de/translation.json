@@ -26,7 +26,7 @@
     "issueTemplate": {
         "title": "Problem melden",
         "send": "Senden",
-        "chooseProgram": "Wähle das Programm, für das Sie ein Problem melden möchten.",
+        "chooseProgram": "Wählen Sie das Programm, für das Sie ein Problem melden möchten.",
         "os": "Betriebssystem (+ Version)",
         "gameVersion": "Version von Meteor Extinction",
         "issueDescription": "Beschreibung des Problems",
