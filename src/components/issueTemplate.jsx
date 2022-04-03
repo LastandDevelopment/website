@@ -9,36 +9,24 @@ import {
   Collapse,
   Typography,
   Button,
+  FormControlLabel,
+  Checkbox,
 } from "@mui/material";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useTranslation } from "react-i18next";
 
 export default function IssueTemplate() {
-  var sanitizeHTML = function (str) {
-    return str.replace(/[^\w. ]/gi, function (c) {
-      return "&#" + c.charCodeAt(0) + ";";
-    });
-  };
-
   const [t] = useTranslation();
 
   const [valid, setValid] = useState(false);
-  const [alarm, setAlarm] = useState(false);
-  const [sendable, setSendable] = useState(false);
-
-  useEffect(() => {
-    if (!alarm && valid) {
-      setSendable(true);
-    } else {
-      setSendable(false);
-    }
-  }, [alarm, valid]);
 
   const [program, setProgram] = useState("");
   const [mESelected, setMESelected] = useState(false);
   const [wGUISelected, setWGUISelected] = useState(false);
   const [wSSelected, setWSSelected] = useState(false);
+
+  const [feedback, setFeedback] = useState(false);
 
   const [os, setOs] = useState("");
   const [mEVersion, setMEVersion] = useState("");
@@ -90,14 +78,6 @@ export default function IssueTemplate() {
     } else {
       setValid(false);
     }
-
-    if (program === "Meteor Extinction") {
-      if (os.match(/\W/g) != null) {
-        setAlarm(true);
-      } else {
-        setAlarm(false);
-      }
-    }
   }, [
     program,
     os,
@@ -115,6 +95,10 @@ export default function IssueTemplate() {
 
   const handleChangeChooseProgram = (event) => {
     setProgram(event.target.value);
+  };
+
+  const handleChangeFeedback = (event) => {
+    setFeedback(event.target.checked);
   };
 
   const handleChangeOS = (event) => {
@@ -178,9 +162,87 @@ export default function IssueTemplate() {
   const sendMail = () => {
     if (program === "Meteor Extinction") {
       const link = document.createElement("a");
-      link.href =
-        "mailto:lastand.development@gmail.com?subject=Issue: Meteor Extinction&body=Operating System: " +
-        sanitizeHTML(os);
+      feedback
+        ? (link.href =
+            "mailto:lastand.development@gmail.com?subject=Issue: Meteor Extinction Version " +
+            mEVersion +
+            "&body=Operating System:%0D%0A   " +
+            os +
+            "%0D%0A%0D%0AVersion of Meteor Extinction:%0D%0A   Version " +
+            mEVersion +
+            "%0D%0A%0D%0ADescription of the Issue:%0D%0A   " +
+            mEDescription.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0ASteps to reproduce the issue:%0D%0A   " +
+            mEReproduction.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0A%0D%0AFEEDBACK REQUESTED")
+        : (link.href =
+            "mailto:lastand.development@gmail.com?subject=Issue: Meteor Extinction Version " +
+            mEVersion +
+            "&body=Operating System:%0D%0A   " +
+            os +
+            "%0D%0A%0D%0AVersion of Meteor Extinction:%0D%0A   Version " +
+            mEVersion +
+            "%0D%0A%0D%0ADescription of the Issue:%0D%0A   " +
+            mEDescription.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0ASteps to reproduce the issue:%0D%0A   " +
+            mEReproduction.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0A%0D%0ADO NOT RESPOND");
+      link.target = "_blank";
+      link.rel = "noreferrer noopener";
+      link.click();
+    } else if (program === "Wooden GUI") {
+      const link = document.createElement("a");
+      feedback
+        ? (link.href =
+            "mailto:lastand.development@gmail.com?subject=Issue: Wooden GUI Version " +
+            wGUIVersion +
+            "&body=Minecraft Version and installed Modifications:%0D%0A   " +
+            minecraftVersion +
+            "%0D%0A%0D%0AVersion of Wooden GUI:%0D%0A   Version " +
+            wGUIVersion +
+            "%0D%0A%0D%0ADescription of the Issue:%0D%0A   " +
+            wGUIDescription.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0A%0D%0AFEEDBACK REQUESTED")
+        : (link.href =
+            "mailto:lastand.development@gmail.com?subject=Issue: Wooden GUI Version " +
+            wGUIVersion +
+            "&body=Minecraft Version and installed Modifications:%0D%0A   " +
+            minecraftVersion +
+            "%0D%0A%0D%0AVersion of Wooden GUI:%0D%0A   Version " +
+            wGUIVersion +
+            "%0D%0A%0D%0ADescription of the Issue:%0D%0A   " +
+            wGUIDescription.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0A%0D%0ADO NOT RESPOND");
+      link.target = "_blank";
+      link.rel = "noreferrer noopener";
+      link.click();
+    } else if (program === "Website") {
+      const link = document.createElement("a");
+      feedback
+        ? (link.href =
+            "mailto:lastand.development@gmail.com?subject=Issue: Website Version " +
+            wSVersion +
+            "&body=Browser:%0D%0A   " +
+            browser +
+            "%0D%0A%0D%0AVersion of the Website:%0D%0A   Version " +
+            wSVersion +
+            "%0D%0A%0D%0ADescription of the Issue:%0D%0A   " +
+            wSDescription.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0ASteps to reproduce the issue:%0D%0A   " +
+            wSReproduction.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0A%0D%0AFEEDBACK REQUESTED")
+        : (link.href =
+            "mailto:lastand.development@gmail.com?subject=Issue: Website Version " +
+            wSVersion +
+            "&body=Browser:%0D%0A   " +
+            browser +
+            "%0D%0A%0D%0AVersion of the Website:%0D%0A   Version " +
+            wSVersion +
+            "%0D%0A%0D%0ADescription of the Issue:%0D%0A   " +
+            wSDescription.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0ASteps to reproduce the issue:%0D%0A   " +
+            wSReproduction.replaceAll("\n", "%0D%0A   ") +
+            "%0D%0A%0D%0A%0D%0ADO NOT RESPOND");
       link.target = "_blank";
       link.rel = "noreferrer noopener";
       link.click();
@@ -197,11 +259,11 @@ export default function IssueTemplate() {
         </Typography>
         <Box sx={{ textAlign: "right" }}>
           <Button
-            sx={{ py: 1.5, px: 4, mb: 5 }}
+            sx={{ py: 1.5, px: 4, marginBottom: 5 }}
             variant="contained"
             color="primary"
             endIcon={<SendRoundedIcon />}
-            disabled={!sendable}
+            disabled={!valid}
             onClick={sendMail}
           >
             <Typography variant="h6">{t("issueTemplate.send")}</Typography>
@@ -210,9 +272,7 @@ export default function IssueTemplate() {
         <Collapse
           in={!valid}
           timeout={1000}
-          orientation={"vertical"}
-          sx={{ paddingTop: "5px" }}
-        >
+          orientation={"vertical"}>
           <Fade
             in={!valid}
             timeout={1000}>
@@ -220,29 +280,9 @@ export default function IssueTemplate() {
               <Typography
                 variant="body2"
                 color="error"
-                sx={{ marginBottom: 5 }}
+                sx={{ marginBottom: 3 }}
               >
                 {t("issueTemplate.fillEverything")}
-              </Typography>
-            </Box>
-          </Fade>
-        </Collapse>
-        <Collapse
-          in={alarm}
-          timeout={1000}
-          orientation={"vertical"}
-          sx={{ paddingTop: "5px" }}
-        >
-          <Fade
-            in={alarm}
-            timeout={1000}>
-            <Box sx={{ textAlign: "left" }}>
-              <Typography
-                variant="body2"
-                color="error"
-                sx={{ marginBottom: 5 }}
-              >
-                {t("issueTemplate.alarm")}
               </Typography>
             </Box>
           </Fade>
@@ -259,7 +299,7 @@ export default function IssueTemplate() {
           SelectProps={{
             IconComponent: ArrowDropDownRoundedIcon,
           }}
-          sx={{ textAlign: "left", mb: 7 }}
+          sx={{ textAlign: "left", mb: 2 }}
         >
           <MenuItem value="Meteor Extinction">Meteor Extinction</MenuItem>
           <MenuItem value="Wooden GUI">Wooden GUI</MenuItem>
@@ -280,7 +320,7 @@ export default function IssueTemplate() {
               variant="outlined"
               color="secondary"
               fullWidth
-              sx={{ mb: 2 }}
+              sx={{ mb: 2, mt: 5 }}
               value={os}
               onChange={handleChangeOS}
             />
@@ -355,7 +395,7 @@ export default function IssueTemplate() {
               variant="outlined"
               color="secondary"
               fullWidth
-              sx={{ mb: 2 }}
+              sx={{ mb: 2, mt: 5 }}
               value={minecraftVersion}
               onChange={handleChangeMinecraftVersion}
             />
@@ -412,7 +452,7 @@ export default function IssueTemplate() {
               variant="outlined"
               color="secondary"
               fullWidth
-              sx={{ mb: 2 }}
+              sx={{ mb: 2, mt: 5 }}
               value={browser}
               onChange={handleChangeBrowser}
             />
@@ -464,6 +504,23 @@ export default function IssueTemplate() {
             />
           </Fade>
         </Collapse>
+        <Container sx={{ textAlign: "left" }}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                sx={{
+                  color: "white",
+                  "&.Mui-checked": {
+                    color: "white",
+                  },
+                }}
+                checked={feedback}
+                onChange={handleChangeFeedback}
+              />
+            }
+            label={t("issueTemplate.requestFeedback")}
+          />
+        </Container>
       </Box>
     </Container>
   );

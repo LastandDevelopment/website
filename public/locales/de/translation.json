@@ -30,12 +30,13 @@
         "os": "Betriebssystem (+ Version)",
         "gameVersion": "Version von Meteor Extinction",
         "issueDescription": "Beschreibung des Problems",
-        "issueReproduction": "Schritte zum Reproduzieren des Problems",
+        "issueReproduction": "Schritte, die zur Reproduktions des Problems benötigt werden",
         "minecraftVersion": "Minecraft-Version & installierte Modifikationen",
         "packVersion": "Version von Wooden GUI",
         "browser": "Browser (+ Version)",
         "websiteVersion": "Version von dieser Website",
-        "fillEverything": "Füllen Sie bitte alle Felder aus."
+        "fillEverything": "Füllen Sie bitte alle Felder aus.",
+        "requestFeedback": "Ich möchte Feedback zu meiner Meldung erhalten."
     },
     "downloadPage": {
         "download": "Herunterladen",

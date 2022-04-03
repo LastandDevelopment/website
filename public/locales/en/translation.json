@@ -35,7 +35,8 @@
         "packVersion": "Version of Wooden GUI",
         "browser": "Browser (+ Version)",
         "websiteVersion": "Version of this Website",
-        "fillEverything": "Please fill in all the fields."
+        "fillEverything": "Please fill in all the fields.",
+        "requestFeedback": "I would like to receive feedback on my report."
     },
     "downloadPage": {
         "download": "Download",
