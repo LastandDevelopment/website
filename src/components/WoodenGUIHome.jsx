@@ -58,36 +58,36 @@ export default function WoodenGUIHome() {
           sx={{ marginY: 10, padding: "3vw" }}>
           <Box className="imageScroller">
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={MainMenu}
               alt="Main Menu"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={Hotbar}
               alt="Hotbar"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={Inventory}
               alt="Inventory"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={CreativeInventory}
               alt="Creative Inventory"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={Loom}
               alt="Loom" />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={EnchantingTable}
               alt="Enchanting Table"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={Trading}
               alt="Trading"
             />

@@ -26,11 +26,11 @@
     "issueTemplate": {
         "title": "Problem melden",
         "send": "Senden",
-        "chooseProgram": "Wählen Sie das Programm, für das Sie ein Problem melden möchten.",
+        "chooseProgram": "Programm",
         "os": "Betriebssystem (+ Version)",
         "gameVersion": "Version von Meteor Extinction",
         "issueDescription": "Beschreibung des Problems",
-        "issueReproduction": "Schritte, die zur Reproduktions des Problems benötigt werden",
+        "issueReproduction": "Schritte zur Reproduktion des Problems",
         "minecraftVersion": "Minecraft-Version & installierte Modifikationen",
         "packVersion": "Version von Wooden GUI",
         "browser": "Browser (+ Version)",

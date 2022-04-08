@@ -26,7 +26,7 @@
     "issueTemplate": {
         "title": "Report an Issue",
         "send": "Send",
-        "chooseProgram": "Choose the program you want to report an issue on.",
+        "chooseProgram": "Program",
         "os": "Operating System (+ Version)",
         "gameVersion": "Version of Meteor Extinction",
         "issueDescription": "Description of the Issue",

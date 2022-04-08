@@ -57,42 +57,42 @@ export default function MeteorExtinctionHome() {
           sx={{ marginY: 10, padding: "3vw" }}>
           <Box className="imageScroller">
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={MainMenu}
               alt="Main Menu"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={Countdown}
               alt="Countdown"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={Game}
               alt="Gameplay"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={MeteorDestroyed}
               alt="Gameplay - Meteor Destroyed"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={MeteorExplosion}
               alt="Gameplay - Meteor Exploding"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={Rocket}
               alt="Gameplay - Rocket"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={RocketExploding}
               alt="Gameplay - Rocket Exploding"
             />
             <img
-              className="imageContenStartAndMiddle"
+              className="imageContentStartAndMiddle"
               src={Pause}
               alt="Pause Menu"
             />

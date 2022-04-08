@@ -1,2 +1,3 @@
-# Lastand Development Website
-GitHub Repository for the Official Website of Lastand Development.
+<h1 align="center">
+<img src="src/components/icons/LastandDevelopmentLogo.svg" alt="Lastand Development" width="100" />
+</h1>

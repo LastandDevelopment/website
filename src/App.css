@@ -67,7 +67,7 @@ body::-webkit-scrollbar-thumb:hover {
   box-shadow: 8px 0px 0px 8px #ffffff60 inset;
 }
 
-.imageContenStartAndMiddle {
+.imageContentStartAndMiddle {
   margin-right: 2vw;
 }
 
@@ -217,7 +217,7 @@ img.Banner:hover {
   }
 }
 
-img.imageContenStartAndMiddle {
+img.imageContentStartAndMiddle {
   border-radius: 5px;
 }
 
