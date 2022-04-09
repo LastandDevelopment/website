@@ -1,7 +1,7 @@
 import React from "react";
 import { CircularProgress, Box } from "@mui/material";
 
-export default function CustomProgress() {
+export default function CustomProgress(props) {
   return (
     <Box
       sx={{
@@ -12,7 +12,7 @@ export default function CustomProgress() {
       }}
     >
       <CircularProgress
-        color="secondary"
+        color={props.themeMode === "dark" ? "secondary" : "primary"}
         size="60px"
         sx={{ strokeLinecap: "round" }}
       />

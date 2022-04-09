@@ -47,7 +47,10 @@ export default function LanguageMenu(props) {
     <Fragment>
       <MenuItem onClick={handleClick}>
         <ListItemIcon>
-          <LanguageRoundedIcon fontSize="medium" />
+          <LanguageRoundedIcon
+            fontSize="medium"
+            color={props.themeMode === "dark" ? "secondary" : "primary"}
+          />
         </ListItemIcon>
         <ListItemText>{t("menu.language")}</ListItemText>
       </MenuItem>

@@ -1,14 +1,15 @@
 const background = {
-  light: { paper: "#121212", default: "#121212" },
+  light: { paper: "#ffffff", default: "#e4e4e4" },
   dark: { paper: "#121212", default: "#121212" },
 };
 
 const secondary = {
   light: "#fff",
   main: "#fff",
-  dark: "#fff",
+  dark: "#000",
   hover: "#808080",
   contrastText: "#000",
+  contrastTextDark: "#fff",
 };
 
 const primary = {
@@ -89,10 +90,10 @@ const getTheme = (mode) => ({
           contrastText: secondary.contrastText,
         },
         text: {
-          primary: "rgba(255, 255, 255, 1)",
-          secondary: "rgba(255, 255, 255, 1)",
-          disabled: "rgba(155, 155, 155, 1)",
-          hint: "rgba(200, 200, 200, 1)",
+          primary: "rgba(0, 0, 0, 1)",
+          secondary: "rgba(0, 0, 0, 1)",
+          disabled: "rgba(100, 100, 100, 1)",
+          hint: "rgba(55, 55, 55, 1)",
         },
         rowHover: "#1b1b1b",
       }
@@ -131,14 +132,6 @@ const getTheme = (mode) => ({
         body: {
           fontFamily: font,
           fontSize: "20px",
-          a: {
-            color: secondary.main,
-          },
-          "a:hover": {
-            color: secondary.main,
-          },
-
-          scrollbarColor: `${secondary.dark} ${background.dark.default}`,
         },
       },
     },

@@ -22,8 +22,8 @@ import IssueTemplate from "./components/issueTemplate";
 import CustomProgress from "./components/SuspenseFallback";
 
 function App() {
-  const activeTheme = "dark";
-  const appliedTheme = createTheme(getTheme(activeTheme));
+  const [themeMode, setThemeMode] = useState("dark");
+  const appliedTheme = createTheme(getTheme(themeMode));
 
   const location = useLocation();
 
@@ -49,11 +49,18 @@ function App() {
     }
   }, [location, displayLocation]);
 
+  const handleThemeModeChange = () => {
+    setThemeMode((t) => (t === "light" ? "dark" : "light"));
+  };
+
   return (
     <ThemeProvider theme={appliedTheme}>
-      <Suspense fallback={<CustomProgress />}>
+      <Suspense fallback={<CustomProgress themeMode={themeMode} />}>
         <CssBaseline />
-        <TitleBar />
+        <TitleBar
+          themeMode={themeMode}
+          handleThemeModeChange={handleThemeModeChange}
+        />
         <div
           className={`${transitionStage}`}
           onAnimationEnd={() => {
@@ -76,11 +83,11 @@ function App() {
               element={<Home />}></Route>
             <Route
               path="meteorextinction"
-              element={<MeteorExtinctionHome />}
+              element={<MeteorExtinctionHome themeMode={themeMode} />}
             ></Route>
             <Route
               path="meteorextinction/download"
-              element={<MeteorExtinctionDownload />}
+              element={<MeteorExtinctionDownload themeMode={themeMode} />}
             ></Route>
             <Route
               path="meteorextinction/download/changelog/alpha-0.1.0"
@@ -103,10 +110,11 @@ function App() {
             ></Route>
             <Route
               path="contact"
-              element={<Contact />}></Route>
+              element={<Contact themeMode={themeMode} />}
+            ></Route>
             <Route
               path="contact/issue-template"
-              element={<IssueTemplate />}
+              element={<IssueTemplate themeMode={themeMode} />}
             ></Route>
           </Routes>
         </div>

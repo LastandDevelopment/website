@@ -23,6 +23,8 @@ import {
 
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
+import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import { InfoRounded } from "@mui/icons-material";
 import MenuRounded from "@mui/icons-material/MenuRounded";
 
@@ -46,7 +48,7 @@ function MenuMargin() {
   }
 }
 
-export default function TitleBar() {
+export default function TitleBar(props) {
   const [t] = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -66,6 +68,9 @@ export default function TitleBar() {
   };
 
   const [openAboutDialog, setOpenAboutDialog] = useState(false);
+
+  const AppearanceIcon =
+    props.themeMode === "dark" ? LightModeRoundedIcon : DarkModeRoundedIcon;
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -117,13 +122,33 @@ export default function TitleBar() {
               component={Link}
               to={"/contact"}>
               <ListItemIcon>
-                <EmailRoundedIcon fontSize="medium" />
+                <EmailRoundedIcon
+                  fontSize="medium"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                />
               </ListItemIcon>
               <ListItemText>
                 <Typography>{t("menu.contact")}</Typography>
               </ListItemText>
             </MenuItem>
-            <LanguageMenu handleTopMenuClose={handleClose} />
+            <LanguageMenu
+              handleTopMenuClose={handleClose}
+              themeMode={props.themeMode}
+            />
+            <MenuItem
+              onClick={() => {
+                props.handleThemeModeChange();
+              }}
+            >
+              <ListItemIcon>
+                <AppearanceIcon
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography>{t("menu.appearance")}</Typography>
+              </ListItemText>
+            </MenuItem>
             <MenuItem
               onClick={() => {
                 setOpenAboutDialog(true);
@@ -131,14 +156,20 @@ export default function TitleBar() {
               }}
             >
               <ListItemIcon>
-                <InfoRounded fontSize="medium" />
+                <InfoRounded
+                  fontSize="medium"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                />
               </ListItemIcon>
               <ListItemText>{t("menu.about")}</ListItemText>
             </MenuItem>
             <Divider variant="middle" />
             <MenuItem onClick={openGitHubRepo}>
               <ListItemIcon>
-                <CodeRoundedIcon fontSize="medium" />
+                <CodeRoundedIcon
+                  fontSize="medium"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                />
               </ListItemIcon>
               <ListItemText>{t("menu.source")}</ListItemText>
             </MenuItem>

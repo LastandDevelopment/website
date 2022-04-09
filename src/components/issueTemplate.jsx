@@ -16,7 +16,7 @@ import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useTranslation } from "react-i18next";
 
-export default function IssueTemplate() {
+export default function IssueTemplate(props) {
   const [t] = useTranslation();
 
   const [valid, setValid] = useState(false);
@@ -295,7 +295,7 @@ export default function IssueTemplate() {
           select
           fullWidth
           variant="outlined"
-          color="secondary"
+          color={props.themeMode === "dark" ? "secondary" : "primary"}
           SelectProps={{
             IconComponent: ArrowDropDownRoundedIcon,
           }}
@@ -318,7 +318,7 @@ export default function IssueTemplate() {
               id="operating-system"
               label={t("issueTemplate.os")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               sx={{ mb: 2, mt: 5 }}
               value={os}
@@ -332,7 +332,7 @@ export default function IssueTemplate() {
               id="game-version"
               label={t("issueTemplate.gameVersion")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               value={mEVersion}
               onChange={handleChangeMEVersion}
@@ -354,7 +354,7 @@ export default function IssueTemplate() {
               id="issue-description-ME"
               label={t("issueTemplate.issueDescription")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               multiline
               minRows={6}
@@ -370,7 +370,7 @@ export default function IssueTemplate() {
               id="issue-reproduction-ME"
               label={t("issueTemplate.issueReproduction")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               multiline
               minRows={4}
@@ -393,7 +393,7 @@ export default function IssueTemplate() {
               id="minecraft-version"
               label={t("issueTemplate.minecraftVersion")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               sx={{ mb: 2, mt: 5 }}
               value={minecraftVersion}
@@ -407,7 +407,7 @@ export default function IssueTemplate() {
               id="pack-version"
               label={t("issueTemplate.packVersion")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               value={wGUIVersion}
               onChange={handleChangeWGUIVersion}
@@ -427,7 +427,7 @@ export default function IssueTemplate() {
               id="issue-description-WGUI"
               label={t("issueTemplate.issueDescription")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               multiline
               minRows={6}
@@ -450,7 +450,7 @@ export default function IssueTemplate() {
               id="browser"
               label={t("issueTemplate.browser")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               sx={{ mb: 2, mt: 5 }}
               value={browser}
@@ -464,7 +464,7 @@ export default function IssueTemplate() {
               id="website-version"
               label={t("issueTemplate.websiteVersion")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               sx={{ mb: 2 }}
               value={wSVersion}
@@ -478,7 +478,7 @@ export default function IssueTemplate() {
               id="issue-description-WS"
               label={t("issueTemplate.issueDescription")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               multiline
               minRows={6}
@@ -494,7 +494,7 @@ export default function IssueTemplate() {
               id="issue-reproduction-WS"
               label={t("issueTemplate.issueReproduction")}
               variant="outlined"
-              color="secondary"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
               fullWidth
               multiline
               minRows={4}
@@ -509,9 +509,9 @@ export default function IssueTemplate() {
             control={
               <Checkbox
                 sx={{
-                  color: "white",
+                  color: props.themeMode === "dark" ? "white" : "black",
                   "&.Mui-checked": {
-                    color: "white",
+                    color: props.themeMode === "dark" ? "white" : "black",
                   },
                 }}
                 checked={feedback}

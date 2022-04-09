@@ -5,7 +5,7 @@ import BugReportRoundedIcon from "@mui/icons-material/BugReportRounded";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-export default function Contact() {
+export default function Contact(props) {
   const [t] = useTranslation();
 
   return (
@@ -24,7 +24,7 @@ export default function Contact() {
         <Container sx={{ width: "fitContent" }}>
           <Button
             variant="text"
-            color="secondary"
+            color={props.themeMode === "dark" ? "secondary" : "primary"}
             href="mailto:lastand.development@gmail.com"
             target="_blank"
             rel="noreferrer noopener"
@@ -42,7 +42,7 @@ export default function Contact() {
           underline="none"
           sx={{ marginBottom: 2, marginRight: 2, paddingY: 0.5, width: 200 }}
           variant="outlined"
-          color="secondary"
+          color={props.themeMode === "dark" ? "secondary" : "primary"}
           href="https://github.com/LastandDevelopment/website/issues/new/choose"
           target="_blank"
           rel="noreferrer noopener"
@@ -53,7 +53,7 @@ export default function Contact() {
           underline="none"
           sx={{ marginBottom: 2, marginRight: 2, paddingY: 0.5, width: 200 }}
           variant="outlined"
-          color="secondary"
+          color={props.themeMode === "dark" ? "secondary" : "primary"}
           href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
           target="_blank"
           rel="noreferrer noopener"

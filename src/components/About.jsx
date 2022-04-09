@@ -43,7 +43,6 @@ export default function AboutDialog(props) {
       >
         <DialogContent>
           <Typography
-            color="secondary"
             variant="h2"
             sx={{
               paddingLeft: 3,
@@ -54,7 +53,6 @@ export default function AboutDialog(props) {
             {t("aboutDialog.about")}
           </Typography>
           <Typography
-            color="secondary"
             variant="h2"
             sx={{ paddingLeft: 3, paddingTop: 1, fontSize: 16 }}
           >

@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #00000000;
   border: 4px solid transparent;
   border-radius: 24px;
-  box-shadow: 8px 0px 0px 8px #ffffff inset;
+  box-shadow: 8px 0px 0px 8px #969696 inset;
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -46,7 +46,6 @@ body::-webkit-scrollbar-thumb:hover {
   overflow-x: overlay;
   height: 35vw;
   border-radius: 5px;
-  scrollbar-color: white transparent;
 }
 
 .imageScroller::-webkit-scrollbar {

@@ -15,9 +15,10 @@ import Pause from "./images/pausemenu.png";
 import GameOver from "./images/gameover.png";
 
 import GitHub from "./icons/GitHubIcon.svg";
+import GitHubDark from "./icons/GitHubIconDark.svg";
 import { useTranslation } from "react-i18next";
 
-export default function MeteorExtinctionHome() {
+export default function MeteorExtinctionHome(props) {
   const [t] = useTranslation();
   return (
     <Container className="containerHome">
@@ -105,14 +106,14 @@ export default function MeteorExtinctionHome() {
 
         <Button
           variant="outlined"
-          color="secondary"
+          color={props.themeMode === "dark" ? "secondary" : "primary"}
           sx={{ paddingY: 1, paddingX: 4, marginY: 3 }}
           href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
           target="_blank"
           rel="noreferrer noopener"
         >
           <img
-            src={GitHub}
+            src={props.themeMode === "dark" ? GitHub : GitHubDark}
             className="githubic"
             alt="GitHub"
             style={{ height: 18 }}

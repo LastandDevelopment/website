@@ -31,7 +31,7 @@ const downloadAlpha010 = () => {
   saveAs(Alpha0_1_0, "Meteor Extinction Alpha 0.1.zip");
 };
 
-export default function MeteorExtinctionDownload() {
+export default function MeteorExtinctionDownload(props) {
   const [t] = useTranslation();
   return (
     <Container className="containerHome">
@@ -97,7 +97,7 @@ export default function MeteorExtinctionDownload() {
                 </Button>
                 <Box />
                 <Button
-                  color="secondary"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
                   variant="text"
                   className="downloadButton"
                   sx={{
@@ -154,7 +154,7 @@ export default function MeteorExtinctionDownload() {
                 </Button>
                 <Box />
                 <Button
-                  color="secondary"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
                   variant="text"
                   className="downloadButton"
                   sx={{
@@ -211,7 +211,7 @@ export default function MeteorExtinctionDownload() {
                 </Button>
                 <Box />
                 <Button
-                  color="secondary"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
                   variant="text"
                   className="downloadButton"
                   sx={{
