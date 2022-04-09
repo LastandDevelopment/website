@@ -17,7 +17,7 @@ body:
     attributes:
       label: Browser
       description: "Which browser did you use? Please provide the version as well."
-      placeholder: "Google Chrome 99.0.4844.51"
+      placeholder: "Google Chrome 100"
     validations:
       required: true
   - type: input
@@ -25,7 +25,7 @@ body:
     attributes:
       label: Version
       description: "In which version of the website did the bug occur? You can find it in the About-Dialog."
-      placeholder: "1.1.2"
+      placeholder: "1.7.0"
     validations:
       required: true
   - type: textarea
