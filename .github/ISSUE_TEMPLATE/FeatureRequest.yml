@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before posting your feature request, please make sure that feature does not exist in the latest version of the game. You can download the latest version on: https://sites.google.com/view/lastanddevelopment/meteor-extinction/all-versions
+        Before posting your feature request, please make sure that feature does not exist.
         
         ---
         
