@@ -10,7 +10,8 @@
         "contact": "Contact",
         "source": "Source Code",
         "about": "About",
-        "language": "Language"
+        "language": "Language",
+        "appearance": "Appearance"
     },
     "aboutDialog": {
         "about": "About this Website"

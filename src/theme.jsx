@@ -132,6 +132,46 @@ const getTheme = (mode) => ({
         body: {
           fontFamily: font,
           fontSize: "20px",
+          mode,
+          ...(mode === "dark"
+            ? {
+              "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
+                background: "transparent",
+                minHeight: 24,
+              },
+              "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
+                backgroundColor: "#00000000",
+                border: "4px solid transparent",
+                borderRadius: "24px",
+                boxShadow: "8px 0px 0px 8px #ffffff inset",
+              },
+              "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
+                  {
+                    backgroundColor: "#00000000",
+                    border: "4px solid transparent",
+                    borderRadius: "24px",
+                    boxShadow: "8px 0px 0px 8px #c8c8c8 inset",
+                  },
+            }
+            : {
+              "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
+                background: "transparent",
+                minHeight: 24,
+              },
+              "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
+                backgroundColor: "#00000000",
+                border: "4px solid transparent",
+                borderRadius: "24px",
+                boxShadow: "8px 0px 0px 8px #242424 inset",
+              },
+              "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
+                  {
+                    backgroundColor: "#00000000",
+                    border: "4px solid transparent",
+                    borderRadius: "24px",
+                    boxShadow: "8px 0px 0px 8px #404040 inset",
+                  },
+            }),
         },
       },
     },

@@ -10,7 +10,8 @@
         "contact": "Kontakt",
         "source": "Quellcode",
         "about": "Über",
-        "language": "Sprache"
+        "language": "Sprache",
+        "appearance": "Erscheinungsbild"
     },
     "aboutDialog": {
         "about": "Über diese Website"

@@ -20,10 +20,18 @@ import Contact from "./components/contact";
 import IssueTemplate from "./components/issueTemplate";
 
 import CustomProgress from "./components/SuspenseFallback";
+import {
+  getStorageMode,
+  setStorageMode,
+} from "./components/services/SettingsService";
 
 function App() {
-  const [themeMode, setThemeMode] = useState("dark");
+  const [themeMode, setThemeMode] = useState(getStorageMode);
   const appliedTheme = createTheme(getTheme(themeMode));
+
+  useEffect(() => {
+    setStorageMode(themeMode);
+  }, [themeMode]);
 
   const location = useLocation();
 
