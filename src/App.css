@@ -47,6 +47,18 @@ body {
   box-shadow: 8px 0px 0px 8px #ffffff60 inset;
 }
 
+.imageScrollerMobile {
+  display: flex;
+  overflow-x: auto;
+  overflow-x: overlay;
+  height: 35vw;
+  border-radius: 5px;
+}
+
+.imageScrollerMobile::-webkit-scrollbar {
+  display: none;
+}
+
 .imageContentStartAndMiddle {
   margin-right: 2vw;
 }

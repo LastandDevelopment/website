@@ -1,5 +1,5 @@
 const background = {
-  light: { paper: "#ffffff", default: "#e4e4e4" },
+  light: { paper: "#ffffff", default: "#f3f3f3" },
   dark: { paper: "#121212", default: "#121212" },
 };
 

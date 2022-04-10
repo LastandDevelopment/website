@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Button, Container, Box, Paper } from "@mui/material";
 import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 import { DownloadRounded } from "@mui/icons-material";
 
@@ -20,6 +21,7 @@ import { useTranslation } from "react-i18next";
 
 export default function MeteorExtinctionHome(props) {
   const [t] = useTranslation();
+  const imageScrollerClass = isMobile ? "imageScrollerMobile" : "imageScroller";
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -56,7 +58,7 @@ export default function MeteorExtinctionHome(props) {
         <Paper
           elevation={3}
           sx={{ marginY: 10, padding: "3vw" }}>
-          <Box className="imageScroller">
+          <Box className={imageScrollerClass}>
             <img
               className="imageContentStartAndMiddle"
               src={MainMenu}

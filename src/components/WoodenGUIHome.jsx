@@ -14,9 +14,11 @@ import EnchantingTable from "./imagesWGUI/EnchantingTable.png";
 import Trading from "./imagesWGUI/Trading.png";
 import GamemodeSwitcher from "./imagesWGUI/GamemodeSwitcher.png";
 import { useTranslation } from "react-i18next";
+import { isMobile } from "react-device-detect";
 
 export default function WoodenGUIHome() {
   const [t] = useTranslation();
+  const imageScrollerClass = isMobile ? "imageScrollerMobile" : "imageScroller";
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -56,7 +58,7 @@ export default function WoodenGUIHome() {
         <Paper
           elevation={3}
           sx={{ marginY: 10, padding: "3vw" }}>
-          <Box className="imageScroller">
+          <Box className={imageScrollerClass}>
             <img
               className="imageContentStartAndMiddle"
               src={MainMenu}
