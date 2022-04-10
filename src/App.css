@@ -31,6 +31,8 @@ body {
 
 .imageScroller::-webkit-scrollbar {
   background: transparent;
+  height: 17px;
+  min-height: 17px;
 }
 
 .imageScroller::-webkit-scrollbar-thumb {
