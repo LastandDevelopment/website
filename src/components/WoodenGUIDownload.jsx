@@ -3,10 +3,6 @@ import React from "react";
 import { Container, Box, Typography, Grid, Paper, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-import Beta0_1_1_17 from "./downloads/WoodenGUIBeta1.0for1.17.zip";
-import Beta0_1_1_18 from "./downloads/WoodenGUIBeta1.0for1.18.zip";
-
-import { saveAs } from "file-saver";
 import { useTranslation } from "react-i18next";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -14,14 +10,6 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   height: 220,
 }));
-
-const downloadBeta01117 = () => {
-  saveAs(Beta0_1_1_17, "Wooden GUI Beta 1.0 for 1.17.zip");
-};
-
-const downloadBeta01118 = () => {
-  saveAs(Beta0_1_1_18, "Wooden GUI Beta 1.0 for 1.18.zip");
-};
 
 export default function WoodenGUIDownload() {
   const [t] = useTranslation();
@@ -68,7 +56,7 @@ export default function WoodenGUIDownload() {
                     py: 1,
                     mt: 5,
                   }}
-                  onClick={downloadBeta01118}
+                  href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/WoodenGUIBeta1.0for1.18.zip"
                 >
                   <Typography variant="h6">
                     {t("downloadPage.downloadFor118")}
@@ -83,7 +71,7 @@ export default function WoodenGUIDownload() {
                     py: 1,
                     mt: 2,
                   }}
-                  onClick={downloadBeta01117}
+                  href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/WoodenGUIBeta1.0for1.17.zip"
                 >
                   <Typography variant="h6">
                     {t("downloadPage.downloadFor117")}

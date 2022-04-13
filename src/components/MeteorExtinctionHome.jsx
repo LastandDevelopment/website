@@ -5,15 +5,15 @@ import { isMobile } from "react-device-detect";
 
 import { DownloadRounded } from "@mui/icons-material";
 
-import MainMenu from "./images/mainmenu.png";
-import Countdown from "./images/countdown.png";
-import Game from "./images/maingame.png";
-import MeteorDestroyed from "./images/maingamemeteordestroyed.png";
-import MeteorExplosion from "./images/meteorexplosion.png";
-import Rocket from "./images/rocket.png";
-import RocketExploding from "./images/rocketexplode.png";
-import Pause from "./images/pausemenu.png";
-import GameOver from "./images/gameover.png";
+import MainMenu from "./imagesME/mainmenu.png";
+import Countdown from "./imagesME/countdown.png";
+import Game from "./imagesME/maingame.png";
+import MeteorDestroyed from "./imagesME/maingamemeteordestroyed.png";
+import MeteorExplosion from "./imagesME/meteorexplosion.png";
+import Rocket from "./imagesME/rocket.png";
+import RocketExploding from "./imagesME/rocketexplode.png";
+import Pause from "./imagesME/pausemenu.png";
+import GameOver from "./imagesME/gameover.png";
 
 import GitHub from "./icons/GitHubIcon.svg";
 import GitHubDark from "./icons/GitHubIconDark.svg";
