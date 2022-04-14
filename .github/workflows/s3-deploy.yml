@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm i
       - name: Build Website
         run: npm run build
       - name: Deploy Build to S3 Bucket
