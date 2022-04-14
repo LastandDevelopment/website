@@ -1,5 +1,6 @@
 {
     "editor.formatOnSave": true,
     "javascript.format.enable": false,
-    "eslint.alwaysShowStatus": true
+    "eslint.alwaysShowStatus": true,
+    "files.eol": "\n"
 }

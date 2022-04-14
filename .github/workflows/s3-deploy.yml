@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Configure AWS Credentials
@@ -16,7 +16,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-      - name: Build React App
+      - name: Build Website
         run: npm install && npm run build
-      - name: Deploy app build to S3 bucket
+      - name: Deploy Build to S3 Bucket
         run: aws s3 sync ./build/ s3://lastanddevelopmentwebsitecontent --delete

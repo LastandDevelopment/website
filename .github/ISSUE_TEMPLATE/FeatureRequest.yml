@@ -8,9 +8,9 @@ body:
     attributes:
       value: |
         Before posting your feature request, please make sure that feature does not exist.
-        
+
         ---
-        
+
   - type: textarea
     id: featuredescription
     attributes:
