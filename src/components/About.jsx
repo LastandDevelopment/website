@@ -24,7 +24,7 @@ export default function AboutDialog(props) {
     props.setOpenAboutDialog(false);
   };
 
-  const version = "1.8.3";
+  const version = "1.8.4";
 
   const className = props.openAboutDialog
     ? "blurBackgroundOpened"

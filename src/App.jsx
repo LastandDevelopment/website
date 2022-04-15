@@ -20,10 +20,12 @@ import Contact from "./components/contact";
 import IssueTemplate from "./components/issueTemplate";
 
 import CustomProgress from "./components/SuspenseFallback";
+
 import {
   getStorageMode,
   setStorageMode,
 } from "./components/services/SettingsService";
+import BrowserTitle from "./components/BrowserTitle";
 
 function App() {
   const [themeMode, setThemeMode] = useState(getStorageMode);
@@ -65,6 +67,7 @@ function App() {
     <ThemeProvider theme={appliedTheme}>
       <Suspense fallback={<CustomProgress themeMode={themeMode} />}>
         <CssBaseline />
+        <BrowserTitle location={location} />
         <TitleBar
           themeMode={themeMode}
           handleThemeModeChange={handleThemeModeChange}

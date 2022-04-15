@@ -1,4 +1,11 @@
 {
+    "title": {
+        "downloadMeteorExtinction": "Download Meteor Extinction",
+        "downloadWoodenGUI": "Download Wooden GUI",
+        "changelog": "Changelog",
+        "contact": "Contact",
+        "reportIssue": "Report an Issue"
+    },
     "home": {
         "text1": "The Official Website of Lastand Development.",
         "text2": "Here you can find all my projects and programs, straight from the developer.",
