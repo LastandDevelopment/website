@@ -1,11 +1,4 @@
 {
-    "title": {
-        "downloadMeteorExtinction": "Meteor Extinction herunterladen",
-        "downloadWoodenGUI": "Wooden GUI herunterladen",
-        "changelog": "Änderungsprotokoll",
-        "contact": "Kontakt",
-        "reportIssue": "Problem melden"
-    },
     "home": {
         "text1": "Die offizielle Website von Lastand Development.",
         "text2": "Hier finden Sie alle Projekte und Programme, direkt vom Entwickler.",

@@ -1,20 +1,15 @@
 import { useEffect } from "react";
 
-import { useTranslation } from "react-i18next";
-
 export default function BrowserTitle(props) {
-  const [t] = useTranslation();
-
   useEffect(() => {
     if (props.location.pathname === "/meteorextinction") {
       document.title = "Meteor Extinction - Lastand Development";
     } else if (props.location.pathname === "/meteorextinction/download") {
-      document.title =
-        t("title.downloadMeteorExtinction") + " - Lastand Development";
+      document.title = "Download Meteor Extinction - Lastand Development";
     } else if (props.location.pathname === "/woodengui") {
       document.title = "Wooden GUI - Lastand Development";
     } else if (props.location.pathname === "/woodengui/download") {
-      document.title = t("title.downloadWoodenGUI") + " - Lastand Development";
+      document.title = "Download Wooden GUI - Lastand Development";
     } else if (
       props.location.pathname ===
         "/meteorextinction/download/changelog/alpha-0.1.0" ||
@@ -23,16 +18,15 @@ export default function BrowserTitle(props) {
       props.location.pathname ===
         "/meteorextinction/download/changelog/alpha-0.1.2"
     ) {
-      document.title =
-        t("title.changelog") + " Meteor Extinction - Lastand Development";
+      document.title = "Changelog Meteor Extinction - Lastand Development";
     } else if (props.location.pathname === "/contact") {
-      document.title = t("title.contact") + " - Lastand Development";
+      document.title = "Contact - Lastand Development";
     } else if (props.location.pathname === "/contact/issue-template") {
-      document.title = t("title.reportIssue") + " - Lastand Development";
+      document.title = "Report and Issue - Lastand Development";
     } else {
       document.title = "Lastand Development";
     }
-  }, [props.location, t]);
+  }, [props.location]);
 
   return null;
 }
