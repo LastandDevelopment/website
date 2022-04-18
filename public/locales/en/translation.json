@@ -82,5 +82,15 @@
         "p2": "Fixed a bug that sometimes prevented the remaining attempts from being displayed correctly after restarting the game in the pause menu",
         "p3": "Fixed a bug that occurred when app info was opened and then closed again very quickly",
         "p4": "Fixed a bug that prevented the correct crosshair from being displayed during the countdown if the game ended while being paused"
+    },
+    "updateME": {
+        "title": "Check for Updates",
+        "updateAvailable": "An Update is available.",
+        "noUpdateAvailable": "The latest is already installed.",
+        "yourVersion": "Installed Version",
+        "latestVersion": "Latest Version",
+        "loadUpdate": "Update",
+        "unknownVersion": "Unknown Version",
+        "noVersionGiven": "No Version specified"
     }
 }

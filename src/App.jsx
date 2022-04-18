@@ -18,6 +18,7 @@ import WoodenGUIHome from "./components/WoodenGUIHome";
 import WoodenGUIDownload from "./components/WoodenGUIDownload";
 import Contact from "./components/contact";
 import IssueTemplate from "./components/issueTemplate";
+import CheckMEVersion from "./components/CheckMEVersion";
 
 import CustomProgress from "./components/SuspenseFallback";
 
@@ -126,6 +127,10 @@ function App() {
             <Route
               path="contact/issue-template"
               element={<IssueTemplate themeMode={themeMode} />}
+            ></Route>
+            <Route
+              path="meteorextinction/download/update"
+              element={<CheckMEVersion />}
             ></Route>
           </Routes>
         </div>

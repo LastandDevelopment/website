@@ -82,5 +82,15 @@
         "p2": "Fehler behoben, der manchmal die korrekte Anzeige der restlichen Versuche verhinderte, wenn das Spiel im Pause-Menü neugestartet wurde",
         "p3": "Fehler behoben, der auftrat, wenn die App-Informationen geöffnet und sehr schnell wieder geschlossen wurden",
         "p4": "Fehler behoben, der während des Countdowns die Anzeige des korrekten Fadenkreuzes verhinderte, wenn das Spiel endete, während es pausiert war"
+    },
+    "updateME": {
+        "title": "Auf Updates überprüfen",
+        "updateAvailable": "Es ist ein Update verfügbar.",
+        "noUpdateAvailable": "Die neueste Version ist bereits installiert.",
+        "yourVersion": "Installierte Version",
+        "latestVersion": "Neueste Version",
+        "loadUpdate": "Aktualisieren",
+        "unknownVersion": "Unbekannte Version",
+        "noVersionGiven": "Version nicht angegeben"
     }
 }
