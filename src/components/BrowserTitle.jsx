@@ -19,6 +19,10 @@ export default function BrowserTitle(props) {
         "/meteorextinction/download/changelog/alpha-0.1.2"
     ) {
       document.title = "Changelog Meteor Extinction - Lastand Development";
+    } else if (
+      props.location.pathname === "/meteorextinction/download/update"
+    ) {
+      document.title = "Update Meteor Extinction - Lastand Development";
     } else if (props.location.pathname === "/contact") {
       document.title = "Contact - Lastand Development";
     } else if (props.location.pathname === "/contact/issue-template") {

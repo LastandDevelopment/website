@@ -55,12 +55,12 @@ export default function CheckMEVersion() {
           <Typography
             variant="body2"
             sx={{ paddingTop: 5 }}>
-            {t("updateME.yourVersion")}: Version {currentVersion}
+            {t("updateME.yourVersion")}: {currentVersion}
           </Typography>
           <Typography
             variant="body2"
             sx={{ paddingTop: 1 }}>
-            {t("updateME.latestVersion")}: Version {mostRecentVersion}
+            {t("updateME.latestVersion")}: {mostRecentVersion}
           </Typography>
           <Button
             color="primary"
@@ -96,7 +96,7 @@ export default function CheckMEVersion() {
           <Typography
             variant="body2"
             sx={{ paddingTop: 5 }}>
-            {t("updateME.yourVersion")}: Version {currentVersion}
+            {t("updateME.yourVersion")}: {currentVersion}
           </Typography>
         </Box>
       </Container>
