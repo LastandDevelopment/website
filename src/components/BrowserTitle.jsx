@@ -26,7 +26,7 @@ export default function BrowserTitle(props) {
     } else if (props.location.pathname === "/contact") {
       document.title = "Contact - Lastand Development";
     } else if (props.location.pathname === "/contact/issue-template") {
-      document.title = "Report and Issue - Lastand Development";
+      document.title = "Report an Issue - Lastand Development";
     } else {
       document.title = "Lastand Development";
     }
