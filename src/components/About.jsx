@@ -14,7 +14,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Grow
     ref={ref}
     {...props}
-    timeout={300} />;
+    timeout={400} />;
 });
 
 export default function AboutDialog(props) {
@@ -24,16 +24,11 @@ export default function AboutDialog(props) {
     props.setOpenAboutDialog(false);
   };
 
-  const version = "1.8.4";
-
-  const className = props.openAboutDialog
-    ? "blurBackgroundOpened"
-    : "blurBackgroundClosed";
+  const version = "1.9.0";
 
   return (
     <div>
       <Dialog
-        className={className}
         open={props.openAboutDialog}
         TransitionComponent={Transition}
         keepMounted
