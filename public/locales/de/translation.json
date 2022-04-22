@@ -2,6 +2,10 @@
     "home": {
         "text1": "Die offizielle Website von Lastand Development.",
         "text2": "Hier finden Sie alle Projekte und Programme, direkt vom Entwickler.",
+        "description1": "Aktuell sind zwei Projekte zum Download verfügbar: Meteor Extinction, mein allererstes Spiel, das ich mithilfe der Unity Engine entwickle, und Wooden GUI, ein Ressourcenpaket für Minecraft, das die grafische Benutzeroberfläche (GUI) verbessert.",
+        "description2": "Beide Projekte sind gratis und werden regelmäßig aktualisiert. Meteor Extinction wird sehr bald sein erstes großes Update erhalten. Danach wird Wooden GUI neue Texturen erhalten.",
+        "description3": "Falls Sie mir Ihre Meinung zu meinen Projekten mitteilen möchte, zögern Sie nicht, mich über GitHub oder per Mail zu kontaktieren.",
+        "description4": "Ich hoffe, dass Ihnen sowohl Meteor Extinction als auch Wooden GUI gefällt!",
         "meteorExtinctionDescription": "Das Arcade-Spiel von Lastand Development. Beschütze die Erde vor Meteoriten und kaufe Upgrades, um mehr Meteoriten zu zerstören!",
         "woodenGUIDescription": "Das Ressourcen-Paket von Lastand Development für Minecraft: Java Edition. Genieße eine vollständig Holz-basierte Minecraft-Oberfläche!",
         "moreInfo": "Mehr erfahren"

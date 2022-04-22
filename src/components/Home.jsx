@@ -4,6 +4,7 @@ import { Typography, Box, Grid, Paper, Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+// import CampaignRoundedIcon from "@mui/icons-material/CampaignRounded";
 
 import MEImage from "./icons/MeteorExtinctionBanner.svg";
 import WGUIImage from "./icons/WoodenGUIBanner.svg";
@@ -27,8 +28,8 @@ export default function Home() {
     <Fragment>
       <BannerHome />
       <Container className="containerHome">
-        <Box sx={{ flexGrow: 1, pb: 4 }}>
-          <Box sx={{ px: 2 }}>
+        <Box sx={{ flexGrow: 1, pb: 6 }}>
+          <Box className="homeText">
             <Typography
               variant="body1"
               className="TopPaddingHome"
@@ -38,13 +39,27 @@ export default function Home() {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ pb: 10 }}>
+              sx={{ paddingBottom: 10 }}>
               {t("home.text2")}
             </Typography>
           </Box>
+          {/* <Paper
+            sx={{ display: "flex", alignItems: "center" }}
+            elevation={3}
+            style={{ padding: 20 }}
+          >
+            <CampaignRoundedIcon sx={{ fontSize: 50, marginRight: 0.6 }} />
+            <Typography
+              sx={{ margin: 2 }}
+              variant="body1">
+              Description
+            </Typography>
+          </Paper> */}
           <Grid
             container
-            spacing={4}>
+            spacing={4}
+            /*sx={{ paddingTop: 4 }}*/
+          >
             <Grid
               item
               xs={12}
@@ -128,6 +143,26 @@ export default function Home() {
               </Paper>
             </Grid>
           </Grid>
+          <Box
+            className="homeText"
+            sx={{ marginTop: 10 }}>
+            <Typography
+              variant="body1"
+              sx={{ paddingBottom: 1 }}>
+              {t("home.description1")}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ paddingBottom: 4 }}>
+              {t("home.description2")}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ paddingBottom: 4 }}>
+              {t("home.description3")}
+            </Typography>
+            <Typography variant="body1">{t("home.description4")}</Typography>
+          </Box>
         </Box>
       </Container>
     </Fragment>

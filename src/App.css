@@ -16,6 +16,20 @@
   text-align: left;
 }
 
+@media screen and (min-width: 940px) {
+  .homeText {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 940px) {
+  .homeText {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
 body {
   overflow-y: auto;
   overflow-y: overlay;
