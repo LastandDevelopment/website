@@ -1,9 +1,20 @@
 import React, { Fragment } from "react";
 
-import { Typography, Box, Grid, Paper, Button, Container } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Grid,
+  Paper,
+  Button,
+  Container,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 // import CampaignRoundedIcon from "@mui/icons-material/CampaignRounded";
 
 import MEImage from "./icons/MeteorExtinctionBanner.svg";
@@ -42,6 +53,38 @@ export default function Home() {
               sx={{ paddingBottom: 10 }}>
               {t("home.text2")}
             </Typography>
+          </Box>
+          <Box sx={{ marginBottom: 4 }}>
+            <Accordion elevation={3}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreRoundedIcon />}
+                aria-controls="AboutLastandDevelopment-content"
+                id="AboutLastandDevelopment-header"
+                sx={{ paddingY: 2, paddingX: 5 }}
+              >
+                <Typography variant="h2">{t("home.about")}</Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={{ paddingBottom: 5, paddingX: 5 }}>
+                <Typography
+                  variant="body1"
+                  sx={{ paddingBottom: 1 }}>
+                  {t("home.hello")}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ paddingBottom: 1 }}>
+                  {t("home.description1")}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ paddingBottom: 1 }}>
+                  {t("home.description2")}
+                </Typography>
+                <Typography variant="body1">
+                  {t("home.description3")}
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
           </Box>
           {/* <Paper
             sx={{ display: "flex", alignItems: "center" }}
@@ -143,26 +186,6 @@ export default function Home() {
               </Paper>
             </Grid>
           </Grid>
-          <Box
-            className="homeText"
-            sx={{ marginTop: 10 }}>
-            <Typography
-              variant="body1"
-              sx={{ paddingBottom: 1 }}>
-              {t("home.description1")}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ paddingBottom: 4 }}>
-              {t("home.description2")}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ paddingBottom: 4 }}>
-              {t("home.description3")}
-            </Typography>
-            <Typography variant="body1">{t("home.description4")}</Typography>
-          </Box>
         </Box>
       </Container>
     </Fragment>
