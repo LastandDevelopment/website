@@ -5,6 +5,13 @@ import getTheme from "./theme";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { Routes, Route, useLocation } from "react-router-dom";
+import {
+  isFirefox,
+  isIE,
+  isSafari,
+  isOpera,
+  isMobile,
+} from "react-device-detect";
 
 import TitleBar from "./components/Titlebar";
 import Home from "./components/Home";
@@ -39,11 +46,22 @@ function App() {
 
   const [displayLocation, setDisplayLocation] = useState(location);
 
-  const [transitionStage, setTransistionStage] = useState("slideIn");
+  function getTransitionClass() {
+    if (!isFirefox && !isIE && !isSafari && !(isOpera && isMobile)) {
+      return "slideIn";
+    } else {
+      return "slideInComp";
+    }
+  }
+  const [transitionStage, setTransistionStage] = useState(getTransitionClass);
 
   useEffect(() => {
     if (location.pathname !== displayLocation.pathname) {
-      setTransistionStage("slideOut");
+      if (!isFirefox && !isIE && !isSafari && !(isOpera && isMobile)) {
+        setTransistionStage("slideOut");
+      } else {
+        setTransistionStage("slideOutComp");
+      }
     }
   }, [location, displayLocation]);
 
@@ -63,9 +81,12 @@ function App() {
         <div
           className={`${transitionStage}`}
           onAnimationEnd={() => {
-            if (transitionStage === "slideOut") {
+            if (
+              transitionStage === "slideOut" ||
+              transitionStage === "slideOutComp"
+            ) {
               window.scrollTo(0, 0);
-              setTransistionStage("slideIn");
+              setTransistionStage(getTransitionClass);
               setDisplayLocation(location);
             }
           }}
