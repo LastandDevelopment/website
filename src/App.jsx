@@ -5,13 +5,7 @@ import getTheme from "./theme";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { Routes, Route, useLocation } from "react-router-dom";
-import {
-  isFirefox,
-  isIE,
-  isSafari,
-  isOpera,
-  isMobile,
-} from "react-device-detect";
+import { isFirefox, isIE, isSafari, isMobile } from "react-device-detect";
 
 import TitleBar from "./components/Titlebar";
 import Home from "./components/Home";
@@ -47,7 +41,7 @@ function App() {
   const [displayLocation, setDisplayLocation] = useState(location);
 
   function getTransitionClass() {
-    if (!isFirefox && !isIE && !isSafari && !(isOpera && isMobile)) {
+    if ((!isFirefox && !isIE && !isSafari) || isMobile) {
       return "slideIn";
     } else {
       return "slideInComp";
@@ -57,7 +51,7 @@ function App() {
 
   useEffect(() => {
     if (location.pathname !== displayLocation.pathname) {
-      if (!isFirefox && !isIE && !isSafari && !(isOpera && isMobile)) {
+      if ((!isFirefox && !isIE && !isSafari) || isMobile) {
         setTransistionStage("slideOut");
       } else {
         setTransistionStage("slideOutComp");
