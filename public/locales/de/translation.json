@@ -96,6 +96,14 @@
         "latestVersion": "Neueste Version",
         "loadUpdate": "Aktualisieren",
         "unknownVersion": "Unbekannte Version",
-        "noVersionGiven": "Version nicht angegeben"
+        "noVersionGiven": "Version nicht angegeben",
+        "notAvailableForOS": "Aktuell gibt es keine ",
+        "notAvailableForOS2": "-Version von Meteor Extinction."
+    },
+    "warning": {
+        "MEnotAvailableForOS": "Aktuell gibt es keine ",
+        "MEnotAvailableForOS2": "-Version von Meteor Extinction.",
+        "MCnotAvailableForOS": "Minecraft: Java-Edition kann auf ",
+        "MCnotAvailableForOS2": " nicht ausgeführt werden."
     }
 }

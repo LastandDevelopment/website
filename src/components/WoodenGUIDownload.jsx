@@ -4,6 +4,8 @@ import { Container, Box, Typography, Grid, Paper, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 import { useTranslation } from "react-i18next";
+import NotSupportedWarning from "./NotSupportedWarning";
+import { isMobile } from "react-device-detect";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -23,14 +25,16 @@ export default function WoodenGUIDownload() {
         </Typography>
         <Typography
           variant="h2"
-          sx={{ paddingTop: 1 }}>
+          sx={{ paddingTop: 1, paddingBottom: 12 }}>
           {t("downloadPage.download")}
         </Typography>
+        <NotSupportedWarning
+          program="WoodenGUI"
+          show={isMobile} />
         <Container className="containerLeft">
           <Typography
             variant="h2"
-            sx={{ paddingTop: 12, paddingBottom: 4, marginLeft: 1 }}
-          >
+            sx={{ paddingBottom: 4, marginLeft: 1 }}>
             {t("downloadPage.betaVersions")}
           </Typography>
           <Grid

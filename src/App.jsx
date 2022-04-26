@@ -129,7 +129,12 @@ function App() {
             ></Route>
             <Route
               path="meteorextinction/download/update"
-              element={<CheckMEVersion />}
+              element={
+                <CheckMEVersion
+                  displayLocation={displayLocation}
+                  location={location}
+                />
+              }
             ></Route>
           </Routes>
         </div>

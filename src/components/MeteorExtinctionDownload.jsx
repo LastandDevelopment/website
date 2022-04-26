@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import WindowsIcon from "./icons/WindowsIcon.svg";
 
 import { useTranslation } from "react-i18next";
+import NotSupportedWarning from "./NotSupportedWarning";
+import { isWindows } from "react-device-detect";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -26,14 +28,16 @@ export default function MeteorExtinctionDownload(props) {
         </Typography>
         <Typography
           variant="h2"
-          sx={{ paddingTop: 1 }}>
+          sx={{ paddingTop: 1, paddingBottom: 12 }}>
           {t("downloadPage.download")}
         </Typography>
+        <NotSupportedWarning
+          program="ME"
+          show={!isWindows} />
         <Container className="containerLeft">
           <Typography
             variant="h2"
-            sx={{ paddingTop: 12, paddingBottom: 4, marginLeft: 1 }}
-          >
+            sx={{ paddingBottom: 4, marginLeft: 1 }}>
             {t("downloadPage.alphaVersions")}
           </Typography>
           <Grid
