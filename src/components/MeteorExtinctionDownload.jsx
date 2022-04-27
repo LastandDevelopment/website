@@ -79,7 +79,7 @@ export default function MeteorExtinctionDownload(props) {
                   href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.2.zip"
                   startIcon={
                     <SvgIcon>
-                      <WindowsIcon />
+                      <WindowsIcon style={{ color: "#FFFFFF" }} />
                     </SvgIcon>
                   }
                 >
@@ -135,7 +135,7 @@ export default function MeteorExtinctionDownload(props) {
                   href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.1.zip"
                   startIcon={
                     <SvgIcon>
-                      <WindowsIcon />
+                      <WindowsIcon style={{ color: "#FFFFFF" }} />
                     </SvgIcon>
                   }
                 >
@@ -191,7 +191,7 @@ export default function MeteorExtinctionDownload(props) {
                   href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.zip"
                   startIcon={
                     <SvgIcon>
-                      <WindowsIcon />
+                      <WindowsIcon style={{ color: "#FFFFFF" }} />
                     </SvgIcon>
                   }
                 >

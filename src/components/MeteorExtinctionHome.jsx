@@ -23,7 +23,6 @@ import Pause from "./imagesME/pausemenu.png";
 import GameOver from "./imagesME/gameover.png";
 
 import { ReactComponent as GitHub } from "./icons/GitHubIcon.svg";
-import { ReactComponent as GitHubDark } from "./icons/GitHubIconDark.svg";
 import { useTranslation } from "react-i18next";
 
 export default function MeteorExtinctionHome(props) {
@@ -121,15 +120,13 @@ export default function MeteorExtinctionHome(props) {
           target="_blank"
           rel="noreferrer noopener"
           startIcon={
-            props.themeMode === "dark" ? (
-              <SvgIcon>
-                <GitHub />
-              </SvgIcon>
-            ) : (
-              <SvgIcon>
-                <GitHubDark />
-              </SvgIcon>
-            )
+            <SvgIcon>
+              <GitHub
+                style={{
+                  color: props.themeMode === "dark" ? "#ffffff" : "#000000",
+                }}
+              />
+            </SvgIcon>
           }
         >
           <Typography
