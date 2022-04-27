@@ -11,9 +11,6 @@ import TitleBar from "./components/Titlebar";
 import Home from "./components/Home";
 import MeteorExtinctionHome from "./components/MeteorExtinctionHome";
 import MeteorExtinctionDownload from "./components/MeteorExtinctionDownload";
-import Alpha010Changelog from "./components/changelogs/alpha-0.1";
-import Alpha011Changelog from "./components/changelogs/alpha-0.1.1";
-import Alpha012Changelog from "./components/changelogs/alpha-0.1.2";
 import WoodenGUIHome from "./components/WoodenGUIHome";
 import WoodenGUIDownload from "./components/WoodenGUIDownload";
 import Contact from "./components/contact";
@@ -27,6 +24,7 @@ import {
   setStorageMode,
 } from "./components/services/SettingsService";
 import BrowserTitle from "./components/BrowserTitle";
+import Changelog from "./components/Changelog";
 
 function App() {
   const [themeMode, setThemeMode] = useState(getStorageMode);
@@ -101,16 +99,13 @@ function App() {
               element={<MeteorExtinctionDownload themeMode={themeMode} />}
             ></Route>
             <Route
-              path="meteorextinction/download/changelog/alpha-0.1.0"
-              element={<Alpha010Changelog />}
-            ></Route>
-            <Route
-              path="meteorextinction/download/changelog/alpha-0.1.1"
-              element={<Alpha011Changelog />}
-            ></Route>
-            <Route
-              path="meteorextinction/download/changelog/alpha-0.1.2"
-              element={<Alpha012Changelog />}
+              path="meteorextinction/download/changelog"
+              element={
+                <Changelog
+                  displayLocation={displayLocation}
+                  location={location}
+                />
+              }
             ></Route>
             <Route
               path="woodengui"

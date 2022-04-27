@@ -7,58 +7,44 @@ export default function Alpha012Changelog() {
   const [t] = useTranslation();
 
   return (
-    <Container className="containerHome">
-      <Box sx={{ flexGrow: 1, pb: 4 }}>
-        <Typography
-          variant="h1"
-          sx={{ paddingTop: 18 }}>
-          Meteor Extinction
-        </Typography>
-        <Typography
-          variant="h2"
-          sx={{ paddingTop: 1 }}>
-          {t("changelog.changelog")}
-        </Typography>
-        <Container className="containerLeft">
-          <Typography
-            variant="h2"
-            sx={{ paddingTop: 12, paddingBottom: 3, marginLeft: 1 }}
-          >
-            Alpha 0.1.2
-          </Typography>
-          <Box sx={{ marginLeft: 3 }}>
-            <ul>
-              <li>
-                <Typography
-                  variant="body2"
-                  sx={{ marginBottom: 1 }}>
-                  {t("changelogAlpha012.p1")}
-                </Typography>
-              </li>
-              <li>
-                <Typography
-                  variant="body2"
-                  sx={{ marginBottom: 1 }}>
-                  {t("changelogAlpha012.p2")}
-                </Typography>
-              </li>
-              <li>
-                <Typography
-                  variant="body2"
-                  sx={{ marginBottom: 1 }}>
-                  {t("changelogAlpha012.p3")}
-                </Typography>
-              </li>
-              <li>
-                <Typography
-                  variant="body2"
-                  sx={{ marginBottom: 1 }}>
-                  {t("changelogAlpha012.p4")}
-                </Typography>
-              </li>
-            </ul>
-          </Box>
-        </Container>
+    <Container className="containerLeft">
+      <Typography
+        variant="h2"
+        sx={{ paddingTop: 12, paddingBottom: 3, marginLeft: 1 }}
+      >
+        Alpha 0.1.2
+      </Typography>
+      <Box sx={{ marginLeft: 3 }}>
+        <ul>
+          <li>
+            <Typography
+              variant="body2"
+              sx={{ marginBottom: 1 }}>
+              {t("changelogAlpha012.p1")}
+            </Typography>
+          </li>
+          <li>
+            <Typography
+              variant="body2"
+              sx={{ marginBottom: 1 }}>
+              {t("changelogAlpha012.p2")}
+            </Typography>
+          </li>
+          <li>
+            <Typography
+              variant="body2"
+              sx={{ marginBottom: 1 }}>
+              {t("changelogAlpha012.p3")}
+            </Typography>
+          </li>
+          <li>
+            <Typography
+              variant="body2"
+              sx={{ marginBottom: 1 }}>
+              {t("changelogAlpha012.p4")}
+            </Typography>
+          </li>
+        </ul>
       </Box>
     </Container>
   );

@@ -26,6 +26,28 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function MeteorExtinctionDownload(props) {
   const [t] = useTranslation();
+
+  const downloadAlpha012 = () => {
+    const link = document.createElement("a");
+    link.href =
+      "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.2.zip";
+    link.click();
+  };
+
+  const downloadAlpha011 = () => {
+    const link = document.createElement("a");
+    link.href =
+      "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.1.zip";
+    link.click();
+  };
+
+  const downloadAlpha01 = () => {
+    const link = document.createElement("a");
+    link.href =
+      "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.zip";
+    link.click();
+  };
+
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -76,7 +98,7 @@ export default function MeteorExtinctionDownload(props) {
                     py: 1,
                     mt: 3,
                   }}
-                  href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.2.zip"
+                  onClick={downloadAlpha012}
                   startIcon={
                     <SvgIcon>
                       <WindowsIcon style={{ color: "#FFFFFF" }} />
@@ -99,7 +121,9 @@ export default function MeteorExtinctionDownload(props) {
                     my: 2,
                   }}
                   component={Link}
-                  to={"/meteorextinction/download/changelog/alpha-0.1.2"}
+                  to={
+                    "/meteorextinction/download/changelog?version=alpha-0.1.2"
+                  }
                 >
                   <Typography variant="h6">
                     {t("downloadPage.changelog")}
@@ -132,7 +156,7 @@ export default function MeteorExtinctionDownload(props) {
                     py: 1,
                     mt: 3,
                   }}
-                  href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.1.zip"
+                  onClick={downloadAlpha011}
                   startIcon={
                     <SvgIcon>
                       <WindowsIcon style={{ color: "#FFFFFF" }} />
@@ -155,7 +179,9 @@ export default function MeteorExtinctionDownload(props) {
                     my: 2,
                   }}
                   component={Link}
-                  to={"/meteorextinction/download/changelog/alpha-0.1.1"}
+                  to={
+                    "/meteorextinction/download/changelog?version=alpha-0.1.1"
+                  }
                 >
                   <Typography variant="h6">
                     {t("downloadPage.changelog")}
@@ -188,7 +214,7 @@ export default function MeteorExtinctionDownload(props) {
                     py: 1,
                     mt: 3,
                   }}
-                  href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.zip"
+                  onClick={downloadAlpha01}
                   startIcon={
                     <SvgIcon>
                       <WindowsIcon style={{ color: "#FFFFFF" }} />
@@ -211,7 +237,7 @@ export default function MeteorExtinctionDownload(props) {
                     my: 2,
                   }}
                   component={Link}
-                  to={"/meteorextinction/download/changelog/alpha-0.1.0"}
+                  to={"/meteorextinction/download/changelog?version=alpha-0.1"}
                 >
                   <Typography variant="h6">
                     {t("downloadPage.changelog")}

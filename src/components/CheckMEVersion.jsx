@@ -26,6 +26,13 @@ export default function CheckMEVersion(props) {
     }
   }, [props.location, props.displayLocation, query]);
 
+  const downloadUpdate = () => {
+    const link = document.createElement("a");
+    link.href =
+      "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.2.zip";
+    link.click();
+  };
+
   const versionNumber = versionQuery;
   const currentVersion =
     versionNumber === "alpha-0.1"
@@ -78,7 +85,7 @@ export default function CheckMEVersion(props) {
               variant="contained"
               startIcon={<UpdateRounded />}
               sx={{ py: 1, px: 6, my: 4 }}
-              href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.2.zip"
+              onClick={downloadUpdate}
             >
               <Typography variant="h6">{t("updateME.loadUpdate")}</Typography>
             </Button>

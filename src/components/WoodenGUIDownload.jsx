@@ -15,6 +15,21 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function WoodenGUIDownload() {
   const [t] = useTranslation();
+
+  const downloadBeta1_0for1_18 = () => {
+    const link = document.createElement("a");
+    link.href =
+      "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/WoodenGUIBeta1.0for1.18.zip";
+    link.click();
+  };
+
+  const downloadBeta1_0for1_17 = () => {
+    const link = document.createElement("a");
+    link.href =
+      "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/WoodenGUIBeta1.0for1.17.zip";
+    link.click();
+  };
+
   return (
     <Container className="containerHome">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -60,7 +75,7 @@ export default function WoodenGUIDownload() {
                     py: 1,
                     mt: 5,
                   }}
-                  href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/WoodenGUIBeta1.0for1.18.zip"
+                  onClick={downloadBeta1_0for1_18}
                 >
                   <Typography variant="h6">
                     {t("downloadPage.downloadFor118")}
@@ -75,7 +90,7 @@ export default function WoodenGUIDownload() {
                     py: 1,
                     mt: 2,
                   }}
-                  href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/WoodenGUIBeta1.0for1.17.zip"
+                  onClick={downloadBeta1_0for1_17}
                 >
                   <Typography variant="h6">
                     {t("downloadPage.downloadFor117")}
