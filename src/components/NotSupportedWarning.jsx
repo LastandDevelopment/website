@@ -13,6 +13,7 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 import { osName } from "react-device-detect";
 import { useTranslation } from "react-i18next";
+import { ReportRounded } from "@mui/icons-material";
 
 export default function NotSupportedWarning(props) {
   const [show, setShow] = useState(props.show);
@@ -49,13 +50,15 @@ export default function NotSupportedWarning(props) {
               textAlign: "left",
             }}
           >
+            <ReportRounded sx={{ marginLeft: 2, fontSize: 40, marginY: 2 }} />
             <Typography
               variant="body1"
-              sx={{ padding: 2 }}>
+              sx={{ paddingTop: 2, paddingBottom: 2, paddingLeft: 2 }}
+            >
               {text}
             </Typography>
             <Box sx={{ flexGrow: 1 }} />
-            <Box sx={{ marginRight: 2 }}>
+            <Box sx={{ marginRight: 2, marginTop: 2, alignSelf: "self-start" }}>
               <IconButton onClick={handleClose}>
                 <CloseRoundedIcon />
               </IconButton>

@@ -1,10 +1,18 @@
 import React from "react";
 
-import { Container, Box, Typography, Grid, Paper, Button } from "@mui/material";
+import {
+  Container,
+  Box,
+  Typography,
+  Grid,
+  Paper,
+  Button,
+  SvgIcon,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
-import WindowsIcon from "./icons/WindowsIcon.svg";
+import { ReactComponent as WindowsIcon } from "./icons/WindowsIcon.svg";
 
 import { useTranslation } from "react-i18next";
 import NotSupportedWarning from "./NotSupportedWarning";
@@ -69,16 +77,15 @@ export default function MeteorExtinctionDownload(props) {
                     mt: 3,
                   }}
                   href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.2.zip"
+                  startIcon={
+                    <SvgIcon>
+                      <WindowsIcon />
+                    </SvgIcon>
+                  }
                 >
-                  <img
-                    src={WindowsIcon}
-                    className="windowsic"
-                    alt="Windows"
-                    style={{ height: 18 }}
-                  />
                   <Typography
                     variant="h6"
-                    sx={{ marginLeft: 2 }}>
+                    sx={{ marginLeft: 0.5 }}>
                     {t("downloadPage.download")}
                   </Typography>
                 </Button>
@@ -126,16 +133,15 @@ export default function MeteorExtinctionDownload(props) {
                     mt: 3,
                   }}
                   href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.1.zip"
+                  startIcon={
+                    <SvgIcon>
+                      <WindowsIcon />
+                    </SvgIcon>
+                  }
                 >
-                  <img
-                    src={WindowsIcon}
-                    className="windowsic"
-                    alt="Windows"
-                    style={{ height: 18 }}
-                  />
                   <Typography
                     variant="h6"
-                    sx={{ marginLeft: 2 }}>
+                    sx={{ marginLeft: 0.5 }}>
                     {t("downloadPage.download")}
                   </Typography>
                 </Button>
@@ -183,16 +189,15 @@ export default function MeteorExtinctionDownload(props) {
                     mt: 3,
                   }}
                   href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.zip"
+                  startIcon={
+                    <SvgIcon>
+                      <WindowsIcon />
+                    </SvgIcon>
+                  }
                 >
-                  <img
-                    src={WindowsIcon}
-                    className="windowsic"
-                    alt="Windows"
-                    style={{ height: 18 }}
-                  />
                   <Typography
                     variant="h6"
-                    sx={{ marginLeft: 2 }}>
+                    sx={{ marginLeft: 0.5 }}>
                     {t("downloadPage.download")}
                   </Typography>
                 </Button>

@@ -1,5 +1,12 @@
 import React from "react";
-import { Typography, Button, Container, Box, Paper } from "@mui/material";
+import {
+  Typography,
+  Button,
+  Container,
+  Box,
+  Paper,
+  SvgIcon,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 
@@ -15,8 +22,8 @@ import RocketExploding from "./imagesME/rocketexplode.png";
 import Pause from "./imagesME/pausemenu.png";
 import GameOver from "./imagesME/gameover.png";
 
-import GitHub from "./icons/GitHubIcon.svg";
-import GitHubDark from "./icons/GitHubIconDark.svg";
+import { ReactComponent as GitHub } from "./icons/GitHubIcon.svg";
+import { ReactComponent as GitHubDark } from "./icons/GitHubIconDark.svg";
 import { useTranslation } from "react-i18next";
 
 export default function MeteorExtinctionHome(props) {
@@ -113,16 +120,21 @@ export default function MeteorExtinctionHome(props) {
           href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
           target="_blank"
           rel="noreferrer noopener"
+          startIcon={
+            props.themeMode === "dark" ? (
+              <SvgIcon>
+                <GitHub />
+              </SvgIcon>
+            ) : (
+              <SvgIcon>
+                <GitHubDark />
+              </SvgIcon>
+            )
+          }
         >
-          <img
-            src={props.themeMode === "dark" ? GitHub : GitHubDark}
-            className="githubic"
-            alt="GitHub"
-            style={{ height: 18 }}
-          />
           <Typography
             variant="h6"
-            sx={{ marginLeft: 1.5 }}>
+            sx={{ marginLeft: 0.5 }}>
             {t("meteorExtinctionHome.issueReport")}
           </Typography>
         </Button>

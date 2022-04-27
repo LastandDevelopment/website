@@ -1,4 +1,4 @@
-import { DownloadRounded } from "@mui/icons-material";
+import { UpdateRounded } from "@mui/icons-material";
 import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useMemo } from "react";
 import { useState } from "react";
@@ -76,7 +76,7 @@ export default function CheckMEVersion(props) {
             <Button
               color="primary"
               variant="contained"
-              startIcon={<DownloadRounded />}
+              startIcon={<UpdateRounded />}
               sx={{ py: 1, px: 6, my: 4 }}
               href="https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.2.zip"
             >
