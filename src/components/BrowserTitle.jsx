@@ -43,8 +43,10 @@ export default function BrowserTitle(props) {
         i18n.language === "de"
           ? "Problem melden - Lastand Development"
           : "Report an Issue - Lastand Development";
-    } else {
+    } else if (props.location.pathname === "/") {
       document.title = "Lastand Development";
+    } else {
+      document.title = "404 - Lastand Development";
     }
   }, [props.location, i18n.language]);
 

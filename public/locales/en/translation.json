@@ -105,5 +105,10 @@
         "MEnotAvailableForOS2": " version of Meteor Extinction.",
         "MCnotAvailableForOS": "Minecraft: Java-Edition cannot be run on ",
         "MCnotAvailableForOS2": "."
+    },
+    "404": {
+        "ohno": "Oh no! This site has been hit by a meteor!",
+        "notfound": "We could not find it! Maybe there is a typo in your URL...",
+        "home": "Home"
     }
 }

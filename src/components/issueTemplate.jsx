@@ -22,6 +22,7 @@ export default function IssueTemplate(props) {
   const [valid, setValid] = useState(false);
 
   const [program, setProgram] = useState("");
+  const [programSelected, setProgramSelected] = useState(false);
   const [mESelected, setMESelected] = useState(false);
   const [wGUISelected, setWGUISelected] = useState(false);
   const [wSSelected, setWSSelected] = useState(false);
@@ -139,25 +140,37 @@ export default function IssueTemplate(props) {
 
   useEffect(() => {
     if (program === "Meteor Extinction") {
-      setTimeout(() => {
-        setMESelected(true);
-      }, 1000);
+      setTimeout(
+        () => {
+          setMESelected(true);
+          setProgramSelected(true);
+        },
+        programSelected ? 1000 : 0
+      );
       setWGUISelected(false);
       setWSSelected(false);
     } else if (program === "Wooden GUI") {
       setMESelected(false);
-      setTimeout(() => {
-        setWGUISelected(true);
-      }, 1000);
+      setTimeout(
+        () => {
+          setWGUISelected(true);
+          setProgramSelected(true);
+        },
+        programSelected ? 1000 : 0
+      );
       setWSSelected(false);
     } else if (program === "Website") {
       setMESelected(false);
       setWGUISelected(false);
-      setTimeout(() => {
-        setWSSelected(true);
-      }, 1000);
+      setTimeout(
+        () => {
+          setWSSelected(true);
+          setProgramSelected(true);
+        },
+        programSelected ? 1000 : 0
+      );
     }
-  }, [program]);
+  }, [program, programSelected]);
 
   const sendMail = () => {
     if (program === "Meteor Extinction") {

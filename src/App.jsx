@@ -25,6 +25,7 @@ import {
 } from "./components/services/SettingsService";
 import BrowserTitle from "./components/BrowserTitle";
 import Changelog from "./components/Changelog";
+import NotFound from "./components/404";
 
 function App() {
   const [themeMode, setThemeMode] = useState(getStorageMode);
@@ -86,7 +87,7 @@ function App() {
           <Routes location={displayLocation}>
             <Route
               path="*"
-              element={<Home />}></Route>
+              element={<NotFound />}></Route>
             <Route
               path="/"
               element={<Home />}></Route>
