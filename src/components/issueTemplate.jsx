@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 import {
   Container,
@@ -15,17 +15,29 @@ import {
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+
+function useQuery() {
+  const { search } = useLocation();
+
+  return useMemo(() => new URLSearchParams(search), [search]);
+}
 
 export default function IssueTemplate(props) {
   const [t] = useTranslation();
+  const query = useQuery();
 
   const [valid, setValid] = useState(false);
 
-  const [program, setProgram] = useState("");
-  const [programSelected, setProgramSelected] = useState(false);
+  const [program, setProgram] = useState(
+    query.get("404") === "true" ? "Website" : ""
+  );
+  const [programSelected, setProgramSelected] = useState(
+    query.get("404") === "true"
+  );
   const [mESelected, setMESelected] = useState(false);
   const [wGUISelected, setWGUISelected] = useState(false);
-  const [wSSelected, setWSSelected] = useState(false);
+  const [wSSelected, setWSSelected] = useState(query.get("404") === "true");
 
   const [feedback, setFeedback] = useState(false);
 
@@ -40,7 +52,9 @@ export default function IssueTemplate(props) {
 
   const [browser, setBrowser] = useState("");
   const [wSVersion, setWSVersion] = useState("");
-  const [wSDescription, setWSDescription] = useState("");
+  const [wSDescription, setWSDescription] = useState(
+    query.get("404") === "true" ? "404 in page [URL]" : ""
+  );
   const [wSReproduction, setWSReproduction] = useState("");
 
   useEffect(() => {

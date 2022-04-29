@@ -109,6 +109,9 @@
     "404": {
         "ohno": "Oh nein! Diese Seite wurde von einem Meteoriten getroffen!",
         "notfound": "Wir konnten sie nicht finden! Vielleicht ist ein Tippfehler in deiner URL...",
-        "home": "Startseite"
+        "home": "Startseite",
+        "fix": "Aber mach dir keine Sorgen! Klicke einfach den nachstehenden Button, und du wirst vor Meteoriten beschützt sein!",
+        "issue": "Falls du sicher bist, dass hier Inhalt angezeigt werden sollte, zum Beispiel weil du das hier gesehen hast nachdem du einen Button auf meiner Website gedrückt hast, erwäge es bitte, diesen Fehler zu melden.",
+        "report404": "404-Fehler melden"
     }
 }

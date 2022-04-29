@@ -109,6 +109,9 @@
     "404": {
         "ohno": "Oh no! This site has been hit by a meteor!",
         "notfound": "We could not find it! Maybe there is a typo in your URL...",
-        "home": "Home"
+        "home": "Home",
+        "fix": "But don't worry! Just click the button below, and you will be protected against meteors!",
+        "issue": "If you are certain that there should be content here, for example because you saw this after clicking a button on my website, please consider reporting this error.",
+        "report404": "Report 404 Error"
     }
 }
