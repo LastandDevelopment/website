@@ -53,7 +53,7 @@ export default function CheckMEVersion(props) {
   if (isWindows) {
     if (versionNumber === "alpha-0.1" || versionNumber === "alpha-0.1.1") {
       return (
-        <Container className="containerHome">
+        <Container className="defaultContainer">
           <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Typography
               variant="h1"
@@ -94,7 +94,7 @@ export default function CheckMEVersion(props) {
       );
     } else if (currentVersion === mostRecentVersion) {
       return (
-        <Container className="containerHome">
+        <Container className="defaultContainer">
           <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Typography
               variant="h1"
@@ -121,7 +121,7 @@ export default function CheckMEVersion(props) {
       );
     } else {
       return (
-        <Container className="containerHome">
+        <Container className="defaultContainer">
           <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Typography
               variant="h1"
@@ -144,7 +144,7 @@ export default function CheckMEVersion(props) {
     }
   } else {
     return (
-      <Container className="containerHome">
+      <Container className="defaultContainer">
         <Box sx={{ flexGrow: 1, pb: 4 }}>
           <Typography
             variant="h1"

@@ -13,6 +13,7 @@ import {
   Typography,
   Divider,
 } from "@mui/material";
+
 import {
   isMobile,
   isFirefox,
@@ -87,7 +88,6 @@ export default function TitleBar(props) {
             to={"/"}>
             <img
               src={LastandDevelopmentLogo}
-              className="LDLogo"
               alt="Lastand Development"
               style={{ height: 30, width: 76.84 }}
             />

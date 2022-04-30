@@ -29,7 +29,7 @@ export default function MeteorExtinctionHome(props) {
   const [t] = useTranslation();
   const imageScrollerClass = isMobile ? "imageScrollerMobile" : "imageScroller";
   return (
-    <Container className="containerHome">
+    <Container className="defaultContainer">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Box sx={{ px: 2 }}>
           <Typography

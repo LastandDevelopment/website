@@ -7,7 +7,7 @@ export default function Alpha01Changelog() {
   const [t] = useTranslation();
 
   return (
-    <Container className="containerLeft">
+    <Container className="leftTextAlignContainer">
       <Typography
         variant="h2"
         sx={{ paddingTop: 12, paddingBottom: 3, marginLeft: 1 }}

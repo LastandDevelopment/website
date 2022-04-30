@@ -49,7 +49,7 @@ export default function MeteorExtinctionDownload(props) {
   };
 
   return (
-    <Container className="containerHome">
+    <Container className="defaultContainer">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"
@@ -64,7 +64,7 @@ export default function MeteorExtinctionDownload(props) {
         <NotSupportedWarning
           program="ME"
           show={!isWindows} />
-        <Container className="containerLeft">
+        <Container className="leftTextAlignContainer">
           <Typography
             variant="h2"
             sx={{ paddingBottom: 4, marginLeft: 1 }}>

@@ -20,10 +20,10 @@ import meteor from "./animations/meteor.svg";
 import anim from "./animations/explosion.svg";
 import empty from "./animations/empty.svg";
 
-const meteorFallStartPosition = (Math.random() - 0.5) * 500;
+const meteorFallStartPosition = Math.round((Math.random() - 0.5) * 500);
 
 const useStyles = makeStyles((theme) => ({
-  NotFoundImage: {
+  Image: {
     height: "150px",
     width: "150px",
     marginBottom: "30px",
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  NotFoundImageAnimDone: {
+  ImageAnimDone: {
     height: "150px",
     marginBottom: "30px",
     transform: "rotate(0deg)",
@@ -59,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
     overflowX: "hidden",
     "@media screen and (min-width: 850px)": {
       animation: "$MeteorFallBoxAnim 1.05s linear",
-      marginRight: 10,
     },
     "@media screen and (max-width: 850px)": {
       animation: "$MeteorFallBoxAnimMobile 1.05s linear",
@@ -68,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  NotFoundBox: {
+  Box: {
     flexGrow: 1,
     marginLeft: "auto",
     marginRight: "auto",
@@ -85,20 +84,26 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  NotFoundTextBox: {
-    marginLeft: "25px",
-    marginRight: "25px",
+  TextBox: {
+    marginLeft: "auto",
+    marginRight: "auto",
     maxWidth: "850px",
+    width: "80vw",
     "@media screen and (max-width: 850px)": {
       marginTop: "50vh",
       transform: "translateY(-50%)",
     },
   },
 
-  NotFoundImageCollapser: {
+  ImageCollapser: {
     "@media screen and (max-width: 850px)": {
       height: "200px",
     },
+  },
+
+  FixedButton: {
+    transition:
+      "opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important",
   },
 
   "@keyframes MeteorFall": {
@@ -117,10 +122,10 @@ const useStyles = makeStyles((theme) => ({
 
   "@keyframes MeteorFallBoxAnim": {
     from: {
-      transform: "translate(" + meteorFallStartPosition + "px, -80vh)",
+      transform: `translate(${meteorFallStartPosition}px, -80vh)`,
     },
     "66%": {
-      transform: "translate(" + meteorFallStartPosition + "px, -80vh)",
+      transform: `translate(${meteorFallStartPosition}px, -80vh)`,
     },
     to: {
       transform: "translate(0px, 0px)",
@@ -129,10 +134,10 @@ const useStyles = makeStyles((theme) => ({
 
   "@keyframes MeteorFallBoxAnimMobile": {
     from: {
-      transform: "translate(" + meteorFallStartPosition + "px, -90vh)",
+      transform: `translate(${meteorFallStartPosition}px, -90vh)`,
     },
     "66%": {
-      transform: "translate(" + meteorFallStartPosition + "px, -90vh)",
+      transform: `translate(${meteorFallStartPosition}px, -90vh)`,
     },
     to: {
       transform: "translate(0px, -10vh)",
@@ -203,30 +208,26 @@ export default function NotFound() {
   }, [showAnim]);
 
   return (
-    <Container className="containerHome">
-      <Box className={classes.NotFoundBox}>
+    <Container className="defaultContainer">
+      <Box className={classes.Box}>
         <Collapse
           in={showAnim}
           timeout={1000}
           orientation={
             windowDimension.winWidth < 850 ? "vertical" : "horizontal"
           }
-          className={classes.NotFoundImageCollapser}
+          className={classes.ImageCollapser}
         >
           <Box className={classes.MeteorFallBox}>
             <img
-              className={
-                step === 1
-                  ? classes.NotFoundImage
-                  : classes.NotFoundImageAnimDone
-              }
+              className={step === 1 ? classes.Image : classes.ImageAnimDone}
               src={step === 1 ? meteor : step === 2 ? anim : empty}
               alt="Meteor"
               sx={{ flexGrow: 1 }}
             />
           </Box>
         </Collapse>
-        <Box className={classes.NotFoundTextBox}>
+        <Box className={classes.TextBox}>
           <Typography
             variant="h1"
             sx={{ marginBottom: 2 }}>
@@ -251,6 +252,7 @@ export default function NotFound() {
               in={!showAnim}
               timeout={1000}>
               <Button
+                className={classes.FixedButton}
                 color="primary"
                 variant="contained"
                 sx={{ py: 1, marginTop: 1, width: "250px" }}
@@ -279,6 +281,7 @@ export default function NotFound() {
               in={showReport}
               timeout={1000}>
               <Button
+                className={classes.FixedButton}
                 color="primary"
                 variant="contained"
                 sx={{ py: 1, marginTop: 1, width: "250px" }}

@@ -12,10 +12,24 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    position: "relative",
+    textAlign: "center",
+    "@media screen and (max-width: 900px)": {
+      width: "90vw !important",
+    },
+    "@media screen and (min-width: 900px)": {
+      width: "820px !important",
+    },
+  },
+}));
 
 function useQuery() {
   const { search } = useLocation();
@@ -24,6 +38,8 @@ function useQuery() {
 }
 
 export default function IssueTemplate(props) {
+  const classes = useStyles();
+
   const [t] = useTranslation();
   const query = useQuery();
 
@@ -277,7 +293,7 @@ export default function IssueTemplate(props) {
   };
 
   return (
-    <Container className="containerForm">
+    <Container className={classes.container}>
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"

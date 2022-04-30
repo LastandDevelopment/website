@@ -31,7 +31,7 @@ export default function WoodenGUIDownload() {
   };
 
   return (
-    <Container className="containerHome">
+    <Container className="defaultContainer">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"
@@ -46,7 +46,7 @@ export default function WoodenGUIDownload() {
         <NotSupportedWarning
           program="WoodenGUI"
           show={isMobile} />
-        <Container className="containerLeft">
+        <Container className="leftTextAlignContainer">
           <Typography
             variant="h2"
             sx={{ paddingBottom: 4, marginLeft: 1 }}>

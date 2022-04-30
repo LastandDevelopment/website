@@ -8,7 +8,7 @@ export default function Changelog(props) {
   const [t] = useTranslation();
 
   return (
-    <Container className="containerHome">
+    <Container className="defaultContainer">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"
