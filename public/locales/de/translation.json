@@ -61,11 +61,29 @@
         "download": "Herunterladen",
         "issueReport": "Problem melden"
     },
+    "meteorExtinctionImages": {
+        "mainMenu": "Hauptmenü",
+        "meteorDestroyed": "Gameplay - Meteorit zerstört",
+        "meteorExplosion": "Gameplay - explodierender Meteorit",
+        "rocket": "Gameplay - Rakete",
+        "rocketExploding": "Gameplay - explodierende Rakete",
+        "pause": "\"Pause\"-Menü",
+        "gameOver": "Spiel vorbei"
+    },
     "woodenGUIHome": {
         "text1": "Wooden GUI ist ein Ressourcen-Paket für Minecraft: Java Edition.",
         "description": "Es verleiht Minecrafts Oberfläche einen gemütlichen Holz-Look. Es ist lebhaft und für optimale Item-Sichtbarkeit optimiert. Außerdem passt Wooden GUI perfekt zu den Vanilla-Texturen von Minecraft, da es auf ihnen basiert.",
         "betaWarning": "Es handelt sich noch um eine Beta-Version. Vor allem im späteren Survival-Gameplay können noch nicht überarbeitete Menüs gefunden werden. Daher wird das Ressourcen-Paket regelmäßig aktualisiert werden.",
         "download": "Herunterladen"
+    },
+    "woodenGUIImages": {
+        "mainMenu": "Hauptmenü",
+        "inventory": "Inventar",
+        "creativeInventory": "Kreativ-Menü",
+        "loom": "Webstuhl",
+        "enchantingTable": "Zaubertisch",
+        "trading": "Handel",
+        "gamemodeSwitcher": "Spielmodus-Wechsler"
     },
     "changelog": {
         "changelog": "Änderungsprotokoll"

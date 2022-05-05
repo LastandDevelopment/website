@@ -8,6 +8,7 @@ import {
   SvgIcon,
   IconButton,
   Slide,
+  styled,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -65,14 +66,6 @@ const useStyles = makeStyles((theme) => ({
     "@media screen and (max-width: 1200px)": {
       fontSize: "4vw !important",
     },
-    "&:hover": {
-      transform: "translateX(5%)",
-      transition: "transform 0.3s ease-in-out",
-    },
-    "&:not(:hover)": {
-      transform: "translateX(0)",
-      transition: "transform 0.3s ease-in-out",
-    },
   },
   ImageCarouselIconBefore: {
     "@media screen and (min-width: 1200px)": {
@@ -80,14 +73,6 @@ const useStyles = makeStyles((theme) => ({
     },
     "@media screen and (max-width: 1200px)": {
       fontSize: "4vw !important",
-    },
-    "&:hover": {
-      transform: "translateX(-5%)",
-      transition: "transform 0.3s ease-in-out",
-    },
-    "&:not(:hover)": {
-      transform: "translateX(0)",
-      transition: "transform 0.3s ease-in-out",
     },
   },
   ImageCarouselPaper: {
@@ -107,29 +92,45 @@ const useStyles = makeStyles((theme) => ({
     },
     textAlign: "center",
     height: "10px",
+    display: "flex",
+    justifyContent: "center",
   },
-  DotOne: {
-    "@media screen and (min-width: 1200px)": {
-      width: "18px",
-      height: "18px",
-      marginLeft: "9px",
-      marginRight: "9px",
-    },
-    "@media screen and (max-width: 1200px)": {
-      width: "1.5vw",
-      height: "1.5vw",
-      marginLeft: "0.75vw",
-      marginRight: "0.75vw",
-    },
-    borderRadius: "50%",
-    backgroundColor: "#ffffff",
+}));
+
+const Dot = styled("div")(({ themeMode, selected }) => ({
+  "@media screen and (min-width: 1200px)": {
+    width: selected ? "13.5px" : "9px",
+    height: selected ? "13.5px" : "9px",
+    marginTop: selected ? "0px" : "2.25px",
+    marginBottom: selected ? "0px" : "2.25px",
+    marginLeft: "4.5px",
+    marginRight: "4.5px",
   },
+  "@media screen and (max-width: 1200px)": {
+    width: selected ? "1.125vw" : "0.75vw",
+    height: selected ? "1.125vw" : "0.75vw",
+    marginTop: selected ? "0vw" : "0.1875vw",
+    marginBottom: selected ? "0vw" : "0.1875vw",
+    marginLeft: "0.375vw",
+    marginRight: "0.375vw",
+  },
+  transition: "all 0.2s ease-in-out",
+  borderRadius: "50%",
+  backgroundColor:
+    themeMode === "dark"
+      ? selected
+        ? "#ffffff"
+        : "#b3b3b3"
+      : selected
+        ? "#000000"
+        : "#4d4d4d",
 }));
 
 export default function MeteorExtinctionHome(props) {
   const classes = useStyles();
 
   const [t] = useTranslation();
+
   const [imageIndex, setImageIndex] = useState(1);
 
   const [moving, setMoving] = useState(false);
@@ -139,7 +140,7 @@ export default function MeteorExtinctionHome(props) {
   const nextImage = () => {
     setMoving(true);
     setImageDirection("next");
-    setImageIndex(imageIndex < 9 ? imageIndex + 1 : 1);
+    setImageIndex(imageIndex < 9 ? (prev) => prev + 1 : 1);
     setTimeout(() => {
       setMoving(false);
     }, 500);
@@ -148,7 +149,7 @@ export default function MeteorExtinctionHome(props) {
   const imageBefore = () => {
     setMoving(true);
     setImageDirection("before");
-    setImageIndex(imageIndex > 1 ? imageIndex - 1 : 9);
+    setImageIndex(imageIndex > 1 ? (prev) => prev - 1 : 9);
     setTimeout(() => {
       setMoving(false);
     }, 500);
@@ -207,6 +208,7 @@ export default function MeteorExtinctionHome(props) {
                   paddingTop: "50%",
                   paddingBottom: "50%",
                 }}
+                color={props.themeMode === "dark" ? "secondary" : "primary"}
                 onClick={!moving ? imageBefore : null}
               >
                 <NavigateBeforeRounded
@@ -238,7 +240,7 @@ export default function MeteorExtinctionHome(props) {
                   <img
                     className={classes.ImageCarouselContent}
                     src={MainMenu}
-                    alt="Main Menu"
+                    alt={t("meteorExtinctionImages.mainMenu")}
                   />
                 </Slide>
                 <Slide
@@ -307,7 +309,7 @@ export default function MeteorExtinctionHome(props) {
                   <img
                     className={classes.ImageCarouselContent}
                     src={MeteorDestroyed}
-                    alt="Gameplay - Meteor Destroyed"
+                    alt={t("meteorExtinctionImages.meteorDestroyed")}
                   />
                 </Slide>
                 <Slide
@@ -330,7 +332,7 @@ export default function MeteorExtinctionHome(props) {
                   <img
                     className={classes.ImageCarouselContent}
                     src={MeteorExplosion}
-                    alt="Gameplay - Meteor Exploding"
+                    alt={t("meteorExtinctionImages.meteorExplosion")}
                   />
                 </Slide>
                 <Slide
@@ -353,7 +355,7 @@ export default function MeteorExtinctionHome(props) {
                   <img
                     className={classes.ImageCarouselContent}
                     src={Rocket}
-                    alt="Gameplay - Rocket"
+                    alt={t("meteorExtinctionImages.rocket")}
                   />
                 </Slide>
                 <Slide
@@ -376,7 +378,7 @@ export default function MeteorExtinctionHome(props) {
                   <img
                     className={classes.ImageCarouselContent}
                     src={RocketExploding}
-                    alt="Gameplay - Rocket Exploding"
+                    alt={t("meteorExtinctionImages.rocketExploding")}
                   />
                 </Slide>
                 <Slide
@@ -399,7 +401,7 @@ export default function MeteorExtinctionHome(props) {
                   <img
                     className={classes.ImageCarouselContent}
                     src={Pause}
-                    alt="Pause Menu"
+                    alt={t("meteorExtinctionImages.pause")}
                   />
                 </Slide>
                 <Slide
@@ -422,27 +424,38 @@ export default function MeteorExtinctionHome(props) {
                   <img
                     className={classes.ImageCarouselContent}
                     src={GameOver}
-                    alt="Game Over"
+                    alt={t("meteorExtinctionImages.gameOver")}
                   />
                 </Slide>
               </Box>
               <div className={classes.PointsDiv}>
-                <div
-                  style={{
-                    justifyContent: "center",
-                    display: "flex",
-                  }}
-                >
-                  <div className={classes.DotOne} />
-                  <div className={classes.DotTwo} />
-                  <div className={classes.DotThree} />
-                  <div className={classes.DotFour} />
-                  <div className={classes.DotFive} />
-                  <div className={classes.DotSix} />
-                  <div className={classes.DotSeven} />
-                  <div className={classes.DotEight} />
-                  <div className={classes.DotNine} />
-                </div>
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 1} />
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 2} />
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 3} />
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 4} />
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 5} />
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 6} />
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 7} />
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 8} />
+                <Dot
+                  themeMode={props.themeMode}
+                  selected={imageIndex === 9} />
               </div>
             </Box>
             <Box sx={{ marginLeft: "1.5%", width: "5%", alignItems: "center" }}>
@@ -453,6 +466,7 @@ export default function MeteorExtinctionHome(props) {
                   paddingTop: "50%",
                   paddingBottom: "50%",
                 }}
+                color={props.themeMode === "dark" ? "secondary" : "primary"}
                 onClick={!moving ? nextImage : null}
               >
                 <NavigateNextRounded

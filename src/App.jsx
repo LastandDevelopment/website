@@ -110,7 +110,8 @@ function App() {
             ></Route>
             <Route
               path="woodengui"
-              element={<WoodenGUIHome />}></Route>
+              element={<WoodenGUIHome themeMode={themeMode} />}
+            ></Route>
             <Route
               path="woodengui/download"
               element={<WoodenGUIDownload />}
