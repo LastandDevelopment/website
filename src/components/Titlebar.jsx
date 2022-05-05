@@ -12,6 +12,7 @@ import {
   ListItemIcon,
   Typography,
   Divider,
+  Grow,
 } from "@mui/material";
 
 import {
@@ -34,6 +35,7 @@ import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
 import AboutDialog from "./About";
 import { useTranslation } from "react-i18next";
 import LanguageMenu from "./LanguageMenu";
+import { useEffect } from "react";
 
 function MenuMargin() {
   if (
@@ -72,6 +74,19 @@ export default function TitleBar(props) {
 
   const AppearanceIcon =
     props.themeMode === "dark" ? LightModeRoundedIcon : DarkModeRoundedIcon;
+
+  const [appearanceIconGrowIn, setAppearanceIconGrowIn] = useState(true);
+
+  const handleThemeModeChange = () => {
+    setAppearanceIconGrowIn(false);
+    setTimeout(() => {
+      props.handleThemeModeChange();
+    }, 300);
+  };
+
+  useEffect(() => {
+    setAppearanceIconGrowIn(true);
+  }, [props.themeMode]);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -137,13 +152,17 @@ export default function TitleBar(props) {
             />
             <MenuItem
               onClick={() => {
-                props.handleThemeModeChange();
+                handleThemeModeChange();
               }}
             >
               <ListItemIcon>
-                <AppearanceIcon
-                  color={props.themeMode === "dark" ? "secondary" : "primary"}
-                />
+                <Grow
+                  timeout={300}
+                  in={appearanceIconGrowIn}>
+                  <AppearanceIcon
+                    color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  />
+                </Grow>
               </ListItemIcon>
               <ListItemText>
                 <Typography>{t("menu.appearance")}</Typography>
