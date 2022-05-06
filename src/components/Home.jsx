@@ -73,9 +73,11 @@ const useStyles = makeStyles((theme) => ({
     },
     "@media screen and (min-width: 387px)": {
       width: "300px",
+      height: "187.5px",
     },
     "@media screen and (max-width: 387px)": {
       width: "77.5vw",
+      height: "48.4375vw",
     },
   },
   CardButton: {

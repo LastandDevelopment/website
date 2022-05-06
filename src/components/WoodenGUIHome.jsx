@@ -39,15 +39,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     "@media screen and (min-width: 1200px)": {
-      height: "534.67px",
+      height: "500px",
     },
     "@media screen and (max-width: 1200px)": {
-      height: "44.636vw",
+      height: "41.667vw",
     },
   },
   ImageCarouselContent: {
     width: "100%",
-    height: "100%",
+    aspectRatio: "16 / 9",
     borderRadius: "10px",
     position: "absolute",
     top: 0,
@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Dot = styled("div")(({ themeMode, selected }) => ({
+const Dot = styled("div")(({ theme, selected }) => ({
   "@media screen and (min-width: 1200px)": {
     width: selected ? "13.5px" : "9px",
     height: selected ? "13.5px" : "9px",
@@ -118,7 +118,7 @@ const Dot = styled("div")(({ themeMode, selected }) => ({
   transition: "all 0.2s ease-in-out",
   borderRadius: "50%",
   backgroundColor:
-    themeMode === "dark"
+    theme === "dark"
       ? selected
         ? "#ffffff"
         : "#b3b3b3"
@@ -212,6 +212,7 @@ export default function WoodenGUIHome(props) {
                   paddingTop: "50%",
                   paddingBottom: "50%",
                 }}
+                aria-label="Image Before"
                 color={props.themeMode === "dark" ? "secondary" : "primary"}
                 onClick={imageBefore}
               >
@@ -413,28 +414,28 @@ export default function WoodenGUIHome(props) {
               </Box>
               <div className={classes.PointsDiv}>
                 <Dot
-                  themeMode={props.themeMode}
+                  theme={props.themeMode}
                   selected={imageIndex === 1} />
                 <Dot
-                  themeMode={props.themeMode}
+                  theme={props.themeMode}
                   selected={imageIndex === 2} />
                 <Dot
-                  themeMode={props.themeMode}
+                  theme={props.themeMode}
                   selected={imageIndex === 3} />
                 <Dot
-                  themeMode={props.themeMode}
+                  theme={props.themeMode}
                   selected={imageIndex === 4} />
                 <Dot
-                  themeMode={props.themeMode}
+                  theme={props.themeMode}
                   selected={imageIndex === 5} />
                 <Dot
-                  themeMode={props.themeMode}
+                  theme={props.themeMode}
                   selected={imageIndex === 6} />
                 <Dot
-                  themeMode={props.themeMode}
+                  theme={props.themeMode}
                   selected={imageIndex === 7} />
                 <Dot
-                  themeMode={props.themeMode}
+                  theme={props.themeMode}
                   selected={imageIndex === 8} />
               </div>
             </Box>
@@ -446,6 +447,7 @@ export default function WoodenGUIHome(props) {
                   paddingTop: "50%",
                   paddingBottom: "50%",
                 }}
+                aria-label="Next Image"
                 color={props.themeMode === "dark" ? "secondary" : "primary"}
                 onClick={nextImage}
               >

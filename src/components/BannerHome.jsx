@@ -4,17 +4,17 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import { styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
-
-import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
 import { AppBar } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   Logo: {
     "@media screen and (min-width: 450px)": {
       height: "120px",
+      width: "307.34px",
     },
     "@media screen and (max-width: 450px)": {
       height: "27vw",
+      width: "69.15vw",
     },
   },
 }));
@@ -41,7 +41,7 @@ export default function BannerHome() {
           sx={{ justifyContent: "center" }}>
           <img
             className={classes.Logo}
-            src={LastandDevelopmentLogo}
+            src="/LastandDevelopmentLogo.svg"
             alt="Lastand Development"
             component="div"
             sx={{ flexGrow: 1 }}
