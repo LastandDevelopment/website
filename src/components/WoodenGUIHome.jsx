@@ -31,6 +31,8 @@ import { useTranslation } from "react-i18next";
 
 import { makeStyles } from "@mui/styles";
 
+import { useSwipeable } from "react-swipeable";
+
 const useStyles = makeStyles((theme) => ({
   ImageCarouselBox: {
     display: "flex",
@@ -132,27 +134,28 @@ export default function WoodenGUIHome(props) {
 
   const [imageIndex, setImageIndex] = useState(1);
 
-  const [moving, setMoving] = useState(false);
-
   const [imageDirection, setImageDirection] = useState("");
 
   const nextImage = () => {
-    setMoving(true);
     setImageDirection("next");
     setImageIndex(imageIndex < 8 ? (prev) => prev + 1 : 1);
-    setTimeout(() => {
-      setMoving(false);
-    }, 500);
   };
 
   const imageBefore = () => {
-    setMoving(true);
     setImageDirection("before");
     setImageIndex(imageIndex > 1 ? (prev) => prev - 1 : 8);
-    setTimeout(() => {
-      setMoving(false);
-    }, 500);
   };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => nextImage(),
+    onSwipedRight: () => imageBefore(),
+    swipeDuration: 500,
+    delta: 10,
+    preventScrollOnSwipe: true,
+    trackTouch: true,
+    trackMouse: false,
+  });
+
   return (
     <Container className="defaultContainer">
       <Box sx={{ flexGrow: 1, pb: 4 }}>
@@ -210,7 +213,7 @@ export default function WoodenGUIHome(props) {
                   paddingBottom: "50%",
                 }}
                 color={props.themeMode === "dark" ? "secondary" : "primary"}
-                onClick={!moving ? imageBefore : null}
+                onClick={imageBefore}
               >
                 <NavigateBeforeRounded
                   className={classes.ImageCarouselIconBefore}
@@ -219,8 +222,10 @@ export default function WoodenGUIHome(props) {
             </Box>
             <Box sx={{ width: "87%", height: "100%" }}>
               <Box
+                {...handlers}
                 className={classes.ImageCarouselContentBox}
-                flexGrow={1}>
+                flexGrow={1}
+              >
                 <Slide
                   in={imageIndex === 1}
                   timeout={500}
@@ -442,7 +447,7 @@ export default function WoodenGUIHome(props) {
                   paddingBottom: "50%",
                 }}
                 color={props.themeMode === "dark" ? "secondary" : "primary"}
-                onClick={!moving ? nextImage : null}
+                onClick={nextImage}
               >
                 <NavigateNextRounded
                   className={classes.ImageCarouselIconNext}
