@@ -62,13 +62,10 @@
         "issueReport": "Problem melden"
     },
     "meteorExtinctionImages": {
-        "mainMenu": "Hauptmenü",
         "meteorDestroyed": "Gameplay - Meteorit zerstört",
         "meteorExplosion": "Gameplay - explodierender Meteorit",
         "rocket": "Gameplay - Rakete",
-        "rocketExploding": "Gameplay - explodierende Rakete",
-        "pause": "\"Pause\"-Menü",
-        "gameOver": "Spiel vorbei"
+        "rocketExploding": "Gameplay - explodierende Rakete"
     },
     "woodenGUIHome": {
         "text1": "Wooden GUI ist ein Ressourcen-Paket für Minecraft: Java Edition.",

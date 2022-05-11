@@ -209,7 +209,11 @@ export default function Home() {
                   component={Link}
                   to={"/meteorextinction"}
                 >
-                  <Typography variant="h6">{t("home.moreInfo")}</Typography>
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
+                    {t("home.moreInfo")}
+                  </Typography>
                 </Button>
               </Paper>
             </Grid>
@@ -250,7 +254,11 @@ export default function Home() {
                   component={Link}
                   to={"/woodengui"}
                 >
-                  <Typography variant="h6">{t("home.moreInfo")}</Typography>
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
+                    {t("home.moreInfo")}
+                  </Typography>
                 </Button>
               </Paper>
             </Grid>

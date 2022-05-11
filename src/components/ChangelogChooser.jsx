@@ -39,8 +39,10 @@ export default function ChangelogChooser(props) {
     return (
       <Fragment>
         <Typography
-          variant="h3"
-          sx={{ paddingTop: 7 }}>
+          variant="body1"
+          className="textLarge"
+          sx={{ paddingTop: 7 }}
+        >
           {unknownVersionText}
         </Typography>
       </Fragment>

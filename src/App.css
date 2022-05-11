@@ -74,6 +74,16 @@ body {
   }
 }
 
+.textSmall {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+.textLarge {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+
 li {
   list-style-type: disc;
 }

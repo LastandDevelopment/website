@@ -13,8 +13,8 @@ import MeteorExtinctionHome from "./components/MeteorExtinctionHome";
 import MeteorExtinctionDownload from "./components/MeteorExtinctionDownload";
 import WoodenGUIHome from "./components/WoodenGUIHome";
 import WoodenGUIDownload from "./components/WoodenGUIDownload";
-import Contact from "./components/contact";
-import IssueTemplate from "./components/issueTemplate";
+import Contact from "./components/Contact";
+import IssueTemplate from "./components/IssueTemplate";
 import CheckMEVersion from "./components/CheckMEVersion";
 
 import CustomProgress from "./components/SuspenseFallback";

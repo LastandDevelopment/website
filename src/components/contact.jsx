@@ -4,12 +4,19 @@ import { Typography, Container, Box, Button } from "@mui/material";
 import BugReportRoundedIcon from "@mui/icons-material/BugReportRounded";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
 export default function Contact(props) {
   const [t] = useTranslation();
 
   return (
     <Container className="defaultContainer">
+      <Helmet>
+        <meta
+          name="description"
+          content="Contact Lastand Development. Write an email or report an issue."
+        />
+      </Helmet>
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"
@@ -30,7 +37,11 @@ export default function Contact(props) {
             rel="noreferrer noopener"
             sx={{ textTransform: "unset" }}
           >
-            <Typography variant="h5">lastand.development@gmail.com</Typography>
+            <Typography
+              variant="body1"
+              sx={{ fontSize: 20, fontWeight: 1000 }}>
+              lastand.development@gmail.com
+            </Typography>
           </Button>
         </Container>
         <Typography
@@ -47,7 +58,11 @@ export default function Contact(props) {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <Typography variant="h6">{t("contact.websiteButton")}</Typography>
+          <Typography
+            variant="body1"
+            className="textSmall">
+            {t("contact.websiteButton")}
+          </Typography>
         </Button>
         <Button
           underline="none"
@@ -58,7 +73,11 @@ export default function Contact(props) {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <Typography variant="h6">Meteor Extinction</Typography>
+          <Typography
+            variant="body1"
+            className="textSmall">
+            Meteor Extinction
+          </Typography>
         </Button>
         <Typography
           variant="body1"
@@ -73,7 +92,11 @@ export default function Contact(props) {
           to="/contact/issue-template"
           startIcon={<BugReportRoundedIcon />}
         >
-          <Typography variant="h6">{t("contact.issueTemplate")}</Typography>
+          <Typography
+            variant="body1"
+            className="textSmall">
+            {t("contact.issueTemplate")}
+          </Typography>
         </Button>
       </Box>
     </Container>

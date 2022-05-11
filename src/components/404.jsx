@@ -19,6 +19,7 @@ import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
 import meteor from "./animations/meteor.svg";
 import anim from "./animations/explosion.svg";
 import empty from "./animations/empty.svg";
+import { Helmet } from "react-helmet";
 
 const meteorFallStartPosition = Math.round((Math.random() - 0.5) * 500);
 
@@ -209,6 +210,15 @@ export default function NotFound() {
 
   return (
     <Container className="defaultContainer">
+      <Helmet>
+        <meta
+          name="robots"
+          content="noindex" />
+        <meta
+          name="description"
+          content="404 - Oooooooooops! This page was hit by a meteor!"
+        />
+      </Helmet>
       <Box className={classes.Box}>
         <Collapse
           in={showAnim}
@@ -260,7 +270,11 @@ export default function NotFound() {
                 to={"/"}
                 startIcon={<HomeRoundedIcon />}
               >
-                <Typography variant="h6">{t("404.home")}</Typography>
+                <Typography
+                  variant="body1"
+                  className="textSmall">
+                  {t("404.home")}
+                </Typography>
               </Button>
             </Fade>
           </Collapse>
@@ -289,7 +303,11 @@ export default function NotFound() {
                 to={"/contact/issue-template?404=true"}
                 startIcon={<ErrorRoundedIcon />}
               >
-                <Typography variant="h6">{t("404.report404")}</Typography>
+                <Typography
+                  variant="body1"
+                  className="textSmall">
+                  {t("404.report404")}
+                </Typography>
               </Button>
             </Fade>
           </Collapse>

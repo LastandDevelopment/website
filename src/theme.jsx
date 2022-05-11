@@ -41,18 +41,6 @@ const getTheme = (mode) => ({
       fontSize: 25,
       fontWeight: 550,
     },
-    h3: {
-      fontSize: 20,
-      fontWeight: 700,
-    },
-    h5: {
-      fontSize: 20,
-      fontWeight: 1000,
-    },
-    h6: {
-      fontSize: 14,
-      fontWeight: 700,
-    },
   },
   shape: {
     borderRadius: 10,

@@ -17,6 +17,7 @@ import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -294,6 +295,15 @@ export default function IssueTemplate(props) {
 
   return (
     <Container className={classes.container}>
+      <Helmet>
+        <meta
+          name="robots"
+          content="noindex" />
+        <meta
+          name="description"
+          content="Report an Issue for Meteor Extinction, Wooden GUI or the website of Lastand Development."
+        />
+      </Helmet>
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"
@@ -309,7 +319,11 @@ export default function IssueTemplate(props) {
             disabled={!valid}
             onClick={sendMail}
           >
-            <Typography variant="h6">{t("issueTemplate.send")}</Typography>
+            <Typography
+              variant="body1"
+              className="textSmall">
+              {t("issueTemplate.send")}
+            </Typography>
           </Button>
         </Box>
         <Collapse

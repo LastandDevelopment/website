@@ -6,6 +6,7 @@ import { styled } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import NotSupportedWarning from "./NotSupportedWarning";
 import { isMobile } from "react-device-detect";
+import { Helmet } from "react-helmet";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -32,6 +33,12 @@ export default function WoodenGUIDownload() {
 
   return (
     <Container className="defaultContainer">
+      <Helmet>
+        <meta
+          name="description"
+          content="Download Wooden GUI, the Resource Pack for Minecraft: Java Edition by Lastand Development"
+        />
+      </Helmet>
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"
@@ -77,7 +84,9 @@ export default function WoodenGUIDownload() {
                   }}
                   onClick={downloadBeta1_0for1_18}
                 >
-                  <Typography variant="h6">
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
                     {t("downloadPage.downloadFor118")}
                   </Typography>
                 </Button>
@@ -92,7 +101,9 @@ export default function WoodenGUIDownload() {
                   }}
                   onClick={downloadBeta1_0for1_17}
                 >
-                  <Typography variant="h6">
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
                     {t("downloadPage.downloadFor117")}
                   </Typography>
                 </Button>

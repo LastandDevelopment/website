@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { isWindows, osName } from "react-device-detect";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
@@ -54,6 +55,15 @@ export default function CheckMEVersion(props) {
     if (versionNumber === "alpha-0.1" || versionNumber === "alpha-0.1.1") {
       return (
         <Container className="defaultContainer">
+          <Helmet>
+            <meta
+              name="robots"
+              content="noindex" />
+            <meta
+              name="description"
+              content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
+            />
+          </Helmet>
           <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Typography
               variant="h1"
@@ -66,8 +76,10 @@ export default function CheckMEVersion(props) {
               {t("updateME.title")}
             </Typography>
             <Typography
-              variant="h3"
-              sx={{ paddingTop: 7 }}>
+              variant="body1"
+              className="textLarge"
+              sx={{ paddingTop: 7 }}
+            >
               {t("updateME.updateAvailable")}
             </Typography>
             <Typography
@@ -87,7 +99,11 @@ export default function CheckMEVersion(props) {
               sx={{ py: 1, px: 6, my: 4 }}
               onClick={downloadUpdate}
             >
-              <Typography variant="h6">{t("updateME.loadUpdate")}</Typography>
+              <Typography
+                variant="body1"
+                className="textSmall">
+                {t("updateME.loadUpdate")}
+              </Typography>
             </Button>
           </Box>
         </Container>
@@ -95,6 +111,15 @@ export default function CheckMEVersion(props) {
     } else if (currentVersion === mostRecentVersion) {
       return (
         <Container className="defaultContainer">
+          <Helmet>
+            <meta
+              name="robots"
+              content="noindex" />
+            <meta
+              name="description"
+              content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
+            />
+          </Helmet>
           <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Typography
               variant="h1"
@@ -107,8 +132,10 @@ export default function CheckMEVersion(props) {
               {t("updateME.title")}
             </Typography>
             <Typography
-              variant="h3"
-              sx={{ paddingTop: 7 }}>
+              variant="body1"
+              className="textLarge"
+              sx={{ paddingTop: 7 }}
+            >
               {t("updateME.noUpdateAvailable")}
             </Typography>
             <Typography
@@ -122,6 +149,15 @@ export default function CheckMEVersion(props) {
     } else {
       return (
         <Container className="defaultContainer">
+          <Helmet>
+            <meta
+              name="robots"
+              content="noindex" />
+            <meta
+              name="description"
+              content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
+            />
+          </Helmet>
           <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Typography
               variant="h1"
@@ -134,8 +170,10 @@ export default function CheckMEVersion(props) {
               {t("updateME.title")}
             </Typography>
             <Typography
-              variant="h3"
-              sx={{ paddingTop: 7 }}>
+              variant="body1"
+              className="textLarge"
+              sx={{ paddingTop: 7 }}
+            >
               {unknownVersionText}
             </Typography>
           </Box>
@@ -145,6 +183,15 @@ export default function CheckMEVersion(props) {
   } else {
     return (
       <Container className="defaultContainer">
+        <Helmet>
+          <meta
+            name="robots"
+            content="noindex" />
+          <meta
+            name="description"
+            content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
+          />
+        </Helmet>
         <Box sx={{ flexGrow: 1, pb: 4 }}>
           <Typography
             variant="h1"
@@ -157,8 +204,10 @@ export default function CheckMEVersion(props) {
             {t("updateME.title")}
           </Typography>
           <Typography
-            variant="h3"
-            sx={{ paddingTop: 7 }}>
+            variant="body1"
+            className="textLarge"
+            sx={{ paddingTop: 7 }}
+          >
             {t("updateME.notAvailableForOS")}
             {osName}
             {t("updateME.notAvailableForOS2")}

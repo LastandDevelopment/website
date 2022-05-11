@@ -62,13 +62,10 @@
         "issueReport": "Report an Issue"
     },
     "meteorExtinctionImages": {
-        "mainMenu": "Main Menu",
         "meteorDestroyed": "Gameplay - Meteor Destroyed",
         "meteorExplosion": "Gameplay - Meteor Exploding",
         "rocket": "Gameplay - Rocket",
-        "rocketExploding": "Gameplay - Rocket Exploding",
-        "pause": "Pause Menu",
-        "gameOver": "Game Over"
+        "rocketExploding": "Gameplay - Rocket Exploding"
     },
     "woodenGUIHome": {
         "text1": "Wooden GUI is a resource pack for Minecraft: Java Edition.",

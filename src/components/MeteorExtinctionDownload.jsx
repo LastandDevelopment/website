@@ -17,6 +17,7 @@ import { ReactComponent as WindowsIcon } from "./icons/WindowsIcon.svg";
 import { useTranslation } from "react-i18next";
 import NotSupportedWarning from "./NotSupportedWarning";
 import { isWindows } from "react-device-detect";
+import { Helmet } from "react-helmet";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -50,6 +51,12 @@ export default function MeteorExtinctionDownload(props) {
 
   return (
     <Container className="defaultContainer">
+      <Helmet>
+        <meta
+          name="description"
+          content="Download Meteor Extinction, the First Game by Lastand Development"
+        />
+      </Helmet>
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Typography
           variant="h1"
@@ -106,8 +113,10 @@ export default function MeteorExtinctionDownload(props) {
                   }
                 >
                   <Typography
-                    variant="h6"
-                    sx={{ marginLeft: 0.5 }}>
+                    variant="body1"
+                    className="textSmall"
+                    sx={{ marginLeft: 0.5 }}
+                  >
                     {t("downloadPage.download")}
                   </Typography>
                 </Button>
@@ -125,7 +134,9 @@ export default function MeteorExtinctionDownload(props) {
                     "/meteorextinction/download/changelog?version=alpha-0.1.2"
                   }
                 >
-                  <Typography variant="h6">
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
                     {t("downloadPage.changelog")}
                   </Typography>
                 </Button>
@@ -164,8 +175,10 @@ export default function MeteorExtinctionDownload(props) {
                   }
                 >
                   <Typography
-                    variant="h6"
-                    sx={{ marginLeft: 0.5 }}>
+                    variant="body1"
+                    className="textSmall"
+                    sx={{ marginLeft: 0.5 }}
+                  >
                     {t("downloadPage.download")}
                   </Typography>
                 </Button>
@@ -183,7 +196,9 @@ export default function MeteorExtinctionDownload(props) {
                     "/meteorextinction/download/changelog?version=alpha-0.1.1"
                   }
                 >
-                  <Typography variant="h6">
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
                     {t("downloadPage.changelog")}
                   </Typography>
                 </Button>
@@ -222,8 +237,10 @@ export default function MeteorExtinctionDownload(props) {
                   }
                 >
                   <Typography
-                    variant="h6"
-                    sx={{ marginLeft: 0.5 }}>
+                    variant="body1"
+                    className="textSmall"
+                    sx={{ marginLeft: 0.5 }}
+                  >
                     {t("downloadPage.download")}
                   </Typography>
                 </Button>
@@ -239,7 +256,9 @@ export default function MeteorExtinctionDownload(props) {
                   component={Link}
                   to={"/meteorextinction/download/changelog?version=alpha-0.1"}
                 >
-                  <Typography variant="h6">
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
                     {t("downloadPage.changelog")}
                   </Typography>
                 </Button>

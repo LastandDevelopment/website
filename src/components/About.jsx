@@ -24,7 +24,7 @@ export default function AboutDialog(props) {
     props.setOpenAboutDialog(false);
   };
 
-  const version = "1.12.2";
+  const version = "1.12.3";
 
   return (
     <div>
@@ -62,7 +62,11 @@ export default function AboutDialog(props) {
             onClick={handleClose}
             sx={{ paddingX: 4, paddingY: 1, marginRight: 1, marginBottom: 1 }}
           >
-            <Typography variant="h6">Ok</Typography>
+            <Typography
+              variant="body1"
+              className="textSmall">
+              Ok
+            </Typography>
           </Button>
         </DialogActions>
       </Dialog>

@@ -32,22 +32,17 @@ import { useTranslation } from "react-i18next";
 import { makeStyles } from "@mui/styles";
 
 import { useSwipeable } from "react-swipeable";
+import { Helmet } from "react-helmet";
 
 const useStyles = makeStyles((theme) => ({
   ImageCarouselBox: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    "@media screen and (min-width: 1200px)": {
-      height: "500px",
-    },
-    "@media screen and (max-width: 1200px)": {
-      height: "41.667vw",
-    },
   },
   ImageCarouselContent: {
     width: "100%",
-    aspectRatio: "16 / 9",
+    height: "100%",
     borderRadius: "10px",
     position: "absolute",
     top: 0,
@@ -55,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   ImageCarouselContentBox: {
     width: "100%",
-    height: "100%",
+    aspectRatio: "16 / 9",
     overflow: "hidden",
     borderRadius: "10px",
     position: "relative",
@@ -74,14 +69,6 @@ const useStyles = makeStyles((theme) => ({
     },
     "@media screen and (max-width: 1200px)": {
       fontSize: "4vw !important",
-    },
-  },
-  ImageCarouselPaper: {
-    "@media screen and (min-width: 1200px)": {
-      paddingBottom: "50px",
-    },
-    "@media screen and (max-width: 1200px)": {
-      paddingBottom: "4.5vw",
     },
   },
   PointsDiv: {
@@ -158,6 +145,12 @@ export default function WoodenGUIHome(props) {
 
   return (
     <Container className="defaultContainer">
+      <Helmet>
+        <meta
+          name="description"
+          content="Introducing Wooden GUI, the Resource Pack for Minecraft: Java Edition by Lastand Development"
+        />
+      </Helmet>
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Box sx={{ px: 2 }}>
           <Typography
@@ -190,16 +183,18 @@ export default function WoodenGUIHome(props) {
           component={Link}
           to={"/woodengui/download"}
         >
-          <Typography variant="h3">{t("woodenGUIHome.download")}</Typography>
+          <Typography
+            variant="body1"
+            className="textLarge">
+            {t("woodenGUIHome.download")}
+          </Typography>
         </Button>
         <Paper
           elevation={3}
           sx={{
             marginY: 10,
-            paddingX: "3%",
-            paddingTop: "3%",
+            padding: "3%",
           }}
-          className={classes.ImageCarouselPaper}
         >
           <Box className={classes.ImageCarouselBox}>
             <Box

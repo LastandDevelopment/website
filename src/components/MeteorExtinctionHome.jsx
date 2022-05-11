@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Typography,
   Button,
@@ -18,16 +18,6 @@ import {
   NavigateNextRounded,
 } from "@mui/icons-material";
 
-import MainMenu from "./imagesME/mainmenu.png";
-import Countdown from "./imagesME/countdown.png";
-import Game from "./imagesME/maingame.png";
-import MeteorDestroyed from "./imagesME/maingamemeteordestroyed.png";
-import MeteorExplosion from "./imagesME/meteorexplosion.png";
-import Rocket from "./imagesME/rocket.png";
-import RocketExploding from "./imagesME/rocketexplode.png";
-import Pause from "./imagesME/pausemenu.png";
-import GameOver from "./imagesME/gameover.png";
-
 import { ReactComponent as GitHub } from "./icons/GitHubIcon.svg";
 
 import { useTranslation } from "react-i18next";
@@ -36,21 +26,36 @@ import { makeStyles } from "@mui/styles";
 
 import { useSwipeable } from "react-swipeable";
 
+import maingameL from "./imagesME/maingame/L.webp";
+import maingameM from "./imagesME/maingame/M.webp";
+import maingameS from "./imagesME/maingame/S.webp";
+
+import meteorL from "./imagesME/meteor/L.webp";
+import meteorM from "./imagesME/meteor/M.webp";
+import meteorS from "./imagesME/meteor/S.webp";
+
+import meteorexplosionL from "./imagesME/meteorexplosion/L.webp";
+import meteorexplosionM from "./imagesME/meteorexplosion/M.webp";
+import meteorexplosionS from "./imagesME/meteorexplosion/S.webp";
+
+import rocketL from "./imagesME/rocket/L.webp";
+import rocketM from "./imagesME/rocket/M.webp";
+import rocketS from "./imagesME/rocket/S.webp";
+
+import rocketexplosionL from "./imagesME/rocketexplosion/L.webp";
+import rocketexplosionM from "./imagesME/rocketexplosion/M.webp";
+import rocketexplosionS from "./imagesME/rocketexplosion/S.webp";
+import { Helmet } from "react-helmet";
+
 const useStyles = makeStyles((theme) => ({
   ImageCarouselBox: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    "@media screen and (min-width: 1200px)": {
-      height: "500px",
-    },
-    "@media screen and (max-width: 1200px)": {
-      height: "41.667vw",
-    },
   },
   ImageCarouselContent: {
     width: "100%",
-    aspectRatio: "16 / 9",
+    height: "100%",
     borderRadius: "10px",
     position: "absolute",
     top: 0,
@@ -58,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
   ImageCarouselContentBox: {
     width: "100%",
-    height: "100%",
+    aspectRatio: "16 / 9",
     overflow: "hidden",
     borderRadius: "10px",
     position: "relative",
@@ -77,14 +82,6 @@ const useStyles = makeStyles((theme) => ({
     },
     "@media screen and (max-width: 1200px)": {
       fontSize: "4vw !important",
-    },
-  },
-  ImageCarouselPaper: {
-    "@media screen and (min-width: 1200px)": {
-      paddingBottom: "50px",
-    },
-    "@media screen and (max-width: 1200px)": {
-      paddingBottom: "4.5vw",
     },
   },
   PointsDiv: {
@@ -141,12 +138,12 @@ export default function MeteorExtinctionHome(props) {
 
   const nextImage = () => {
     setImageDirection("next");
-    setImageIndex(imageIndex < 9 ? (prev) => prev + 1 : 1);
+    setImageIndex(imageIndex < 5 ? (prev) => prev + 1 : 1);
   };
 
   const imageBefore = () => {
     setImageDirection("before");
-    setImageIndex(imageIndex > 1 ? (prev) => prev - 1 : 9);
+    setImageIndex(imageIndex > 1 ? (prev) => prev - 1 : 5);
   };
 
   const handlers = useSwipeable({
@@ -159,8 +156,39 @@ export default function MeteorExtinctionHome(props) {
     trackMouse: false,
   });
 
+  const [windowDimension, detectHW] = useState({
+    winWidth: window.innerWidth,
+  });
+
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", detectSize);
+
+    return () => {
+      window.removeEventListener("resize", detectSize);
+    };
+  }, [windowDimension]);
+
+  const imageNames =
+    windowDimension.winWidth >= 1200
+      ? [maingameL, meteorL, meteorexplosionL, rocketL, rocketexplosionL]
+      : windowDimension.winWidth >= 756
+        ? [maingameM, meteorM, meteorexplosionM, rocketM, rocketexplosionM]
+        : [maingameS, meteorS, meteorexplosionS, rocketS, rocketexplosionS];
+
   return (
     <Container className="defaultContainer">
+      <Helmet>
+        <meta
+          name="description"
+          content="Introducing Meteor Extinction, the First Game by Lastand Development"
+        />
+      </Helmet>
       <Box sx={{ flexGrow: 1, pb: 4 }}>
         <Box sx={{ px: 2 }}>
           <Typography
@@ -188,7 +216,9 @@ export default function MeteorExtinctionHome(props) {
           component={Link}
           to={"/meteorextinction/download"}
         >
-          <Typography variant="h3">
+          <Typography
+            variant="body1"
+            className="textLarge">
             {t("meteorExtinctionHome.download")}
           </Typography>
         </Button>
@@ -196,10 +226,8 @@ export default function MeteorExtinctionHome(props) {
           elevation={3}
           sx={{
             marginY: 10,
-            paddingX: "3%",
-            paddingTop: "3%",
+            padding: "3%",
           }}
-          className={classes.ImageCarouselPaper}
         >
           <Box className={classes.ImageCarouselBox}>
             <Box
@@ -246,8 +274,8 @@ export default function MeteorExtinctionHome(props) {
                 >
                   <img
                     className={classes.ImageCarouselContent}
-                    src={MainMenu}
-                    alt={t("meteorExtinctionImages.mainMenu")}
+                    src={imageNames[0]}
+                    alt="Gameplay"
                   />
                 </Slide>
                 <Slide
@@ -269,8 +297,8 @@ export default function MeteorExtinctionHome(props) {
                 >
                   <img
                     className={classes.ImageCarouselContent}
-                    src={Countdown}
-                    alt="Countdown"
+                    src={imageNames[1]}
+                    alt={t("meteorExtinctionImages.meteorDestroyed")}
                   />
                 </Slide>
                 <Slide
@@ -292,8 +320,8 @@ export default function MeteorExtinctionHome(props) {
                 >
                   <img
                     className={classes.ImageCarouselContent}
-                    src={Game}
-                    alt="Gameplay"
+                    src={imageNames[2]}
+                    alt={t("meteorExtinctionImages.meteorExplosion")}
                   />
                 </Slide>
                 <Slide
@@ -315,8 +343,8 @@ export default function MeteorExtinctionHome(props) {
                 >
                   <img
                     className={classes.ImageCarouselContent}
-                    src={MeteorDestroyed}
-                    alt={t("meteorExtinctionImages.meteorDestroyed")}
+                    src={imageNames[3]}
+                    alt={t("meteorExtinctionImages.rocket")}
                   />
                 </Slide>
                 <Slide
@@ -338,100 +366,8 @@ export default function MeteorExtinctionHome(props) {
                 >
                   <img
                     className={classes.ImageCarouselContent}
-                    src={MeteorExplosion}
-                    alt={t("meteorExtinctionImages.meteorExplosion")}
-                  />
-                </Slide>
-                <Slide
-                  in={imageIndex === 6}
-                  timeout={500}
-                  easing={{
-                    enter: "cubic-bezier(0.9, 0, 0.1, 1)",
-                    exit: "cubic-bezier(0.9, 0, 0.1, 1)",
-                  }}
-                  direction={
-                    imageIndex === 6
-                      ? imageDirection === "next"
-                        ? "left"
-                        : "right"
-                      : imageDirection === "next"
-                        ? "right"
-                        : "left"
-                  }
-                >
-                  <img
-                    className={classes.ImageCarouselContent}
-                    src={Rocket}
-                    alt={t("meteorExtinctionImages.rocket")}
-                  />
-                </Slide>
-                <Slide
-                  in={imageIndex === 7}
-                  timeout={500}
-                  easing={{
-                    enter: "cubic-bezier(0.9, 0, 0.1, 1)",
-                    exit: "cubic-bezier(0.9, 0, 0.1, 1)",
-                  }}
-                  direction={
-                    imageIndex === 7
-                      ? imageDirection === "next"
-                        ? "left"
-                        : "right"
-                      : imageDirection === "next"
-                        ? "right"
-                        : "left"
-                  }
-                >
-                  <img
-                    className={classes.ImageCarouselContent}
-                    src={RocketExploding}
+                    src={imageNames[4]}
                     alt={t("meteorExtinctionImages.rocketExploding")}
-                  />
-                </Slide>
-                <Slide
-                  in={imageIndex === 8}
-                  timeout={500}
-                  easing={{
-                    enter: "cubic-bezier(0.9, 0, 0.1, 1)",
-                    exit: "cubic-bezier(0.9, 0, 0.1, 1)",
-                  }}
-                  direction={
-                    imageIndex === 8
-                      ? imageDirection === "next"
-                        ? "left"
-                        : "right"
-                      : imageDirection === "next"
-                        ? "right"
-                        : "left"
-                  }
-                >
-                  <img
-                    className={classes.ImageCarouselContent}
-                    src={Pause}
-                    alt={t("meteorExtinctionImages.pause")}
-                  />
-                </Slide>
-                <Slide
-                  in={imageIndex === 9}
-                  timeout={500}
-                  easing={{
-                    enter: "cubic-bezier(0.9, 0, 0.1, 1)",
-                    exit: "cubic-bezier(0.9, 0, 0.1, 1)",
-                  }}
-                  direction={
-                    imageIndex === 9
-                      ? imageDirection === "next"
-                        ? "left"
-                        : "right"
-                      : imageDirection === "next"
-                        ? "right"
-                        : "left"
-                  }
-                >
-                  <img
-                    className={classes.ImageCarouselContent}
-                    src={GameOver}
-                    alt={t("meteorExtinctionImages.gameOver")}
                   />
                 </Slide>
               </Box>
@@ -451,18 +387,6 @@ export default function MeteorExtinctionHome(props) {
                 <Dot
                   theme={props.themeMode}
                   selected={imageIndex === 5} />
-                <Dot
-                  theme={props.themeMode}
-                  selected={imageIndex === 6} />
-                <Dot
-                  theme={props.themeMode}
-                  selected={imageIndex === 7} />
-                <Dot
-                  theme={props.themeMode}
-                  selected={imageIndex === 8} />
-                <Dot
-                  theme={props.themeMode}
-                  selected={imageIndex === 9} />
               </div>
             </Box>
             <Box sx={{ marginLeft: "1.5%", width: "5%", alignItems: "center" }}>
@@ -503,8 +427,10 @@ export default function MeteorExtinctionHome(props) {
           }
         >
           <Typography
-            variant="h6"
-            sx={{ marginLeft: 0.5 }}>
+            variant="body1"
+            className="textSmall"
+            sx={{ marginLeft: 0.5 }}
+          >
             {t("meteorExtinctionHome.issueReport")}
           </Typography>
         </Button>
