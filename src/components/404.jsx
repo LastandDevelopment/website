@@ -15,11 +15,7 @@ import { useTranslation } from "react-i18next";
 
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
-
-import meteor from "./animations/meteor.svg";
-import anim from "./animations/explosion.svg";
-import empty from "./animations/empty.svg";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const meteorFallStartPosition = Math.round((Math.random() - 0.5) * 500);
 
@@ -209,110 +205,131 @@ export default function NotFound() {
   }, [showAnim]);
 
   return (
-    <Container className="defaultContainer">
-      <Helmet>
-        <meta
-          name="robots"
-          content="noindex" />
-        <meta
-          name="description"
-          content="404 - Oooooooooops! This page was hit by a meteor!"
-        />
-      </Helmet>
-      <Box className={classes.Box}>
-        <Collapse
-          in={showAnim}
-          timeout={1000}
-          orientation={
-            windowDimension.winWidth < 850 ? "vertical" : "horizontal"
-          }
-          className={classes.ImageCollapser}
-        >
-          <Box className={classes.MeteorFallBox}>
-            <img
-              className={step === 1 ? classes.Image : classes.ImageAnimDone}
-              src={step === 1 ? meteor : step === 2 ? anim : empty}
-              alt="Meteor"
-              sx={{ flexGrow: 1 }}
-            />
+    <HelmetProvider>
+      <Container className="defaultContainer">
+        <Helmet>
+          <meta
+            name="robots"
+            content="noindex" />
+          <meta
+            name="description"
+            content="404 - Oooooooooops! This page was hit by a meteor!"
+          />
+
+          <link
+            rel="preload"
+            as="image"
+            href="/animations/meteor.svg" />
+          <link
+            rel="preload"
+            as="image"
+            href="/animations/explosion.svg" />
+          <link
+            rel="preload"
+            as="image"
+            href="/animations/empty.svg" />
+        </Helmet>
+        <Box className={classes.Box}>
+          <Collapse
+            in={showAnim}
+            timeout={1000}
+            orientation={
+              windowDimension.winWidth < 850 ? "vertical" : "horizontal"
+            }
+            className={classes.ImageCollapser}
+          >
+            <Box className={classes.MeteorFallBox}>
+              <img
+                className={step === 1 ? classes.Image : classes.ImageAnimDone}
+                src={
+                  step === 1
+                    ? "/animations/meteor.svg"
+                    : step === 2
+                      ? "/animations/explosion.svg"
+                      : "/animations/empty.svg"
+                }
+                alt="Meteor"
+                sx={{ flexGrow: 1 }}
+              />
+            </Box>
+          </Collapse>
+          <Box className={classes.TextBox}>
+            <Typography
+              variant="h1"
+              sx={{ marginBottom: 2 }}>
+              404
+            </Typography>
+            <Typography variant="body1">{t("404.ohno")}</Typography>
+            <Typography variant="body1">{t("404.notfound")}</Typography>
+            <Collapse
+              in={!showAnim}
+              timeout={1000}
+              orientation={"vertical"}>
+              <Fade
+                in={!showAnim}
+                timeout={1000}>
+                <Typography
+                  variant="body1"
+                  sx={{ marginTop: 3 }}>
+                  {t("404.fix")}
+                </Typography>
+              </Fade>
+              <Fade
+                in={!showAnim}
+                timeout={1000}>
+                <Button
+                  className={classes.FixedButton}
+                  color="primary"
+                  variant="contained"
+                  sx={{ py: 1, marginTop: 1, width: "250px" }}
+                  component={Link}
+                  to={"/"}
+                  startIcon={<HomeRoundedIcon />}
+                >
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
+                    {t("404.home")}
+                  </Typography>
+                </Button>
+              </Fade>
+            </Collapse>
+            <Collapse
+              in={showReport}
+              timeout={1000}
+              orientation={"vertical"}>
+              <Fade
+                in={showReport}
+                timeout={1000}>
+                <Typography
+                  variant="body1"
+                  sx={{ marginTop: 3 }}>
+                  {t("404.issue")}
+                </Typography>
+              </Fade>
+              <Fade
+                in={showReport}
+                timeout={1000}>
+                <Button
+                  className={classes.FixedButton}
+                  color="primary"
+                  variant="contained"
+                  sx={{ py: 1, marginTop: 1, width: "250px" }}
+                  component={Link}
+                  to={"/contact/issue-template?404=true"}
+                  startIcon={<ErrorRoundedIcon />}
+                >
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
+                    {t("404.report404")}
+                  </Typography>
+                </Button>
+              </Fade>
+            </Collapse>
           </Box>
-        </Collapse>
-        <Box className={classes.TextBox}>
-          <Typography
-            variant="h1"
-            sx={{ marginBottom: 2 }}>
-            404
-          </Typography>
-          <Typography variant="body1">{t("404.ohno")}</Typography>
-          <Typography variant="body1">{t("404.notfound")}</Typography>
-          <Collapse
-            in={!showAnim}
-            timeout={1000}
-            orientation={"vertical"}>
-            <Fade
-              in={!showAnim}
-              timeout={1000}>
-              <Typography
-                variant="body1"
-                sx={{ marginTop: 3 }}>
-                {t("404.fix")}
-              </Typography>
-            </Fade>
-            <Fade
-              in={!showAnim}
-              timeout={1000}>
-              <Button
-                className={classes.FixedButton}
-                color="primary"
-                variant="contained"
-                sx={{ py: 1, marginTop: 1, width: "250px" }}
-                component={Link}
-                to={"/"}
-                startIcon={<HomeRoundedIcon />}
-              >
-                <Typography
-                  variant="body1"
-                  className="textSmall">
-                  {t("404.home")}
-                </Typography>
-              </Button>
-            </Fade>
-          </Collapse>
-          <Collapse
-            in={showReport}
-            timeout={1000}
-            orientation={"vertical"}>
-            <Fade
-              in={showReport}
-              timeout={1000}>
-              <Typography
-                variant="body1"
-                sx={{ marginTop: 3 }}>
-                {t("404.issue")}
-              </Typography>
-            </Fade>
-            <Fade
-              in={showReport}
-              timeout={1000}>
-              <Button
-                className={classes.FixedButton}
-                color="primary"
-                variant="contained"
-                sx={{ py: 1, marginTop: 1, width: "250px" }}
-                component={Link}
-                to={"/contact/issue-template?404=true"}
-                startIcon={<ErrorRoundedIcon />}
-              >
-                <Typography
-                  variant="body1"
-                  className="textSmall">
-                  {t("404.report404")}
-                </Typography>
-              </Button>
-            </Fade>
-          </Collapse>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </HelmetProvider>
   );
 }

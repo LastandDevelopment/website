@@ -6,7 +6,7 @@ import { styled } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import NotSupportedWarning from "./NotSupportedWarning";
 import { isMobile } from "react-device-detect";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -32,86 +32,88 @@ export default function WoodenGUIDownload() {
   };
 
   return (
-    <Container className="defaultContainer">
-      <Helmet>
-        <meta
-          name="description"
-          content="Download Wooden GUI, the Resource Pack for Minecraft: Java Edition by Lastand Development"
-        />
-      </Helmet>
-      <Box sx={{ flexGrow: 1, pb: 4 }}>
-        <Typography
-          variant="h1"
-          sx={{ paddingTop: 18 }}>
-          Wooden GUI
-        </Typography>
-        <Typography
-          variant="h2"
-          sx={{ paddingTop: 1, paddingBottom: 12 }}>
-          {t("downloadPage.download")}
-        </Typography>
-        <NotSupportedWarning
-          program="WoodenGUI"
-          show={isMobile} />
-        <Container className="leftTextAlignContainer">
+    <HelmetProvider>
+      <Container className="defaultContainer">
+        <Helmet>
+          <meta
+            name="description"
+            content="Download Wooden GUI, the Resource Pack for Minecraft: Java Edition by Lastand Development"
+          />
+        </Helmet>
+        <Box sx={{ flexGrow: 1, pb: 4 }}>
+          <Typography
+            variant="h1"
+            sx={{ paddingTop: 18 }}>
+            Wooden GUI
+          </Typography>
           <Typography
             variant="h2"
-            sx={{ paddingBottom: 4, marginLeft: 1 }}>
-            {t("downloadPage.betaVersions")}
+            sx={{ paddingTop: 1, paddingBottom: 12 }}>
+            {t("downloadPage.download")}
           </Typography>
-          <Grid
-            container
-            spacing={4}>
+          <NotSupportedWarning
+            program="WoodenGUI"
+            show={isMobile} />
+          <Container className="leftTextAlignContainer">
+            <Typography
+              variant="h2"
+              sx={{ paddingBottom: 4, marginLeft: 1 }}>
+              {t("downloadPage.betaVersions")}
+            </Typography>
             <Grid
-              item
-              xs={12}
-              sm={6}
-              lg={4}
-              xl={4}>
-              <Item elevation={3}>
-                <Typography
-                  variant="h2"
-                  sx={{ pt: 3 }}>
-                  Beta 1.0
-                </Typography>
-                <Button
-                  color="primary"
-                  variant="contained"
-                  className="downloadButton"
-                  sx={{
-                    py: 1,
-                    mt: 5,
-                  }}
-                  onClick={downloadBeta1_0for1_18}
-                >
+              container
+              spacing={4}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                lg={4}
+                xl={4}>
+                <Item elevation={3}>
                   <Typography
-                    variant="body1"
-                    className="textSmall">
-                    {t("downloadPage.downloadFor118")}
+                    variant="h2"
+                    sx={{ pt: 3 }}>
+                    Beta 1.0
                   </Typography>
-                </Button>
-                <Box />
-                <Button
-                  color="primary"
-                  variant="contained"
-                  className="downloadButton"
-                  sx={{
-                    py: 1,
-                    mt: 2,
-                  }}
-                  onClick={downloadBeta1_0for1_17}
-                >
-                  <Typography
-                    variant="body1"
-                    className="textSmall">
-                    {t("downloadPage.downloadFor117")}
-                  </Typography>
-                </Button>
-              </Item>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    className="downloadButton"
+                    sx={{
+                      py: 1,
+                      mt: 5,
+                    }}
+                    onClick={downloadBeta1_0for1_18}
+                  >
+                    <Typography
+                      variant="body1"
+                      className="textSmall">
+                      {t("downloadPage.downloadFor118")}
+                    </Typography>
+                  </Button>
+                  <Box />
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    className="downloadButton"
+                    sx={{
+                      py: 1,
+                      mt: 2,
+                    }}
+                    onClick={downloadBeta1_0for1_17}
+                  >
+                    <Typography
+                      variant="body1"
+                      className="textSmall">
+                      {t("downloadPage.downloadFor117")}
+                    </Typography>
+                  </Button>
+                </Item>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
-    </Container>
+          </Container>
+        </Box>
+      </Container>
+    </HelmetProvider>
   );
 }
