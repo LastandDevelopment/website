@@ -109,7 +109,7 @@ export default function TitleBar(props) {
             size="large"
             color="secondary"
             id="menu-button"
-            aria-label="Menu"
+            aria-label={t("ariaLabels.menu")}
             aria-controls={open ? "main-menu" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}

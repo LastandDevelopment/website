@@ -128,14 +128,14 @@ export default function WoodenGUIHome(props) {
     setImageIndex(imageIndex < 8 ? (prev) => prev + 1 : 1);
   };
 
-  const imageBefore = () => {
+  const previousImage = () => {
     setImageDirection("before");
     setImageIndex(imageIndex > 1 ? (prev) => prev - 1 : 8);
   };
 
   const handlers = useSwipeable({
     onSwipedLeft: () => nextImage(),
-    onSwipedRight: () => imageBefore(),
+    onSwipedRight: () => previousImage(),
     swipeDuration: 500,
     delta: 10,
     preventScrollOnSwipe: true,
@@ -209,9 +209,9 @@ export default function WoodenGUIHome(props) {
                     paddingTop: "50%",
                     paddingBottom: "50%",
                   }}
-                  aria-label="Image Before"
+                  aria-label={t("ariaLabels.previousImage")}
                   color={props.themeMode === "dark" ? "secondary" : "primary"}
-                  onClick={imageBefore}
+                  onClick={previousImage}
                 >
                   <NavigateBeforeRounded
                     className={classes.ImageCarouselIconBefore}
@@ -446,7 +446,7 @@ export default function WoodenGUIHome(props) {
                     paddingTop: "50%",
                     paddingBottom: "50%",
                   }}
-                  aria-label="Next Image"
+                  aria-label={t("ariaLabels.nextImage")}
                   color={props.themeMode === "dark" ? "secondary" : "primary"}
                   onClick={nextImage}
                 >

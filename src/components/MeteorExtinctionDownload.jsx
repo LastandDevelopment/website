@@ -54,6 +54,9 @@ export default function MeteorExtinctionDownload(props) {
       <Container className="defaultContainer">
         <Helmet>
           <meta
+            name="robots"
+            content="noindex" />
+          <meta
             name="description"
             content="Download Meteor Extinction, the First Game by Lastand Development"
           />

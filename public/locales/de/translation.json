@@ -31,6 +31,7 @@
     },
     "issueTemplate": {
         "title": "Problem melden",
+        "description": "Hier können Sie ein Problem melden, das Sie in einem meiner Projekte gefunden haben und mir alle notwendigen Informationen geben, um das Problem zu beheben.",
         "send": "Senden",
         "chooseProgram": "Programm",
         "os": "Betriebssystem (+ Version)",
@@ -127,6 +128,13 @@
         "home": "Startseite",
         "fix": "Aber mach dir keine Sorgen! Klicke einfach den nachstehenden Button, und du wirst vor Meteoriten beschützt sein!",
         "issue": "Falls du sicher bist, dass hier Inhalt angezeigt werden sollte, zum Beispiel weil du das hier gesehen hast nachdem du einen Button auf meiner Website gedrückt hast, erwäge es bitte, diesen Fehler zu melden.",
-        "report404": "404-Fehler melden"
+        "report404": "404-Fehler melden",
+        "meteorAnimation": "Meteorit"
+    },
+    "ariaLabels": {
+        "nextImage": "nächstes Bild",
+        "previousImage": "vorheriges Bild",
+        "closeWarning": "Warnung schließen",
+        "menu": "Menü"
     }
 }

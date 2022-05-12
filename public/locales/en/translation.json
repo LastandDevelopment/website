@@ -31,6 +31,7 @@
     },
     "issueTemplate": {
         "title": "Report an Issue",
+        "description": "Here you can report an issue that you found in any of my projects and give me all the necessary information to fix this issue.",
         "send": "Send",
         "chooseProgram": "Program",
         "os": "Operating System (+ Version)",
@@ -127,6 +128,13 @@
         "home": "Home",
         "fix": "But don't worry! Just click the button below, and you will be protected against meteors!",
         "issue": "If you are certain that there should be content here, for example because you saw this after clicking a button on my website, please consider reporting this error.",
-        "report404": "Report 404 Error"
+        "report404": "Report 404 Error",
+        "meteorAnimation": "Meteor"
+    },
+    "ariaLabels": {
+        "nextImage": "next Image",
+        "previousImage": "previous Image",
+        "closeWarning": "close Warning",
+        "menu": "Menu"
     }
 }

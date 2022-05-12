@@ -248,7 +248,7 @@ export default function NotFound() {
                       ? "/animations/explosion.svg"
                       : "/animations/empty.svg"
                 }
-                alt="Meteor"
+                alt={t("404.meteorAnimation")}
                 sx={{ flexGrow: 1 }}
               />
             </Box>

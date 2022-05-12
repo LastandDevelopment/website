@@ -36,6 +36,9 @@ export default function WoodenGUIDownload() {
       <Container className="defaultContainer">
         <Helmet>
           <meta
+            name="robots"
+            content="noindex" />
+          <meta
             name="description"
             content="Download Wooden GUI, the Resource Pack for Minecraft: Java Edition by Lastand Development"
           />

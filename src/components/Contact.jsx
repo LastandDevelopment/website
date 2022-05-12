@@ -26,7 +26,7 @@ export default function Contact(props) {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ paddingTop: 5, paddingBottom: 1 }}>
+            sx={{ paddingTop: 1, paddingBottom: 1 }}>
             {t("contact.emailAddress")}
           </Typography>
           <Container sx={{ width: "fitContent" }}>

@@ -59,7 +59,10 @@ export default function NotSupportedWarning(props) {
             </Typography>
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ marginRight: 2, marginTop: 2, alignSelf: "self-start" }}>
-              <IconButton onClick={handleClose}>
+              <IconButton
+                onClick={handleClose}
+                aria-label={t("ariaLabels.closeWarning")}
+              >
                 <CloseRoundedIcon />
               </IconButton>
             </Box>

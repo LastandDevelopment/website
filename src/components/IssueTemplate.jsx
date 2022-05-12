@@ -298,9 +298,6 @@ export default function IssueTemplate(props) {
       <Container className={classes.container}>
         <Helmet>
           <meta
-            name="robots"
-            content="noindex" />
-          <meta
             name="description"
             content="Report an Issue for Meteor Extinction, Wooden GUI or the website of Lastand Development."
           />
@@ -308,8 +305,13 @@ export default function IssueTemplate(props) {
         <Box sx={{ flexGrow: 1, pb: 4 }}>
           <Typography
             variant="h1"
-            sx={{ paddingBottom: 10, paddingTop: 18 }}>
+            sx={{ paddingTop: 18 }}>
             {t("issueTemplate.title")}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ paddingTop: 11, paddingBottom: 5 }}>
+            {t("issueTemplate.description")}
           </Typography>
           <Box sx={{ textAlign: "right" }}>
             <Button
