@@ -6,6 +6,8 @@ import { styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import { AppBar } from "@mui/material";
 
+import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
+
 const useStyles = makeStyles((theme) => ({
   Logo: {
     "@media screen and (min-width: 450px)": {
@@ -41,7 +43,7 @@ export default function BannerHome() {
           sx={{ justifyContent: "center" }}>
           <img
             className={classes.Logo}
-            src="/LastandDevelopmentLogo.svg"
+            src={LastandDevelopmentLogo}
             alt="Lastand Development"
             component="div"
             sx={{ flexGrow: 1 }}

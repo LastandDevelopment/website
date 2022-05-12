@@ -30,6 +30,8 @@ import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import { InfoRounded } from "@mui/icons-material";
 import MenuRounded from "@mui/icons-material/MenuRounded";
 
+import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
+
 import AboutDialog from "./About";
 import { useTranslation } from "react-i18next";
 import LanguageMenu from "./LanguageMenu";
@@ -100,7 +102,7 @@ export default function TitleBar(props) {
             component={Link}
             to={"/"}>
             <img
-              src="/LastandDevelopmentLogo.svg"
+              src={LastandDevelopmentLogo}
               alt="Lastand Development"
               style={{ height: 30, width: 76.84 }}
             />

@@ -17,6 +17,10 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
+import Meteor from "./animations/meteor.svg";
+import Explosion from "./animations/explosion.svg";
+import Empty from "./animations/empty.svg";
+
 const meteorFallStartPosition = Math.round((Math.random() - 0.5) * 500);
 
 const useStyles = makeStyles((theme) => ({
@@ -215,19 +219,6 @@ export default function NotFound() {
             name="description"
             content="404 - Oooooooooops! This page was hit by a meteor!"
           />
-
-          <link
-            rel="preload"
-            as="image"
-            href="/animations/meteor.svg" />
-          <link
-            rel="preload"
-            as="image"
-            href="/animations/explosion.svg" />
-          <link
-            rel="preload"
-            as="image"
-            href="/animations/empty.svg" />
         </Helmet>
         <Box className={classes.Box}>
           <Collapse
@@ -241,13 +232,7 @@ export default function NotFound() {
             <Box className={classes.MeteorFallBox}>
               <img
                 className={step === 1 ? classes.Image : classes.ImageAnimDone}
-                src={
-                  step === 1
-                    ? "/animations/meteor.svg"
-                    : step === 2
-                      ? "/animations/explosion.svg"
-                      : "/animations/empty.svg"
-                }
+                src={step === 1 ? Meteor : step === 2 ? Explosion : Empty}
                 alt={t("404.meteorAnimation")}
                 sx={{ flexGrow: 1 }}
               />
