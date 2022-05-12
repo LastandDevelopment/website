@@ -9,19 +9,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lastand-development.com/meteorextinction/download</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://lastand-development.com/woodengui</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lastand-development.com/woodengui/download</loc>
-    <priority>0.5</priority>
+    <loc>https://lastand-development.com/contact</loc>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://lastand-development.com/contact</loc>
+    <loc>https://lastand-development.com/contact/issue-template</loc>
     <priority>0.3</priority>
   </url>
 </urlset>
