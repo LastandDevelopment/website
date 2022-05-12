@@ -316,7 +316,7 @@ export default function NotFound() {
                   variant="contained"
                   sx={{ py: 1, marginTop: 1, width: "250px" }}
                   component={Link}
-                  to={"/contact/issue-template?404=true"}
+                  to={"/contact/issue-template?error=404"}
                   startIcon={<ErrorRoundedIcon />}
                 >
                   <Typography

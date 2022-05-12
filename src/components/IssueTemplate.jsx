@@ -47,14 +47,14 @@ export default function IssueTemplate(props) {
   const [valid, setValid] = useState(false);
 
   const [program, setProgram] = useState(
-    query.get("404") === "true" ? "Website" : ""
+    query.get("error") === "404" ? "Website" : ""
   );
   const [programSelected, setProgramSelected] = useState(
-    query.get("404") === "true"
+    query.get("error") === "404"
   );
   const [mESelected, setMESelected] = useState(false);
   const [wGUISelected, setWGUISelected] = useState(false);
-  const [wSSelected, setWSSelected] = useState(query.get("404") === "true");
+  const [wSSelected, setWSSelected] = useState(query.get("error") === "404");
 
   const [feedback, setFeedback] = useState(false);
 
@@ -70,7 +70,7 @@ export default function IssueTemplate(props) {
   const [browser, setBrowser] = useState("");
   const [wSVersion, setWSVersion] = useState("");
   const [wSDescription, setWSDescription] = useState(
-    query.get("404") === "true" ? "404 in page [URL]" : ""
+    query.get("error") === "404" ? "404 in page [URL]" : ""
   );
   const [wSReproduction, setWSReproduction] = useState("");
 
@@ -297,6 +297,11 @@ export default function IssueTemplate(props) {
     <HelmetProvider>
       <Container className={classes.container}>
         <Helmet>
+          {query.get("error") === "404" && (
+            <meta
+              name="robots"
+              content="noindex" />
+          )}
           <meta
             name="description"
             content="Report an Issue for Meteor Extinction, Wooden GUI or the website of Lastand Development."
