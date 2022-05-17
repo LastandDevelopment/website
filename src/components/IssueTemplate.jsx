@@ -46,6 +46,8 @@ export default function IssueTemplate(props) {
 
   const [valid, setValid] = useState(false);
 
+  const [transition, setTransition] = useState(false);
+
   const [program, setProgram] = useState(
     query.get("error") === "404" ? "Website" : ""
   );
@@ -126,7 +128,13 @@ export default function IssueTemplate(props) {
   ]);
 
   const handleChangeChooseProgram = (event) => {
-    setProgram(event.target.value);
+    if (!transition) {
+      setTransition(true);
+      setProgram(event.target.value);
+      setTimeout(() => {
+        setTransition(false);
+      }, 2000);
+    }
   };
 
   const handleChangeFeedback = (event) => {

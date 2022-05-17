@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 import {
   Typography,
@@ -11,7 +11,7 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { makeStyles, styled } from "@mui/styles";
 import { Link } from "react-router-dom";
 
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
@@ -90,11 +90,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const LearnMoreIcon = styled(ArrowForwardIosRoundedIcon)(({ hover }) => ({
+  transform: `translateX(${hover === 1 ? 3 : 0}px)`,
+  transition:
+    "transform 0.2s ease-in-out, fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important",
+  fontSize: "15px !important",
+}));
+
 export default function Home() {
   const classes = useStyles();
 
   const [t] = useTranslation();
   const { i18n } = useTranslation();
+
+  const [hoverButtonOne, setHoverButtonOne] = useState(false);
+  const [hoverButtonTwo, setHoverButtonTwo] = useState(false);
 
   const checkLanguageClass = (() => {
     if (i18n.language === "de") {
@@ -204,10 +214,12 @@ export default function Home() {
                   className={classes.CardButton}
                   color="primary"
                   variant="contained"
-                  endIcon={<ArrowForwardIosRoundedIcon />}
+                  endIcon={<LearnMoreIcon hover={hoverButtonOne ? 1 : 0} />}
                   sx={{ py: 1, my: 2 }}
                   component={Link}
                   to={"/meteorextinction"}
+                  onMouseEnter={() => setHoverButtonOne(true)}
+                  onMouseLeave={() => setHoverButtonOne(false)}
                 >
                   <Typography
                     variant="body1"
@@ -249,10 +261,12 @@ export default function Home() {
                   className={classes.CardButton}
                   color="primary"
                   variant="contained"
-                  endIcon={<ArrowForwardIosRoundedIcon />}
+                  endIcon={<LearnMoreIcon hover={hoverButtonTwo ? 1 : 0} />}
                   sx={{ py: 1, my: 2 }}
                   component={Link}
                   to={"/woodengui"}
+                  onMouseEnter={() => setHoverButtonTwo(true)}
+                  onMouseLeave={() => setHoverButtonTwo(false)}
                 >
                   <Typography
                     variant="body1"

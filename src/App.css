@@ -96,6 +96,16 @@ li {
   .MuiSelect-icon {
     transition: transform 0.3s !important;
   }
+  .MuiSelect-iconOpen {
+    transform: scaleY(-1) !important;
+  }
+
+  .MuiAccordionSummary-expandIconWrapper {
+    transition: transform 0.3s !important;
+  }
+  .MuiAccordionSummary-expandIconWrapper.Mui-expanded {
+    transform: scaleY(-1) !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
