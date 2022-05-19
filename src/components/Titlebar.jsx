@@ -14,6 +14,7 @@ import {
   Divider,
   Grow,
 } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 import {
   isMobile,
@@ -37,6 +38,20 @@ import { useTranslation } from "react-i18next";
 import LanguageMenu from "./LanguageMenu";
 import { useEffect } from "react";
 
+const useStyles = makeStyles((theme) => ({
+  menuItem: {
+    margin: "4px 6px 4px 6px !important",
+    paddingLeft: "10px !important",
+    paddingRight: "10px !important",
+    borderRadius: "10px !important",
+    transition: "background-color 0.2s ease-in-out",
+  },
+  menu: {
+    paddingTop: "2px !important",
+    paddingBottom: "2px !important",
+  },
+}));
+
 function MenuMargin() {
   if (
     isMobile === false &&
@@ -52,6 +67,10 @@ function MenuMargin() {
 }
 
 export default function TitleBar(props) {
+  const { i18n } = useTranslation();
+
+  const classes = useStyles();
+
   const [t] = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -87,6 +106,12 @@ export default function TitleBar(props) {
   useEffect(() => {
     setAppearanceIconGrowIn(true);
   }, [props.themeMode]);
+
+  useEffect(() => {
+    if (!(i18n.language === "en" || i18n.language === "de")) {
+      i18n.changeLanguage(i18n.language.includes("de") ? "de" : "en");
+    }
+  }, [i18n.language, i18n]);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -126,6 +151,7 @@ export default function TitleBar(props) {
                 width: 230,
               },
             }}
+            classes={{ list: classes.menu }}
             id="main-menu"
             elevation={3}
             anchorEl={anchorEl}
@@ -135,18 +161,18 @@ export default function TitleBar(props) {
             <MenuItem
               onClick={handleClose}
               component={Link}
-              to={"/contact"}>
+              to={"/contact"}
+              className={classes.menuItem}
+            >
               <ListItemIcon>
-                <EmailRoundedIcon
-                  fontSize="medium"
-                  color={props.themeMode === "dark" ? "secondary" : "primary"}
-                />
+                <EmailRoundedIcon fontSize="medium" />
               </ListItemIcon>
               <ListItemText>
                 <Typography>{t("menu.contact")}</Typography>
               </ListItemText>
             </MenuItem>
             <LanguageMenu
+              className={classes.menuItem}
               handleTopMenuClose={handleClose}
               themeMode={props.themeMode}
             />
@@ -154,14 +180,13 @@ export default function TitleBar(props) {
               onClick={() => {
                 handleThemeModeChange();
               }}
+              className={classes.menuItem}
             >
               <ListItemIcon>
                 <Grow
                   timeout={300}
                   in={appearanceIconGrowIn}>
-                  <AppearanceIcon
-                    color={props.themeMode === "dark" ? "secondary" : "primary"}
-                  />
+                  <AppearanceIcon />
                 </Grow>
               </ListItemIcon>
               <ListItemText>
@@ -173,22 +198,19 @@ export default function TitleBar(props) {
                 setOpenAboutDialog(true);
                 setAnchorEl(null);
               }}
+              className={classes.menuItem}
             >
               <ListItemIcon>
-                <InfoRounded
-                  fontSize="medium"
-                  color={props.themeMode === "dark" ? "secondary" : "primary"}
-                />
+                <InfoRounded fontSize="medium" />
               </ListItemIcon>
               <ListItemText>{t("menu.about")}</ListItemText>
             </MenuItem>
             <Divider variant="middle" />
-            <MenuItem onClick={openGitHubRepo}>
+            <MenuItem
+              onClick={openGitHubRepo}
+              className={classes.menuItem}>
               <ListItemIcon>
-                <CodeRoundedIcon
-                  fontSize="medium"
-                  color={props.themeMode === "dark" ? "secondary" : "primary"}
-                />
+                <CodeRoundedIcon fontSize="medium" />
               </ListItemIcon>
               <ListItemText>{t("menu.source")}</ListItemText>
             </MenuItem>

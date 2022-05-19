@@ -4,18 +4,26 @@
   "icons": [
     {
       "src": "favicon.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "324x324 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "icon192.png",
+      "src": "maskable-logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
-      "src": "icon512.png",
+      "src": "logo192.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
     }
   ],
   "start_url": ".",

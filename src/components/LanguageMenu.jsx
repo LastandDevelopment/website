@@ -5,8 +5,25 @@ import MenuItem from "@mui/material/MenuItem";
 import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
 import { useTranslation } from "react-i18next";
 import { ListItemIcon, ListItemText } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles((theme) => ({
+  menuItem: {
+    margin: "4px 6px 4px 6px !important",
+    paddingLeft: "10px !important",
+    paddingRight: "10px !important",
+    borderRadius: "10px !important",
+    transition: "background-color 0.2s ease-in-out",
+  },
+  menu: {
+    paddingTop: "2px !important",
+    paddingBottom: "2px !important",
+  },
+}));
 
 export default function LanguageMenu(props) {
+  const classes = useStyles();
+
   const [t] = useTranslation();
   const { i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -35,22 +52,27 @@ export default function LanguageMenu(props) {
   );
 
   useEffect(() => {
-    if (i18n.language) {
+    if (i18n.language === "en" || i18n.language === "de") {
       const langIndex = languageItems.findIndex(
         (l) => l.lang === i18n.language
       );
       setSelectedIndex(langIndex);
+    } else {
+      if (i18n.language.includes("de")) {
+        setSelectedIndex(1);
+      } else {
+        setSelectedIndex(0);
+      }
     }
-  }, [i18n.language, languageItems]);
+  }, [i18n.language, languageItems, i18n]);
 
   return (
     <Fragment>
-      <MenuItem onClick={handleClick}>
+      <MenuItem
+        onClick={handleClick}
+        className={classes.menuItem}>
         <ListItemIcon>
-          <LanguageRoundedIcon
-            fontSize="medium"
-            color={props.themeMode === "dark" ? "secondary" : "primary"}
-          />
+          <LanguageRoundedIcon fontSize="medium" />
         </ListItemIcon>
         <ListItemText>{t("menu.language")}</ListItemText>
       </MenuItem>
@@ -60,6 +82,7 @@ export default function LanguageMenu(props) {
             width: 150,
           },
         }}
+        classes={{ list: classes.menu }}
         id="language-menu"
         elevation={3}
         anchorEl={anchorEl}
@@ -76,9 +99,9 @@ export default function LanguageMenu(props) {
       >
         {languageItems.map((l, i) => (
           <MenuItem
-            sx={{ justifyContent: "center" }}
             key={"langItem" + i}
             selected={i === selectedIndex}
+            className={classes.menuItem}
             onClick={() => {
               i18n.changeLanguage(l.lang);
               handleClose();

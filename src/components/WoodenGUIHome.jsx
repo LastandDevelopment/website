@@ -210,7 +210,6 @@ export default function WoodenGUIHome(props) {
                     paddingBottom: "50%",
                   }}
                   aria-label={t("ariaLabels.previousImage")}
-                  color={props.themeMode === "dark" ? "secondary" : "primary"}
                   onClick={previousImage}
                 >
                   <NavigateBeforeRounded
@@ -447,7 +446,6 @@ export default function WoodenGUIHome(props) {
                     paddingBottom: "50%",
                   }}
                   aria-label={t("ariaLabels.nextImage")}
-                  color={props.themeMode === "dark" ? "secondary" : "primary"}
                   onClick={nextImage}
                 >
                   <NavigateNextRounded

@@ -24,7 +24,7 @@ export default function AboutDialog(props) {
     props.setOpenAboutDialog(false);
   };
 
-  const version = "1.12.7";
+  const version = "1.13.0";
 
   return (
     <div>
