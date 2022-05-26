@@ -115,6 +115,37 @@ const getTheme = (mode) => ({
       }),
   },
   components: {
+    MuiSelect: {
+      styleOverrides: {
+        icon: {
+          transition: "transform 0.3s",
+        },
+        iconOpen: {
+          transform: "scaleY(-1)",
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        expandIconWrapper: {
+          transition: "transform 0.3s",
+          "&.Mui-expanded": {
+            transform: "scaleY(-1)",
+          },
+        },
+      },
+    },
+    MuiSvgIcon: {
+      variants: [
+        {
+          props: { variant: "learnMore" },
+          style: {
+            transition:
+              "transform 0.5s cubic-bezier(.62,.18,.28,1.84), fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+          },
+        },
+      ],
+    },
     MuiCssBaseline: {
       styleOverrides: {
         body: {

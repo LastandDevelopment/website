@@ -91,9 +91,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const LearnMoreIcon = styled(ArrowForwardIosRoundedIcon)(({ hover }) => ({
-  transform: `translateX(${hover === 1 ? 3 : 0}px)`,
-  transition:
-    "transform 0.2s ease-in-out, fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important",
+  transform: `translateX(${hover === 1 ? 6 : 0}px)`,
   fontSize: "15px !important",
 }));
 
@@ -214,12 +212,19 @@ export default function Home() {
                   className={classes.CardButton}
                   color="primary"
                   variant="contained"
-                  endIcon={<LearnMoreIcon hover={hoverButtonOne ? 1 : 0} />}
+                  endIcon={
+                    <LearnMoreIcon
+                      hover={hoverButtonOne ? 1 : 0}
+                      variant="learnMore"
+                    />
+                  }
                   sx={{ py: 1, my: 2 }}
                   component={Link}
                   to={"/meteorextinction"}
                   onMouseEnter={() => setHoverButtonOne(true)}
                   onMouseLeave={() => setHoverButtonOne(false)}
+                  onTouchStart={() => setHoverButtonOne(true)}
+                  onTouchEnd={() => setHoverButtonOne(false)}
                 >
                   <Typography
                     variant="body1"
@@ -261,12 +266,19 @@ export default function Home() {
                   className={classes.CardButton}
                   color="primary"
                   variant="contained"
-                  endIcon={<LearnMoreIcon hover={hoverButtonTwo ? 1 : 0} />}
+                  endIcon={
+                    <LearnMoreIcon
+                      hover={hoverButtonTwo ? 1 : 0}
+                      variant="learnMore"
+                    />
+                  }
                   sx={{ py: 1, my: 2 }}
                   component={Link}
                   to={"/woodengui"}
                   onMouseEnter={() => setHoverButtonTwo(true)}
                   onMouseLeave={() => setHoverButtonTwo(false)}
+                  onTouchStart={() => setHoverButtonTwo(true)}
+                  onTouchEnd={() => setHoverButtonTwo(false)}
                 >
                   <Typography
                     variant="body1"

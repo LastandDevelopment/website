@@ -22,7 +22,7 @@ i18n
     backend: {
       loadPath: process.env.PUBLIC_URL + "/locales/{{lng}}/{{ns}}.json",
       requestOptions: {
-        cache: "no-store",
+        cache: "default",
       },
     },
     fallbackLng: "en",

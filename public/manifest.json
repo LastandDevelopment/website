@@ -3,18 +3,18 @@
   "name": "Lastand Development",
   "icons": [
     {
-      "src": "favicon-v2.svg",
+      "src": "favicon.svg",
       "sizes": "64x64",
       "type": "image/x-icon"
     },
     {
-      "src": "maskable-logo192-v1.png",
+      "src": "maskable-logo192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "maskable"
     },
     {
-      "src": "maskable-logo512-v1.png",
+      "src": "maskable-logo512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
