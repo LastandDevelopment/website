@@ -1,4 +1,5 @@
 const mode = "mode";
+let language = "language";
 
 export function getStorageMode() {
   if (!get(mode)) {
@@ -17,6 +18,16 @@ export function getStorageMode() {
 
 export function setStorageMode(val) {
   set(mode, val);
+}
+
+export function getLanguage() {
+  if (!get("i18nextLng")) {
+    language = navigator.language || navigator.userLanguage;
+  } else {
+    language = get("i18nextLng");
+  }
+
+  return language;
 }
 
 const get = (key) => {

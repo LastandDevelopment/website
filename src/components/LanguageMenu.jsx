@@ -90,7 +90,7 @@ export default function LanguageMenu(props) {
         onClose={handleClose}
         anchorOrigin={{
           vertical: "top",
-          horizontal: "top",
+          horizontal: "left",
         }}
         transformOrigin={{
           vertical: 15,

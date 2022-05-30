@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
+import AppSettings from "../AppSettings";
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Grow
     ref={ref}
@@ -23,8 +25,6 @@ export default function AboutDialog(props) {
   const handleClose = () => {
     props.setOpenAboutDialog(false);
   };
-
-  const version = "1.13.3";
 
   return (
     <div>
@@ -51,7 +51,7 @@ export default function AboutDialog(props) {
             variant="h2"
             sx={{ paddingLeft: 3, paddingTop: 1, fontSize: 16 }}
           >
-            Version {version}
+            Version {AppSettings.version}
           </Typography>
           <br />
         </DialogContent>
