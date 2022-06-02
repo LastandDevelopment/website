@@ -19,7 +19,7 @@ export default function Contact(props) {
               content="Contact Lastand Development. Write an email or report an issue."
             />
           </Helmet>
-          <Box sx={{ flexGrow: 1, pb: 4 }}>
+          <Box sx={{ flexGrow: 1, pb: 10 }}>
             <Typography
               variant="h1"
               sx={{ paddingBottom: 10, paddingTop: 10 }}>

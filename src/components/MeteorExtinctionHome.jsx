@@ -192,7 +192,7 @@ export default function MeteorExtinctionHome(props) {
               content="Introducing Meteor Extinction, the First Game by Lastand Development"
             />
           </Helmet>
-          <Box sx={{ flexGrow: 1, pb: 4 }}>
+          <Box sx={{ flexGrow: 1, pb: 10 }}>
             <Box sx={{ px: 2 }}>
               <Typography
                 variant="h1"
@@ -230,7 +230,7 @@ export default function MeteorExtinctionHome(props) {
             <Paper
               elevation={3}
               sx={{
-                marginY: 10,
+                marginY: 6,
                 padding: "3%",
               }}
             >
@@ -421,7 +421,7 @@ export default function MeteorExtinctionHome(props) {
             <Button
               variant="outlined"
               color={props.themeMode === "dark" ? "secondary" : "primary"}
-              sx={{ paddingY: 1, paddingX: 4, marginY: 3 }}
+              sx={{ paddingY: 1, paddingX: 4, marginBottom: 3 }}
               href="https://github.com/LastandDevelopment/MeteorExtinctionOfficial/issues/new/choose"
               target="_blank"
               rel="noreferrer noopener"

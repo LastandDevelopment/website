@@ -108,7 +108,7 @@ export default function Home() {
     <div className="insideDiv">
       <BannerHome />
       <Container className="defaultContainer">
-        <Box sx={{ flexGrow: 1, pb: 6 }}>
+        <Box sx={{ flexGrow: 1, pb: 10 }}>
           <Box className={classes.IntroductionText}>
             <Typography
               variant="body1"

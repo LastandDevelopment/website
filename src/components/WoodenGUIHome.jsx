@@ -196,7 +196,7 @@ export default function WoodenGUIHome(props) {
             <Paper
               elevation={3}
               sx={{
-                marginY: 10,
+                marginY: 6,
                 padding: "3%",
               }}
             >

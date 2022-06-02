@@ -36,7 +36,7 @@ body {
 
 .toContact-enter {
   opacity: 0;
-  transform: translateY(10vw);
+  transform: translateY(10vh);
   z-index: 1;
 }
 .toContact-enter.toContact-enter-active {
@@ -52,13 +52,13 @@ body {
 }
 .toContact-exit.toContact-exit-active {
   opacity: 0;
-  transform: translateY(-2vw);
+  transform: translateY(-2vh);
 
   transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
 }
 .fromContactToHome-enter {
   opacity: 0;
-  transform: translateY(-2vw);
+  transform: translateY(-2vh);
   z-index: 0;
 }
 .fromContactToHome-enter.fromContactToHome-enter-active {
@@ -74,7 +74,7 @@ body {
 }
 .fromContactToHome-exit.fromContactToHome-exit-active {
   opacity: 0;
-  transform: translateY(10vw);
+  transform: translateY(10vh);
 
   transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
 }

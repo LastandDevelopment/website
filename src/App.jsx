@@ -50,17 +50,17 @@ function App() {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      if (locationBefore.pathname.includes("meteorextinction")) {
+      if (locationBefore.pathname.startsWith("/meteorextinction")) {
         setTransitionType("fromMEToHome");
-      } else if (locationBefore.pathname.includes("woodengui")) {
+      } else if (locationBefore.pathname.startsWith("/woodengui")) {
         setTransitionType("fromWGToHome");
       } else {
         setTransitionType("fromContactToHome");
       }
     } else {
-      if (location.pathname.includes("meteorextinction")) {
+      if (location.pathname.startsWith("/meteorextinction")) {
         setTransitionType("toME");
-      } else if (location.pathname.includes("woodengui")) {
+      } else if (location.pathname.startsWith("/woodengui")) {
         setTransitionType("toWG");
       } else {
         setTransitionType("toContact");

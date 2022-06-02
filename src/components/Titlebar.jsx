@@ -97,7 +97,9 @@ export default function TitleBar(props) {
         position="fixed"
         color="primary"
         enableColorOnDark
-        elevation={0}>
+        elevation={0}
+        sx={{ maxWidth: "100vw", left: 0 }}
+      >
         <Toolbar>
           <Button
             color="secondary"
