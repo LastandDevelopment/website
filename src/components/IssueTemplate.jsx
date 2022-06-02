@@ -14,6 +14,8 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
+import CheckBoxRoundedIcon from "@mui/icons-material/CheckBoxRounded";
+import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
@@ -591,6 +593,8 @@ export default function IssueTemplate(props) {
                     }}
                     checked={feedback}
                     onChange={handleChangeFeedback}
+                    icon={<CheckBoxOutlineBlankRoundedIcon />}
+                    checkedIcon={<CheckBoxRoundedIcon />}
                   />
                 }
                 label={t("issueTemplate.requestFeedback")}
