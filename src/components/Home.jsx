@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
 import {
   Typography,
@@ -34,14 +34,6 @@ const useStyles = makeStyles((theme) => ({
     "@media screen and (max-width: 940px)": {
       marginLeft: "20px",
       marginRight: "20px",
-    },
-  },
-  ResponsiveTopPadding: {
-    "@media screen and (min-width: 450px)": {
-      paddingTop: "90px",
-    },
-    "@media screen and (max-width: 450px)": {
-      paddingTop: "20vw",
     },
   },
   PaperGerman: {
@@ -113,15 +105,14 @@ export default function Home() {
   })();
 
   return (
-    <Fragment>
+    <div className="insideDiv">
       <BannerHome />
       <Container className="defaultContainer">
         <Box sx={{ flexGrow: 1, pb: 6 }}>
           <Box className={classes.IntroductionText}>
             <Typography
               variant="body1"
-              className={classes.ResponsiveTopPadding}
-              sx={{ paddingBottom: 1 }}
+              sx={{ paddingBottom: 1, paddingTop: 10 }}
             >
               {t("home.text1")}
             </Typography>
@@ -291,6 +282,6 @@ export default function Home() {
           </Grid>
         </Box>
       </Container>
-    </Fragment>
+    </div>
   );
 }

@@ -115,6 +115,13 @@ const getTheme = (mode) => ({
       }),
   },
   components: {
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          minHeight: "64px !important",
+        },
+      },
+    },
     MuiSelect: {
       styleOverrides: {
         icon: {

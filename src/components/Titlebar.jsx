@@ -16,14 +16,6 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-import {
-  isMobile,
-  isFirefox,
-  isSafari,
-  isIE,
-  isMobileSafari,
-} from "react-device-detect";
-
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
@@ -51,20 +43,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "2px !important",
   },
 }));
-
-function MenuMargin() {
-  if (
-    isMobile === false &&
-    isFirefox === false &&
-    isSafari === false &&
-    isIE === false &&
-    isMobileSafari === false
-  ) {
-    return 1.9;
-  } else {
-    return 0;
-  }
-}
 
 export default function TitleBar(props) {
   const { i18n } = useTranslation();
@@ -141,7 +119,7 @@ export default function TitleBar(props) {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
-            sx={{ marginLeft: "auto", marginRight: MenuMargin }}
+            sx={{ marginLeft: "auto" }}
           >
             <MenuRounded />
           </IconButton>

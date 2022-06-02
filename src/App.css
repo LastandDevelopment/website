@@ -9,69 +9,15 @@
 }
 
 body {
+  overflow: hidden;
+}
+
+.insideDiv {
   overflow-y: auto;
   overflow-y: overlay;
   overflow-x: hidden;
-}
-
-.slideIn {
-  animation: 0.7s slideIn forwards;
-  animation-timing-function: cubic-bezier(0, 0, 0.3, 1);
-}
-
-.slideOut {
-  animation: 0.7s slideOut forwards;
-  animation-timing-function: cubic-bezier(0.7, 0, 1, 1);
-}
-
-.slideInComp {
-  animation: 0.7s slideInComp forwards;
-  animation-timing-function: ease-out;
-}
-
-.slideOutComp {
-  animation: 0.7s slideOutComp forwards;
-  animation-timing-function: ease-in;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideOut {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-}
-
-@keyframes slideInComp {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutComp {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  margin-top: 64px;
+  height: calc(100vh - 64px);
 }
 
 .textSmall {
@@ -86,6 +32,141 @@ body {
 
 .downloadButton {
   width: 270px;
+}
+
+.toContact-enter {
+  opacity: 0;
+  transform: translateY(10vw);
+  z-index: 1;
+}
+.toContact-enter.toContact-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition: opacity 300ms ease-in-out 150ms, transform 300ms ease-in-out 150ms;
+}
+.toContact-exit {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 0;
+}
+.toContact-exit.toContact-exit-active {
+  opacity: 0;
+  transform: translateY(-2vw);
+
+  transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
+}
+.fromContactToHome-enter {
+  opacity: 0;
+  transform: translateY(-2vw);
+  z-index: 0;
+}
+.fromContactToHome-enter.fromContactToHome-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition: opacity 300ms ease-in-out 150ms, transform 300ms ease-in-out 150ms;
+}
+.fromContactToHome-exit {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+}
+.fromContactToHome-exit.fromContactToHome-exit-active {
+  opacity: 0;
+  transform: translateY(10vw);
+
+  transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
+}
+
+.toME-enter {
+  opacity: 0;
+  transform: translateX(-10vw);
+  z-index: 1;
+}
+.toME-enter.toME-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+
+  transition: opacity 300ms ease-in-out 150ms, transform 300ms ease-in-out 150ms;
+}
+.toME-exit {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 0;
+}
+.toME-exit.toME-exit-active {
+  opacity: 0;
+  transform: translateX(2vw);
+
+  transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
+}
+.fromMEToHome-enter {
+  opacity: 0;
+  transform: translateX(2vw);
+  z-index: 0;
+}
+.fromMEToHome-enter.fromMEToHome-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+
+  transition: opacity 300ms ease-in-out 150ms, transform 300ms ease-in-out 150ms;
+}
+.fromMEToHome-exit {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 1;
+}
+.fromMEToHome-exit.fromMEToHome-exit-active {
+  opacity: 0;
+  transform: translateX(-10vw);
+
+  transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
+}
+
+.toWG-enter {
+  opacity: 0;
+  transform: translateX(10vw);
+  z-index: 1;
+}
+.toWG-enter.toWG-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+
+  transition: opacity 300ms ease-in-out 150ms, transform 300ms ease-in-out 150ms;
+}
+.toWG-exit {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 0;
+}
+.toWG-exit.toWG-exit-active {
+  opacity: 0;
+  transform: translateX(-2vw);
+
+  transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
+}
+.fromWGToHome-enter {
+  opacity: 0;
+  transform: translateX(-2vw);
+  z-index: 0;
+}
+.fromWGToHome-enter.fromWGToHome-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+
+  transition: opacity 300ms ease-in-out 150ms, transform 300ms ease-in-out 150ms;
+}
+.fromWGToHome-exit {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 1;
+}
+.fromWGToHome-exit.fromWGToHome-exit-active {
+  opacity: 0;
+  transform: translateX(10vw);
+
+  transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
 }
 
 @media (prefers-reduced-motion: reduce) {

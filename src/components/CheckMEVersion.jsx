@@ -55,172 +55,180 @@ export default function CheckMEVersion(props) {
     if (versionNumber === "alpha-0.1" || versionNumber === "alpha-0.1.1") {
       return (
         <HelmetProvider>
-          <Container className="defaultContainer">
-            <Helmet>
-              <meta
-                name="robots"
-                content="noindex" />
-              <meta
-                name="description"
-                content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
-              />
-            </Helmet>
-            <Box sx={{ flexGrow: 1, pb: 4 }}>
-              <Typography
-                variant="h1"
-                sx={{ paddingTop: 18 }}>
-                Meteor Extinction
-              </Typography>
-              <Typography
-                variant="h2"
-                sx={{ paddingTop: 1 }}>
-                {t("updateME.title")}
-              </Typography>
-              <Typography
-                variant="body1"
-                className="textLarge"
-                sx={{ paddingTop: 7 }}
-              >
-                {t("updateME.updateAvailable")}
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ paddingTop: 5 }}>
-                {t("updateME.yourVersion")}: {currentVersion}
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ paddingTop: 1 }}>
-                {t("updateME.latestVersion")}: {mostRecentVersion}
-              </Typography>
-              <Button
-                color="primary"
-                variant="contained"
-                startIcon={<UpdateRounded />}
-                sx={{ py: 1, px: 6, my: 4 }}
-                onClick={downloadUpdate}
-              >
+          <div className="insideDiv">
+            <Container className="defaultContainer">
+              <Helmet>
+                <meta
+                  name="robots"
+                  content="noindex" />
+                <meta
+                  name="description"
+                  content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
+                />
+              </Helmet>
+              <Box sx={{ flexGrow: 1, pb: 4 }}>
+                <Typography
+                  variant="h1"
+                  sx={{ paddingTop: 10 }}>
+                  Meteor Extinction
+                </Typography>
+                <Typography
+                  variant="h2"
+                  sx={{ paddingTop: 1 }}>
+                  {t("updateME.title")}
+                </Typography>
                 <Typography
                   variant="body1"
-                  className="textSmall">
-                  {t("updateME.loadUpdate")}
+                  className="textLarge"
+                  sx={{ paddingTop: 7 }}
+                >
+                  {t("updateME.updateAvailable")}
                 </Typography>
-              </Button>
-            </Box>
-          </Container>
+                <Typography
+                  variant="body2"
+                  sx={{ paddingTop: 5 }}>
+                  {t("updateME.yourVersion")}: {currentVersion}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{ paddingTop: 1 }}>
+                  {t("updateME.latestVersion")}: {mostRecentVersion}
+                </Typography>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  startIcon={<UpdateRounded />}
+                  sx={{ py: 1, px: 6, my: 4 }}
+                  onClick={downloadUpdate}
+                >
+                  <Typography
+                    variant="body1"
+                    className="textSmall">
+                    {t("updateME.loadUpdate")}
+                  </Typography>
+                </Button>
+              </Box>
+            </Container>
+          </div>
         </HelmetProvider>
       );
     } else if (currentVersion === mostRecentVersion) {
       return (
         <HelmetProvider>
-          <Container className="defaultContainer">
-            <Helmet>
-              <meta
-                name="robots"
-                content="noindex" />
-              <meta
-                name="description"
-                content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
-              />
-            </Helmet>
-            <Box sx={{ flexGrow: 1, pb: 4 }}>
-              <Typography
-                variant="h1"
-                sx={{ paddingTop: 18 }}>
-                Meteor Extinction
-              </Typography>
-              <Typography
-                variant="h2"
-                sx={{ paddingTop: 1 }}>
-                {t("updateME.title")}
-              </Typography>
-              <Typography
-                variant="body1"
-                className="textLarge"
-                sx={{ paddingTop: 7 }}
-              >
-                {t("updateME.noUpdateAvailable")}
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ paddingTop: 5 }}>
-                {t("updateME.yourVersion")}: {currentVersion}
-              </Typography>
-            </Box>
-          </Container>
+          <div className="insideDiv">
+            <Container className="defaultContainer">
+              <Helmet>
+                <meta
+                  name="robots"
+                  content="noindex" />
+                <meta
+                  name="description"
+                  content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
+                />
+              </Helmet>
+              <Box sx={{ flexGrow: 1, pb: 4 }}>
+                <Typography
+                  variant="h1"
+                  sx={{ paddingTop: 10 }}>
+                  Meteor Extinction
+                </Typography>
+                <Typography
+                  variant="h2"
+                  sx={{ paddingTop: 1 }}>
+                  {t("updateME.title")}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  className="textLarge"
+                  sx={{ paddingTop: 7 }}
+                >
+                  {t("updateME.noUpdateAvailable")}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{ paddingTop: 5 }}>
+                  {t("updateME.yourVersion")}: {currentVersion}
+                </Typography>
+              </Box>
+            </Container>
+          </div>
         </HelmetProvider>
       );
     } else {
       return (
         <HelmetProvider>
-          <Container className="defaultContainer">
-            <Helmet>
-              <meta
-                name="robots"
-                content="noindex" />
-              <meta
-                name="description"
-                content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
-              />
-            </Helmet>
-            <Box sx={{ flexGrow: 1, pb: 4 }}>
-              <Typography
-                variant="h1"
-                sx={{ paddingTop: 18 }}>
-                Meteor Extinction
-              </Typography>
-              <Typography
-                variant="h2"
-                sx={{ paddingTop: 1 }}>
-                {t("updateME.title")}
-              </Typography>
-              <Typography
-                variant="body1"
-                className="textLarge"
-                sx={{ paddingTop: 7 }}
-              >
-                {unknownVersionText}
-              </Typography>
-            </Box>
-          </Container>
+          <div className="insideDiv">
+            <Container className="defaultContainer">
+              <Helmet>
+                <meta
+                  name="robots"
+                  content="noindex" />
+                <meta
+                  name="description"
+                  content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
+                />
+              </Helmet>
+              <Box sx={{ flexGrow: 1, pb: 4 }}>
+                <Typography
+                  variant="h1"
+                  sx={{ paddingTop: 10 }}>
+                  Meteor Extinction
+                </Typography>
+                <Typography
+                  variant="h2"
+                  sx={{ paddingTop: 1 }}>
+                  {t("updateME.title")}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  className="textLarge"
+                  sx={{ paddingTop: 7 }}
+                >
+                  {unknownVersionText}
+                </Typography>
+              </Box>
+            </Container>
+          </div>
         </HelmetProvider>
       );
     }
   } else {
     return (
       <HelmetProvider>
-        <Container className="defaultContainer">
-          <Helmet>
-            <meta
-              name="robots"
-              content="noindex" />
-            <meta
-              name="description"
-              content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
-            />
-          </Helmet>
-          <Box sx={{ flexGrow: 1, pb: 4 }}>
-            <Typography
-              variant="h1"
-              sx={{ paddingTop: 18 }}>
-              Meteor Extinction
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{ paddingTop: 1 }}>
-              {t("updateME.title")}
-            </Typography>
-            <Typography
-              variant="body1"
-              className="textLarge"
-              sx={{ paddingTop: 7 }}
-            >
-              {t("updateME.notAvailableForOS")}
-              {osName}
-              {t("updateME.notAvailableForOS2")}
-            </Typography>
-          </Box>
-        </Container>
+        <div className="insideDiv">
+          <Container className="defaultContainer">
+            <Helmet>
+              <meta
+                name="robots"
+                content="noindex" />
+              <meta
+                name="description"
+                content="The Update Page of Meteor Extinction, the First Game by Lastand Development"
+              />
+            </Helmet>
+            <Box sx={{ flexGrow: 1, pb: 4 }}>
+              <Typography
+                variant="h1"
+                sx={{ paddingTop: 10 }}>
+                Meteor Extinction
+              </Typography>
+              <Typography
+                variant="h2"
+                sx={{ paddingTop: 1 }}>
+                {t("updateME.title")}
+              </Typography>
+              <Typography
+                variant="body1"
+                className="textLarge"
+                sx={{ paddingTop: 7 }}
+              >
+                {t("updateME.notAvailableForOS")}
+                {osName}
+                {t("updateME.notAvailableForOS2")}
+              </Typography>
+            </Box>
+          </Container>
+        </div>
       </HelmetProvider>
     );
   }

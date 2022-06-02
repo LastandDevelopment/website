@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: "flex-start",
-  paddingTop: theme.spacing(14),
+  paddingTop: theme.spacing(6),
   paddingBottom: theme.spacing(12),
 }));
 
@@ -31,12 +31,12 @@ export default function BannerHome() {
   const classes = useStyles();
 
   return (
-    <Box sx={{ flexGrow: 1, paddingBottom: 40 }}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar
         color="primary"
         enableColorOnDark
         elevation={0}
-        position="absolute"
+        position="relative"
       >
         <StyledToolbar
           className="mui-fixed"

@@ -303,299 +303,302 @@ export default function IssueTemplate(props) {
 
   return (
     <HelmetProvider>
-      <Container className={classes.container}>
-        <Helmet>
-          {query.get("error") === "404" && (
+      <div className="insideDiv">
+        <Container className={classes.container}>
+          <Helmet>
+            {query.get("error") === "404" && (
+              <meta
+                name="robots"
+                content="noindex" />
+            )}
             <meta
-              name="robots"
-              content="noindex" />
-          )}
-          <meta
-            name="description"
-            content="Report an Issue for Meteor Extinction, Wooden GUI or the website of Lastand Development."
-          />
-        </Helmet>
-        <Box sx={{ flexGrow: 1, pb: 4 }}>
-          <Typography
-            variant="h1"
-            sx={{ paddingTop: 18 }}>
-            {t("issueTemplate.title")}
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{ paddingTop: 11, paddingBottom: 5 }}>
-            {t("issueTemplate.description")}
-          </Typography>
-          <Box sx={{ textAlign: "right" }}>
-            <Button
-              sx={{ py: 1.5, px: 4, marginBottom: 5 }}
-              variant="contained"
-              color="primary"
-              endIcon={<SendRoundedIcon />}
-              disabled={!valid}
-              onClick={sendMail}
-            >
-              <Typography
-                variant="body1"
-                className="textSmall">
-                {t("issueTemplate.send")}
-              </Typography>
-            </Button>
-          </Box>
-          <Collapse
-            in={!valid}
-            timeout={1000}
-            orientation={"vertical"}>
-            <Fade
-              in={!valid}
-              timeout={1000}>
-              <Box sx={{ textAlign: "left" }}>
-                <Typography
-                  variant="body2"
-                  color="error"
-                  sx={{ marginBottom: 3 }}
-                >
-                  {t("issueTemplate.fillEverything")}
-                </Typography>
-              </Box>
-            </Fade>
-          </Collapse>
-          <TextField
-            id="choose-program"
-            label={t("issueTemplate.chooseProgram")}
-            value={program}
-            onChange={handleChangeChooseProgram}
-            select
-            fullWidth
-            variant="outlined"
-            color={props.themeMode === "dark" ? "secondary" : "primary"}
-            SelectProps={{
-              IconComponent: ArrowDropDownRoundedIcon,
-            }}
-            sx={{ textAlign: "left", mb: 2 }}
-          >
-            <MenuItem value="Meteor Extinction">Meteor Extinction</MenuItem>
-            <MenuItem value="Wooden GUI">Wooden GUI</MenuItem>
-            <MenuItem value="Website">Website</MenuItem>
-          </TextField>
-          <Collapse
-            in={mESelected}
-            timeout={1000}
-            orientation={"vertical"}
-            sx={{ paddingTop: "5px" }}
-          >
-            <Fade
-              in={mESelected}
-              timeout={1000}>
-              <TextField
-                id="operating-system"
-                label={t("issueTemplate.os")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                sx={{ mb: 2, mt: 5 }}
-                value={os}
-                onChange={handleChangeOS}
-              />
-            </Fade>
-            <Fade
-              in={mESelected}
-              timeout={1000}>
-              <TextField
-                id="game-version"
-                label={t("issueTemplate.gameVersion")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                value={mEVersion}
-                onChange={handleChangeMEVersion}
-                select
-                SelectProps={{
-                  IconComponent: ArrowDropDownRoundedIcon,
-                }}
-                sx={{ textAlign: "left", mb: 2 }}
-              >
-                <MenuItem value="Alpha 0.1">Alpha 0.1</MenuItem>
-                <MenuItem value="Alpha 0.1.1">Alpha 0.1.1</MenuItem>
-                <MenuItem value="Alpha 0.1.2">Alpha 0.1.2</MenuItem>
-              </TextField>
-            </Fade>
-            <Fade
-              in={mESelected}
-              timeout={1000}>
-              <TextField
-                id="issue-description-ME"
-                label={t("issueTemplate.issueDescription")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                multiline
-                minRows={6}
-                sx={{ mb: 2 }}
-                value={mEDescription}
-                onChange={handleChangeMEDescription}
-              />
-            </Fade>
-            <Fade
-              in={mESelected}
-              timeout={1000}>
-              <TextField
-                id="issue-reproduction-ME"
-                label={t("issueTemplate.issueReproduction")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                multiline
-                minRows={4}
-                sx={{ mb: 2 }}
-                value={mEReproduction}
-                onChange={handleChangeMEReproduction}
-              />
-            </Fade>
-          </Collapse>
-          <Collapse
-            in={wGUISelected}
-            timeout={1000}
-            orientation={"vertical"}
-            sx={{ paddingTop: "5px" }}
-          >
-            <Fade
-              in={wGUISelected}
-              timeout={1000}>
-              <TextField
-                id="minecraft-version"
-                label={t("issueTemplate.minecraftVersion")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                sx={{ mb: 2, mt: 5 }}
-                value={minecraftVersion}
-                onChange={handleChangeMinecraftVersion}
-              />
-            </Fade>
-            <Fade
-              in={wGUISelected}
-              timeout={1000}>
-              <TextField
-                id="pack-version"
-                label={t("issueTemplate.packVersion")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                value={wGUIVersion}
-                onChange={handleChangeWGUIVersion}
-                select
-                SelectProps={{
-                  IconComponent: ArrowDropDownRoundedIcon,
-                }}
-                sx={{ textAlign: "left", mb: 2 }}
-              >
-                <MenuItem value="Beta 1.0">Beta 1.0</MenuItem>
-              </TextField>
-            </Fade>
-            <Fade
-              in={wGUISelected}
-              timeout={1000}>
-              <TextField
-                id="issue-description-WGUI"
-                label={t("issueTemplate.issueDescription")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                multiline
-                minRows={6}
-                sx={{ mb: 2 }}
-                value={wGUIDescription}
-                onChange={handleChangeWGUIDescription}
-              />
-            </Fade>
-          </Collapse>
-          <Collapse
-            in={wSSelected}
-            timeout={1000}
-            orientation={"vertical"}
-            sx={{ paddingTop: "5px" }}
-          >
-            <Fade
-              in={wSSelected}
-              timeout={1000}>
-              <TextField
-                id="browser"
-                label={t("issueTemplate.browser")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                sx={{ mb: 2, mt: 5 }}
-                value={browser}
-                onChange={handleChangeBrowser}
-              />
-            </Fade>
-            <Fade
-              in={wSSelected}
-              timeout={1000}>
-              <TextField
-                id="website-version"
-                label={t("issueTemplate.websiteVersion")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                sx={{ mb: 2 }}
-                value={wSVersion}
-                onChange={handleChangeWSVersion}
-              />
-            </Fade>
-            <Fade
-              in={wSSelected}
-              timeout={1000}>
-              <TextField
-                id="issue-description-WS"
-                label={t("issueTemplate.issueDescription")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                multiline
-                minRows={6}
-                sx={{ mb: 2 }}
-                value={wSDescription}
-                onChange={handleChangeWSDescription}
-              />
-            </Fade>
-            <Fade
-              in={wSSelected}
-              timeout={1000}>
-              <TextField
-                id="issue-reproduction-WS"
-                label={t("issueTemplate.issueReproduction")}
-                variant="outlined"
-                color={props.themeMode === "dark" ? "secondary" : "primary"}
-                fullWidth
-                multiline
-                minRows={4}
-                sx={{ mb: 2 }}
-                value={wSReproduction}
-                onChange={handleChangeWSReproduction}
-              />
-            </Fade>
-          </Collapse>
-          <Container sx={{ textAlign: "left" }}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  sx={{
-                    color: props.themeMode === "dark" ? "white" : "black",
-                    "&.Mui-checked": {
-                      color: props.themeMode === "dark" ? "white" : "black",
-                    },
-                  }}
-                  checked={feedback}
-                  onChange={handleChangeFeedback}
-                />
-              }
-              label={t("issueTemplate.requestFeedback")}
+              name="description"
+              content="Report an Issue for Meteor Extinction, Wooden GUI or the website of Lastand Development."
             />
-          </Container>
-        </Box>
-      </Container>
+          </Helmet>
+          <Box sx={{ flexGrow: 1, pb: 4 }}>
+            <Typography
+              variant="h1"
+              sx={{ paddingTop: 10 }}>
+              {t("issueTemplate.title")}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ paddingTop: 11, paddingBottom: 5 }}
+            >
+              {t("issueTemplate.description")}
+            </Typography>
+            <Box sx={{ textAlign: "right" }}>
+              <Button
+                sx={{ py: 1.5, px: 4, marginBottom: 5 }}
+                variant="contained"
+                color="primary"
+                endIcon={<SendRoundedIcon />}
+                disabled={!valid}
+                onClick={sendMail}
+              >
+                <Typography
+                  variant="body1"
+                  className="textSmall">
+                  {t("issueTemplate.send")}
+                </Typography>
+              </Button>
+            </Box>
+            <Collapse
+              in={!valid}
+              timeout={1000}
+              orientation={"vertical"}>
+              <Fade
+                in={!valid}
+                timeout={1000}>
+                <Box sx={{ textAlign: "left" }}>
+                  <Typography
+                    variant="body2"
+                    color="error"
+                    sx={{ marginBottom: 3 }}
+                  >
+                    {t("issueTemplate.fillEverything")}
+                  </Typography>
+                </Box>
+              </Fade>
+            </Collapse>
+            <TextField
+              id="choose-program"
+              label={t("issueTemplate.chooseProgram")}
+              value={program}
+              onChange={handleChangeChooseProgram}
+              select
+              fullWidth
+              variant="outlined"
+              color={props.themeMode === "dark" ? "secondary" : "primary"}
+              SelectProps={{
+                IconComponent: ArrowDropDownRoundedIcon,
+              }}
+              sx={{ textAlign: "left", mb: 2 }}
+            >
+              <MenuItem value="Meteor Extinction">Meteor Extinction</MenuItem>
+              <MenuItem value="Wooden GUI">Wooden GUI</MenuItem>
+              <MenuItem value="Website">Website</MenuItem>
+            </TextField>
+            <Collapse
+              in={mESelected}
+              timeout={1000}
+              orientation={"vertical"}
+              sx={{ paddingTop: "5px" }}
+            >
+              <Fade
+                in={mESelected}
+                timeout={1000}>
+                <TextField
+                  id="operating-system"
+                  label={t("issueTemplate.os")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  sx={{ mb: 2, mt: 5 }}
+                  value={os}
+                  onChange={handleChangeOS}
+                />
+              </Fade>
+              <Fade
+                in={mESelected}
+                timeout={1000}>
+                <TextField
+                  id="game-version"
+                  label={t("issueTemplate.gameVersion")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  value={mEVersion}
+                  onChange={handleChangeMEVersion}
+                  select
+                  SelectProps={{
+                    IconComponent: ArrowDropDownRoundedIcon,
+                  }}
+                  sx={{ textAlign: "left", mb: 2 }}
+                >
+                  <MenuItem value="Alpha 0.1">Alpha 0.1</MenuItem>
+                  <MenuItem value="Alpha 0.1.1">Alpha 0.1.1</MenuItem>
+                  <MenuItem value="Alpha 0.1.2">Alpha 0.1.2</MenuItem>
+                </TextField>
+              </Fade>
+              <Fade
+                in={mESelected}
+                timeout={1000}>
+                <TextField
+                  id="issue-description-ME"
+                  label={t("issueTemplate.issueDescription")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  multiline
+                  minRows={6}
+                  sx={{ mb: 2 }}
+                  value={mEDescription}
+                  onChange={handleChangeMEDescription}
+                />
+              </Fade>
+              <Fade
+                in={mESelected}
+                timeout={1000}>
+                <TextField
+                  id="issue-reproduction-ME"
+                  label={t("issueTemplate.issueReproduction")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  multiline
+                  minRows={4}
+                  sx={{ mb: 2 }}
+                  value={mEReproduction}
+                  onChange={handleChangeMEReproduction}
+                />
+              </Fade>
+            </Collapse>
+            <Collapse
+              in={wGUISelected}
+              timeout={1000}
+              orientation={"vertical"}
+              sx={{ paddingTop: "5px" }}
+            >
+              <Fade
+                in={wGUISelected}
+                timeout={1000}>
+                <TextField
+                  id="minecraft-version"
+                  label={t("issueTemplate.minecraftVersion")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  sx={{ mb: 2, mt: 5 }}
+                  value={minecraftVersion}
+                  onChange={handleChangeMinecraftVersion}
+                />
+              </Fade>
+              <Fade
+                in={wGUISelected}
+                timeout={1000}>
+                <TextField
+                  id="pack-version"
+                  label={t("issueTemplate.packVersion")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  value={wGUIVersion}
+                  onChange={handleChangeWGUIVersion}
+                  select
+                  SelectProps={{
+                    IconComponent: ArrowDropDownRoundedIcon,
+                  }}
+                  sx={{ textAlign: "left", mb: 2 }}
+                >
+                  <MenuItem value="Beta 1.0">Beta 1.0</MenuItem>
+                </TextField>
+              </Fade>
+              <Fade
+                in={wGUISelected}
+                timeout={1000}>
+                <TextField
+                  id="issue-description-WGUI"
+                  label={t("issueTemplate.issueDescription")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  multiline
+                  minRows={6}
+                  sx={{ mb: 2 }}
+                  value={wGUIDescription}
+                  onChange={handleChangeWGUIDescription}
+                />
+              </Fade>
+            </Collapse>
+            <Collapse
+              in={wSSelected}
+              timeout={1000}
+              orientation={"vertical"}
+              sx={{ paddingTop: "5px" }}
+            >
+              <Fade
+                in={wSSelected}
+                timeout={1000}>
+                <TextField
+                  id="browser"
+                  label={t("issueTemplate.browser")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  sx={{ mb: 2, mt: 5 }}
+                  value={browser}
+                  onChange={handleChangeBrowser}
+                />
+              </Fade>
+              <Fade
+                in={wSSelected}
+                timeout={1000}>
+                <TextField
+                  id="website-version"
+                  label={t("issueTemplate.websiteVersion")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  sx={{ mb: 2 }}
+                  value={wSVersion}
+                  onChange={handleChangeWSVersion}
+                />
+              </Fade>
+              <Fade
+                in={wSSelected}
+                timeout={1000}>
+                <TextField
+                  id="issue-description-WS"
+                  label={t("issueTemplate.issueDescription")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  multiline
+                  minRows={6}
+                  sx={{ mb: 2 }}
+                  value={wSDescription}
+                  onChange={handleChangeWSDescription}
+                />
+              </Fade>
+              <Fade
+                in={wSSelected}
+                timeout={1000}>
+                <TextField
+                  id="issue-reproduction-WS"
+                  label={t("issueTemplate.issueReproduction")}
+                  variant="outlined"
+                  color={props.themeMode === "dark" ? "secondary" : "primary"}
+                  fullWidth
+                  multiline
+                  minRows={4}
+                  sx={{ mb: 2 }}
+                  value={wSReproduction}
+                  onChange={handleChangeWSReproduction}
+                />
+              </Fade>
+            </Collapse>
+            <Container sx={{ textAlign: "left" }}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    sx={{
+                      color: props.themeMode === "dark" ? "white" : "black",
+                      "&.Mui-checked": {
+                        color: props.themeMode === "dark" ? "white" : "black",
+                      },
+                    }}
+                    checked={feedback}
+                    onChange={handleChangeFeedback}
+                  />
+                }
+                label={t("issueTemplate.requestFeedback")}
+              />
+            </Container>
+          </Box>
+        </Container>
+      </div>
     </HelmetProvider>
   );
 }
