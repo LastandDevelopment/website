@@ -49,26 +49,79 @@ function App() {
   };
 
   useEffect(() => {
-    if (location.pathname === "/") {
-      if (locationBefore.pathname.startsWith("/meteorextinction")) {
-        setTransitionType("fromMEToHome");
-      } else if (locationBefore.pathname.startsWith("/woodengui")) {
-        setTransitionType("fromWGToHome");
+    if (location.pathname !== locationBefore.pathname) {
+      if (location.pathname === "/") {
+        if (locationBefore.pathname.startsWith("/meteorextinction")) {
+          setTransitionType("fromMEToHome");
+        } else if (locationBefore.pathname.startsWith("/woodengui")) {
+          setTransitionType("fromWGToHome");
+        } else if (locationBefore.pathname.startsWith("/contact")) {
+          setTransitionType("fromContactToHome");
+        } else {
+          setTransitionType("from404ToHome");
+        }
       } else {
-        setTransitionType("fromContactToHome");
+        if (location.pathname.startsWith("/meteorextinction")) {
+          if (
+            locationBefore.pathname.startsWith(
+              "/meteorextinction/download/changelog"
+            )
+          ) {
+            setTransitionType("fromMEToHome");
+          } else if (
+            locationBefore.pathname.startsWith("/meteorextinction/download")
+          ) {
+            if (
+              location.pathname.startsWith(
+                "/meteorextinction/download/changelog"
+              )
+            ) {
+              setTransitionType("toME");
+            } else if (location.pathname.startsWith("/meteorextinction")) {
+              setTransitionType("fromMEToHome");
+            }
+          } else {
+            setTransitionType("toME");
+          }
+        } else if (location.pathname.startsWith("/woodengui")) {
+          if (locationBefore.pathname.startsWith("/woodengui/download")) {
+            setTransitionType("fromWGToHome");
+          } else {
+            setTransitionType("toWG");
+          }
+        } else if (location.pathname.startsWith("/contact")) {
+          if (locationBefore.pathname.startsWith("/contact/issue-template")) {
+            setTransitionType("fromContactToHome");
+          } else {
+            setTransitionType("toContact");
+          }
+        } else {
+          setTransitionType("to404");
+        }
       }
-    } else {
-      if (location.pathname.startsWith("/meteorextinction")) {
-        setTransitionType("toME");
-      } else if (location.pathname.startsWith("/woodengui")) {
-        setTransitionType("toWG");
-      } else {
-        setTransitionType("toContact");
-      }
+      setLocationBefore(location);
     }
-    setLocationBefore(location);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
+
+  const [height, setHeight] = useState(window.innerHeight);
+
+  function handleWindowSizeChange() {
+    setHeight(window.innerHeight);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--window-height",
+      height + "px"
+    );
+  }, [height]);
 
   useEffect(() => {
     setTransitionLocation(location);

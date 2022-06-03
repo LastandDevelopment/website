@@ -62,7 +62,7 @@ export default function MeteorExtinctionDownload(props) {
               content="Download Meteor Extinction, the First Game by Lastand Development"
             />
           </Helmet>
-          <Box sx={{ flexGrow: 1, pb: 10 }}>
+          <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Typography
               variant="h1"
               sx={{ paddingTop: 10 }}>

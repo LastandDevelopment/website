@@ -192,7 +192,7 @@ export default function MeteorExtinctionHome(props) {
               content="Introducing Meteor Extinction, the First Game by Lastand Development"
             />
           </Helmet>
-          <Box sx={{ flexGrow: 1, pb: 10 }}>
+          <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Box sx={{ px: 2 }}>
               <Typography
                 variant="h1"

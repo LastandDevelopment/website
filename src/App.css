@@ -1,3 +1,7 @@
+:root {
+  --window-height: 100vh;
+}
+
 .defaultContainer {
   position: relative;
   text-align: center;
@@ -10,6 +14,7 @@
 
 body {
   overflow: hidden;
+  width: 100vw;
 }
 
 .insideDiv {
@@ -17,7 +22,7 @@ body {
   overflow-y: overlay;
   overflow-x: hidden;
   margin-top: 64px;
-  height: calc(100vh - 64px);
+  height: calc(var(--window-height) - 64px);
 }
 
 .textSmall {
@@ -75,6 +80,51 @@ body {
 .fromContactToHome-exit.fromContactToHome-exit-active {
   opacity: 0;
   transform: translateY(10vh);
+
+  transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
+}
+
+.to404-enter {
+  opacity: 0;
+  transform: translateY(-10vh);
+  z-index: 1;
+}
+.to404-enter.to404-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition: opacity 300ms ease-in-out 150ms, transform 300ms ease-in-out 150ms;
+}
+.to404-exit {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 0;
+}
+.to404-exit.to404-exit-active {
+  opacity: 0;
+  transform: translateY(2vh);
+
+  transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
+}
+.from404ToHome-enter {
+  opacity: 0;
+  transform: translateY(2vh);
+  z-index: 0;
+}
+.from404ToHome-enter.from404ToHome-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition: opacity 300ms ease-in-out 150ms, transform 300ms ease-in-out 150ms;
+}
+.from404ToHome-exit {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+}
+.from404ToHome-exit.from404ToHome-exit-active {
+  opacity: 0;
+  transform: translateY(-10vh);
 
   transition: opacity 450ms ease-in-out, transform 300ms ease-in-out 150ms;
 }

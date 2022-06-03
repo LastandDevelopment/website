@@ -318,7 +318,7 @@ export default function IssueTemplate(props) {
               content="Report an Issue for Meteor Extinction, Wooden GUI or the website of Lastand Development."
             />
           </Helmet>
-          <Box sx={{ flexGrow: 1, pb: 10 }}>
+          <Box sx={{ flexGrow: 1, pb: 4 }}>
             <Typography
               variant="h1"
               sx={{ paddingTop: 10 }}>
