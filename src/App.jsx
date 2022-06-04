@@ -119,6 +119,9 @@ function App() {
   function setLocationForTransition() {
     React.startTransition(() => {
       setTransitionLocation(location);
+      setTimeout(() => {
+        setDisplayLocation(location);
+      }, 450);
     });
   }
 
@@ -149,6 +152,7 @@ function App() {
                         <route.element
                           themeMode={themeMode}
                           displayLocation={displayLocation}
+                          location={location}
                         />
                       </div>
                     }
