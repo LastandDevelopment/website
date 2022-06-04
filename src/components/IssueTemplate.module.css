@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 90vw !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    width: 820px !important;
+  }
+}

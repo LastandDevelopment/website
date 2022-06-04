@@ -11,7 +11,8 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from "@mui/material";
-import { makeStyles, styled } from "@mui/styles";
+import { styled } from "@mui/material/styles";
+import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
@@ -24,72 +25,12 @@ import WGUIImage from "./icons/WoodenGUIBanner.svg";
 import BannerHome from "./BannerHome";
 import { useTranslation } from "react-i18next";
 
-const useStyles = makeStyles((theme) => ({
-  IntroductionText: {
-    "@media screen and (min-width: 940px)": {
-      width: "900px",
-      marginLeft: "auto",
-      marginRight: "auto",
-    },
-    "@media screen and (max-width: 940px)": {
-      marginLeft: "20px",
-      marginRight: "20px",
-    },
-  },
-  PaperGerman: {
-    "@media screen and (min-width: 880px) and (max-width: 921px)": {
-      height: "499px",
-    },
-    "@media screen and (min-width: 921px) and (max-width: 1198px)": {
-      height: "477px",
-    },
-    "@media screen and (min-width: 1198px)": {
-      height: "455px",
-    },
-  },
-  PaperEnglish: {
-    "@media screen and (min-width: 880px) and (max-width: 1085px)": {
-      height: "477px",
-    },
-    "@media screen and (min-width: 1085px)": {
-      height: "455px",
-    },
-  },
-  Banner: {
-    filter: "drop-shadow(0px 2.5px 2px rgb(0 0 0 / 0.35))",
-    borderRadius: "10px",
-    transition: "filter 0.5s",
-    "&:hover": {
-      filter: "drop-shadow(0px 5px 4px rgb(0 0 0 / 0.35))",
-      transition: "filter 0.5s",
-    },
-    "@media screen and (min-width: 387px)": {
-      width: "300px",
-      height: "187.5px",
-    },
-    "@media screen and (max-width: 387px)": {
-      width: "77.5vw",
-      height: "48.4375vw",
-    },
-  },
-  CardButton: {
-    "@media screen and (min-width: 387px)": {
-      width: "300px",
-    },
-    "@media screen and (max-width: 387px)": {
-      width: "77.5vw",
-    },
-  },
-}));
-
 const LearnMoreIcon = styled(ArrowForwardIosRoundedIcon)(({ hover }) => ({
   transform: `translateX(${hover === 1 ? 6 : 0}px)`,
   fontSize: "15px !important",
 }));
 
 export default function Home() {
-  const classes = useStyles();
-
   const [t] = useTranslation();
   const { i18n } = useTranslation();
 
@@ -98,9 +39,9 @@ export default function Home() {
 
   const checkLanguageClass = (() => {
     if (i18n.language === "de") {
-      return classes.PaperGerman;
+      return styles.PaperGerman;
     } else if (i18n.language === "en") {
-      return classes.PaperEnglish;
+      return styles.PaperEnglish;
     }
   })();
 
@@ -109,7 +50,7 @@ export default function Home() {
       <BannerHome />
       <Container className="defaultContainer">
         <Box sx={{ flexGrow: 1, pb: 4 }}>
-          <Box className={classes.IntroductionText}>
+          <Box className={styles.IntroductionText}>
             <Typography
               variant="body1"
               sx={{ paddingBottom: 1, paddingTop: 10 }}
@@ -189,7 +130,7 @@ export default function Home() {
                   Meteor Extinction
                 </Typography>
                 <img
-                  className={classes.Banner}
+                  className={styles.Banner}
                   src={MEImage}
                   alt="Meteor Extinction"
                   sx={{ flexGrow: 1 }}
@@ -200,7 +141,7 @@ export default function Home() {
                   {t("home.meteorExtinctionDescription")}
                 </Typography>
                 <Button
-                  className={classes.CardButton}
+                  className={styles.CardButton}
                   color="primary"
                   variant="contained"
                   endIcon={
@@ -243,7 +184,7 @@ export default function Home() {
                   Wooden GUI
                 </Typography>
                 <img
-                  className={classes.Banner}
+                  className={styles.Banner}
                   src={WGUIImage}
                   alt="Wooden GUI"
                   sx={{ flexGrow: 1 }}
@@ -254,7 +195,7 @@ export default function Home() {
                   {t("home.woodenGUIDescription")}
                 </Typography>
                 <Button
-                  className={classes.CardButton}
+                  className={styles.CardButton}
                   color="primary"
                   variant="contained"
                   endIcon={

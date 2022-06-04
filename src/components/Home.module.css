@@ -1,0 +1,68 @@
+@media screen and (min-width: 940px) {
+  .IntroductionText {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 940px) {
+  .IntroductionText {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 880px) and (max-width: 921px) {
+  .PaperGerman {
+    height: 499px;
+  }
+}
+@media screen and (min-width: 921px) and (max-width: 1198px) {
+  .PaperGerman {
+    height: 477px;
+  }
+}
+@media screen and (min-width: 1198px) {
+  .PaperGerman {
+    height: 455px;
+  }
+}
+
+@media screen and (min-width: 880px) and (max-width: 1085px) {
+  .PaperEnglish {
+    height: 477px;
+  }
+}
+@media screen and (min-width: 1085px) {
+  .PaperEnglish {
+    height: 455px;
+  }
+}
+.Banner {
+  filter: drop-shadow(0px 2.5px 2px rgb(0 0 0 / 0.35));
+  border-radius: 10px;
+  transition: filter 0.5s;
+}
+.Banner:hover {
+  filter: drop-shadow(0px 5px 4px rgb(0 0 0 / 0.35));
+  transition: filter 0.5s;
+}
+
+@media screen and (min-width: 387px) {
+  .Banner {
+    width: 300px;
+    height: 187.5px;
+  }
+  .CardButton {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 387px) {
+  .Banner {
+    width: 77.5vw;
+    height: 48.4375vw;
+  }
+  .CardButton {
+    width: 77.5vw;
+  }
+}

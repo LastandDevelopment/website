@@ -9,7 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 
-import { makeStyles } from "@mui/styles";
+import styles from "./404.module.css";
+
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -21,143 +22,8 @@ import Meteor from "./animations/meteor.svg";
 import Explosion from "./animations/explosion.svg";
 import Empty from "./animations/empty.svg";
 
-const meteorFallStartPosition = Math.round((Math.random() - 0.5) * 500);
-
-const useStyles = makeStyles((theme) => ({
-  Image: {
-    height: "150px",
-    width: "150px",
-    marginBottom: "30px",
-    animation: "$MeteorFall 1.05s linear",
-    "@media screen and (min-width: 850px)": {
-      marginTop: "80px",
-    },
-    "@media screen and (max-width: 850px)": {
-      marginTop: "45vh",
-      marginRight: "auto",
-      marginLeft: "auto",
-    },
-  },
-
-  ImageAnimDone: {
-    height: "150px",
-    marginBottom: "30px",
-    transform: "rotate(0deg)",
-    animation: "$MeteorExplosion 1.2s steps(14)",
-    "@media screen and (min-width: 850px)": {
-      marginTop: "80px",
-    },
-    "@media screen and (max-width: 850px)": {
-      marginTop: "40vh",
-      marginRight: "auto",
-      marginLeft: "auto",
-    },
-  },
-
-  MeteorFallBox: {
-    maxWidth: "150px",
-    width: "150px",
-    overflowX: "hidden",
-    "@media screen and (min-width: 850px)": {
-      animation: "$MeteorFallBoxAnim 1.05s linear",
-    },
-    "@media screen and (max-width: 850px)": {
-      animation: "$MeteorFallBoxAnimMobile 1.05s linear",
-      marginLeft: "auto",
-      marginRight: "auto",
-    },
-  },
-
-  Box: {
-    flexGrow: 1,
-    marginLeft: "auto",
-    marginRight: "auto",
-    height: "calc(100vh - 64px)",
-    "@media screen and (min-width: 850px)": {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    "@media screen and (max-width: 850px)": {
-      marginTop: "64px",
-      marginBottom: "64px",
-      position: "relative",
-    },
-  },
-
-  TextBox: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    maxWidth: "850px",
-    width: "80vw",
-    "@media screen and (max-width: 850px)": {
-      marginTop: "50vh",
-      transform: "translateY(-50%)",
-    },
-  },
-
-  ImageCollapser: {
-    "@media screen and (max-width: 850px)": {
-      height: "200px",
-    },
-  },
-
-  FixedButton: {
-    transition:
-      "opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important",
-  },
-
-  "@keyframes MeteorFall": {
-    from: {
-      opacity: 0,
-    },
-    "66%": {
-      opacity: 0,
-      transform: "rotate(20deg)",
-    },
-    to: {
-      opacity: 1,
-      transform: "rotate(52deg)",
-    },
-  },
-
-  "@keyframes MeteorFallBoxAnim": {
-    from: {
-      transform: `translate(${meteorFallStartPosition}px, -80vh)`,
-    },
-    "66%": {
-      transform: `translate(${meteorFallStartPosition}px, -80vh)`,
-    },
-    to: {
-      transform: "translate(0px, 0px)",
-    },
-  },
-
-  "@keyframes MeteorFallBoxAnimMobile": {
-    from: {
-      transform: `translate(${meteorFallStartPosition}px, -90vh)`,
-    },
-    "66%": {
-      transform: `translate(${meteorFallStartPosition}px, -90vh)`,
-    },
-    to: {
-      transform: "translate(0px, -10vh)",
-    },
-  },
-
-  "@keyframes MeteorExplosion": {
-    from: {
-      transform: "translate(0px, 0px)",
-    },
-    to: {
-      transform: "translate(-2100px, 0px)",
-    },
-  },
-}));
-
 export default function NotFound() {
   const [t] = useTranslation();
-  const classes = useStyles();
 
   const [windowDimension, detectHW] = useState({
     winWidth: window.innerWidth,
@@ -221,25 +87,25 @@ export default function NotFound() {
               content="404 - Oooooooooops! This page was hit by a meteor!"
             />
           </Helmet>
-          <Box className={classes.Box}>
+          <Box className={styles.Box}>
             <Collapse
               in={showAnim}
               timeout={1000}
               orientation={
                 windowDimension.winWidth < 850 ? "vertical" : "horizontal"
               }
-              className={classes.ImageCollapser}
+              className={styles.ImageCollapser}
             >
-              <Box className={classes.MeteorFallBox}>
+              <Box className={styles.MeteorFallBox}>
                 <img
-                  className={step === 1 ? classes.Image : classes.ImageAnimDone}
+                  className={step === 1 ? styles.Image : styles.ImageAnimDone}
                   src={step === 1 ? Meteor : step === 2 ? Explosion : Empty}
                   alt={t("404.meteorAnimation")}
                   sx={{ flexGrow: 1 }}
                 />
               </Box>
             </Collapse>
-            <Box className={classes.TextBox}>
+            <Box className={styles.TextBox}>
               <Typography
                 variant="h1"
                 sx={{ marginBottom: 2 }}>
@@ -264,7 +130,7 @@ export default function NotFound() {
                   in={!showAnim}
                   timeout={1000}>
                   <Button
-                    className={classes.FixedButton}
+                    className={styles.FixedButton}
                     color="primary"
                     variant="contained"
                     sx={{ py: 1, marginTop: 1, width: "250px" }}
@@ -297,7 +163,7 @@ export default function NotFound() {
                   in={showReport}
                   timeout={1000}>
                   <Button
-                    className={classes.FixedButton}
+                    className={styles.FixedButton}
                     color="primary"
                     variant="contained"
                     sx={{ py: 1, marginTop: 1, width: "250px" }}

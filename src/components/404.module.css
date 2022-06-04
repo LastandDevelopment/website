@@ -1,0 +1,133 @@
+@media screen and (min-width: 850px) {
+  .Image {
+    margin-top: 80px;
+  }
+  .ImageAnimDone {
+    margin-top: 80px;
+  }
+  .MeteorFallBox {
+    animation: MeteorFallBoxAnim 1.05s linear;
+  }
+  .Box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 850px) {
+  .Image {
+    margin-top: 45vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .ImageAnimDone {
+    margin-top: 45vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .MeteorFallBox {
+    animation: MeteorFallBoxAnimMobile 1.05s linear;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .Box {
+    margin-top: 64px;
+    margin-bottom: 64px;
+    position: relative;
+  }
+  .TextBox {
+    margin-top: 50vh;
+    transform: translateY(-50%);
+  }
+  .ImageCollapser {
+    height: 200px;
+  }
+}
+
+.Image {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 30px;
+  animation: MeteorFall 1.05s linear;
+}
+
+.ImageAnimDone {
+  height: 150px;
+  margin-bottom: 30px;
+  transform: rotate(0deg);
+  animation: MeteorExplosion 1.2s steps(14);
+}
+
+.MeteorFallBox {
+  max-width: 150px;
+  width: 150px;
+  overflow-x: hidden;
+}
+
+.Box {
+  flex-grow: 1;
+  margin-left: auto;
+  margin-right: auto;
+  height: calc(100vh - 64px);
+}
+
+.TextBox {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 850px;
+  width: 80vw;
+}
+
+.FixedButton {
+  transition: opacity 1000ms cubic-bezier(0.4 0 0.2 1) 0msbackground-color 250ms
+    cubic-bezier(0.4 0 0.2 1) 0msbox-shadow 250ms cubic-bezier(0.4 0 0.2 1)
+    0msborder-color 250ms cubic-bezier(0.4 0 0.2 1) 0mscolor 250ms
+    cubic-bezier(0.4 0 0.2 1) 0ms !important;
+}
+
+@keyframes MeteorFall {
+  from {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+    transform: rotate(20deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(52deg);
+  }
+}
+
+@keyframes MeteorFallBoxAnim {
+  from {
+    transform: translate(-120px, -80vh);
+  }
+  66% {
+    transform: translate(-120, -80vh);
+  }
+  to {
+    transform: translate(0px 0px);
+  }
+}
+
+@keyframes MeteorFallBoxAnimMobile {
+  from {
+    transform: translate(-120px, -90vh);
+  }
+  66% {
+    transform: translate(-120px, -90vh);
+  }
+  to {
+    transform: translate(0px, -10vh);
+  }
+}
+
+@keyframes MeteorExplosion {
+  from {
+    transform: translate(0px 0px);
+  }
+  to {
+    transform: translate(-2100px 0px);
+  }
+}

@@ -118,7 +118,26 @@ const getTheme = (mode) => ({
     MuiToolbar: {
       styleOverrides: {
         root: {
-          minHeight: "64px !important",
+          minHeight: "64px",
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          margin: "4px 6px 4px 6px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          borderRadius: "10px",
+          transition: "background-color 0.2s ease-in-out",
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        list: {
+          paddingTop: "2px",
+          paddingBottom: "2px",
         },
       },
     },

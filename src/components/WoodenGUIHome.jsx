@@ -29,61 +29,10 @@ import GamemodeSwitcher from "./imagesWGUI/GamemodeSwitcher.png";
 
 import { useTranslation } from "react-i18next";
 
-import { makeStyles } from "@mui/styles";
+import styles from "./WoodenGUIHome.module.css";
 
 import { useSwipeable } from "react-swipeable";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-
-const useStyles = makeStyles((theme) => ({
-  ImageCarouselBox: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  ImageCarouselContent: {
-    width: "100%",
-    height: "100%",
-    borderRadius: "10px",
-    position: "absolute",
-    top: 0,
-    left: 0,
-  },
-  ImageCarouselContentBox: {
-    width: "100%",
-    aspectRatio: "16 / 9",
-    overflow: "hidden",
-    borderRadius: "10px",
-    position: "relative",
-  },
-  ImageCarouselIconNext: {
-    "@media screen and (min-width: 1200px)": {
-      fontSize: "40px !important",
-    },
-    "@media screen and (max-width: 1200px)": {
-      fontSize: "4vw !important",
-    },
-  },
-  ImageCarouselIconBefore: {
-    "@media screen and (min-width: 1200px)": {
-      fontSize: "40px !important",
-    },
-    "@media screen and (max-width: 1200px)": {
-      fontSize: "4vw !important",
-    },
-  },
-  PointsDiv: {
-    "@media screen and (min-width: 1200px)": {
-      marginTop: "12px",
-    },
-    "@media screen and (max-width: 1200px)": {
-      marginTop: "1vw",
-    },
-    textAlign: "center",
-    height: "10px",
-    display: "flex",
-    justifyContent: "center",
-  },
-}));
 
 const Dot = styled("div")(({ theme, selected }) => ({
   "@media screen and (min-width: 1200px)": {
@@ -115,8 +64,6 @@ const Dot = styled("div")(({ theme, selected }) => ({
 }));
 
 export default function WoodenGUIHome(props) {
-  const classes = useStyles();
-
   const [t] = useTranslation();
 
   const [imageIndex, setImageIndex] = useState(1);
@@ -200,7 +147,7 @@ export default function WoodenGUIHome(props) {
                 padding: "3%",
               }}
             >
-              <Box className={classes.ImageCarouselBox}>
+              <Box className={styles.ImageCarouselBox}>
                 <Box
                   sx={{
                     marginRight: "1.5%",
@@ -219,14 +166,14 @@ export default function WoodenGUIHome(props) {
                     onClick={previousImage}
                   >
                     <NavigateBeforeRounded
-                      className={classes.ImageCarouselIconBefore}
+                      className={styles.ImageCarouselIconBefore}
                     />
                   </IconButton>
                 </Box>
                 <Box sx={{ width: "87%", height: "100%" }}>
                   <Box
                     {...handlers}
-                    className={classes.ImageCarouselContentBox}
+                    className={styles.ImageCarouselContentBox}
                     flexGrow={1}
                   >
                     <Slide
@@ -247,7 +194,7 @@ export default function WoodenGUIHome(props) {
                       }
                     >
                       <img
-                        className={classes.ImageCarouselContent}
+                        className={styles.ImageCarouselContent}
                         src={MainMenu}
                         alt={t("woodenGUIImages.mainMenu")}
                       />
@@ -270,7 +217,7 @@ export default function WoodenGUIHome(props) {
                       }
                     >
                       <img
-                        className={classes.ImageCarouselContent}
+                        className={styles.ImageCarouselContent}
                         src={Hotbar}
                         alt="Hotbar"
                       />
@@ -293,7 +240,7 @@ export default function WoodenGUIHome(props) {
                       }
                     >
                       <img
-                        className={classes.ImageCarouselContent}
+                        className={styles.ImageCarouselContent}
                         src={Inventory}
                         alt={t("woodenGUIImages.inventory")}
                       />
@@ -316,7 +263,7 @@ export default function WoodenGUIHome(props) {
                       }
                     >
                       <img
-                        className={classes.ImageCarouselContent}
+                        className={styles.ImageCarouselContent}
                         src={CreativeInventory}
                         alt={t("woodenGUIImages.creativeInventory")}
                       />
@@ -339,7 +286,7 @@ export default function WoodenGUIHome(props) {
                       }
                     >
                       <img
-                        className={classes.ImageCarouselContent}
+                        className={styles.ImageCarouselContent}
                         src={Loom}
                         alt={t("woodenGUIImages.loom")}
                       />
@@ -362,7 +309,7 @@ export default function WoodenGUIHome(props) {
                       }
                     >
                       <img
-                        className={classes.ImageCarouselContent}
+                        className={styles.ImageCarouselContent}
                         src={EnchantingTable}
                         alt={t("woodenGUIImages.enchantingTable")}
                       />
@@ -385,7 +332,7 @@ export default function WoodenGUIHome(props) {
                       }
                     >
                       <img
-                        className={classes.ImageCarouselContent}
+                        className={styles.ImageCarouselContent}
                         src={Trading}
                         alt={t("woodenGUIImages.trading")}
                       />
@@ -408,13 +355,13 @@ export default function WoodenGUIHome(props) {
                       }
                     >
                       <img
-                        className={classes.ImageCarouselContent}
+                        className={styles.ImageCarouselContent}
                         src={GamemodeSwitcher}
                         alt={t("woodenGUIImages.gamemodeSwitcher")}
                       />
                     </Slide>
                   </Box>
-                  <div className={classes.PointsDiv}>
+                  <div className={styles.PointsDiv}>
                     <Dot
                       theme={props.themeMode}
                       selected={imageIndex === 1} />
@@ -455,7 +402,7 @@ export default function WoodenGUIHome(props) {
                     onClick={nextImage}
                   >
                     <NavigateNextRounded
-                      className={classes.ImageCarouselIconNext}
+                      className={styles.ImageCarouselIconNext}
                     />
                   </IconButton>
                 </Box>

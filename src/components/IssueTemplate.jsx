@@ -12,7 +12,6 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import CheckBoxRoundedIcon from "@mui/icons-material/CheckBoxRounded";
 import CheckBoxOutlineBlankRoundedIcon from "@mui/icons-material/CheckBoxOutlineBlankRounded";
@@ -20,19 +19,7 @@ import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    position: "relative",
-    textAlign: "center",
-    "@media screen and (max-width: 900px)": {
-      width: "90vw !important",
-    },
-    "@media screen and (min-width: 900px)": {
-      width: "820px !important",
-    },
-  },
-}));
+import styles from "./IssueTemplate.module.css";
 
 function useQuery() {
   const { search } = useLocation();
@@ -41,8 +28,6 @@ function useQuery() {
 }
 
 export default function IssueTemplate(props) {
-  const classes = useStyles();
-
   const [t] = useTranslation();
   const query = useQuery();
 
@@ -306,7 +291,7 @@ export default function IssueTemplate(props) {
   return (
     <HelmetProvider>
       <div className="insideDiv">
-        <Container className={classes.container}>
+        <Container className={styles.container}>
           <Helmet>
             {query.get("error") === "404" && (
               <meta

@@ -14,7 +14,6 @@ import {
   Divider,
   Grow,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
@@ -30,24 +29,8 @@ import { useTranslation } from "react-i18next";
 import LanguageMenu from "./LanguageMenu";
 import { useEffect } from "react";
 
-const useStyles = makeStyles((theme) => ({
-  menuItem: {
-    margin: "4px 6px 4px 6px !important",
-    paddingLeft: "10px !important",
-    paddingRight: "10px !important",
-    borderRadius: "10px !important",
-    transition: "background-color 0.2s ease-in-out",
-  },
-  menu: {
-    paddingTop: "2px !important",
-    paddingBottom: "2px !important",
-  },
-}));
-
 export default function TitleBar(props) {
   const { i18n } = useTranslation();
-
-  const classes = useStyles();
 
   const [t] = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -131,7 +114,6 @@ export default function TitleBar(props) {
                 width: 230,
               },
             }}
-            classes={{ list: classes.menu }}
             id="main-menu"
             elevation={3}
             anchorEl={anchorEl}
@@ -141,9 +123,7 @@ export default function TitleBar(props) {
             <MenuItem
               onClick={handleClose}
               component={Link}
-              to={"/contact"}
-              className={classes.menuItem}
-            >
+              to={"/contact"}>
               <ListItemIcon>
                 <EmailRoundedIcon fontSize="medium" />
               </ListItemIcon>
@@ -152,7 +132,6 @@ export default function TitleBar(props) {
               </ListItemText>
             </MenuItem>
             <LanguageMenu
-              className={classes.menuItem}
               handleTopMenuClose={handleClose}
               themeMode={props.themeMode}
             />
@@ -160,7 +139,6 @@ export default function TitleBar(props) {
               onClick={() => {
                 handleThemeModeChange();
               }}
-              className={classes.menuItem}
             >
               <ListItemIcon>
                 <Grow
@@ -178,7 +156,6 @@ export default function TitleBar(props) {
                 setOpenAboutDialog(true);
                 setAnchorEl(null);
               }}
-              className={classes.menuItem}
             >
               <ListItemIcon>
                 <InfoRounded fontSize="medium" />
@@ -186,9 +163,7 @@ export default function TitleBar(props) {
               <ListItemText>{t("menu.about")}</ListItemText>
             </MenuItem>
             <Divider variant="middle" />
-            <MenuItem
-              onClick={openGitHubRepo}
-              className={classes.menuItem}>
+            <MenuItem onClick={openGitHubRepo}>
               <ListItemIcon>
                 <CodeRoundedIcon fontSize="medium" />
               </ListItemIcon>
