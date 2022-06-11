@@ -1,4 +1,6 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const Home = React.lazy(() => import("./components/Home"));
 const MeteorExtinctionHome = React.lazy(() =>
@@ -17,7 +19,7 @@ const CheckMEVersion = React.lazy(() => import("./components/CheckMEVersion"));
 const Changelog = React.lazy(() => import("./components/Changelog"));
 const NotFound = React.lazy(() => import("./components/404"));
 
-export const MyRoutes = [
+const MyRoutes = [
   {
     element: NotFound,
     path: "*",
@@ -59,3 +61,36 @@ export const MyRoutes = [
     path: "contact/issue-template",
   },
 ];
+
+export default function AllRoutes(props) {
+  return (
+    <TransitionGroup>
+      <CSSTransition
+        key={props.transitionLocation.key}
+        classNames={props.transitionType}
+        timeout={450}
+        onExited={() => props.setDisplayLocation(props.location)}
+      >
+        <Routes location={props.transitionLocation}>
+          {MyRoutes.map((route) => {
+            return (
+              <Route
+                path={route.path}
+                key={route.path}
+                element={
+                  <div style={{ position: "absolute", width: "100%" }}>
+                    <route.element
+                      themeMode={props.themeMode}
+                      displayLocation={props.displayLocation}
+                      location={props.location}
+                    />
+                  </div>
+                }
+              />
+            );
+          })}
+        </Routes>
+      </CSSTransition>
+    </TransitionGroup>
+  );
+}

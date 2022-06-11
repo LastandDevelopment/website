@@ -19,7 +19,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     timeout={400} />;
 });
 
-export default function AboutDialog(props) {
+export default function About(props) {
   const [t] = useTranslation();
 
   const handleClose = () => {

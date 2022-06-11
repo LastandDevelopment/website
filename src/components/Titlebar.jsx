@@ -1,33 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  IconButton,
-  Button,
-  Menu,
-  MenuItem,
-  ListItemText,
-  ListItemIcon,
-  Typography,
-  Divider,
-  Grow,
-} from "@mui/material";
-
-import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
-import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
-import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
-import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
-import { InfoRounded } from "@mui/icons-material";
+import { AppBar, Box, Toolbar, IconButton, Button, Menu } from "@mui/material";
 import MenuRounded from "@mui/icons-material/MenuRounded";
 
 import LastandDevelopmentLogo from "./icons/LastandDevelopmentLogo.svg";
 
-import AboutDialog from "./About";
 import { useTranslation } from "react-i18next";
-import LanguageMenu from "./LanguageMenu";
 import { useEffect } from "react";
+
+import AboutDialog from "./About";
+import MainMenu from "./MainMenu";
 
 export default function TitleBar(props) {
   const { i18n } = useTranslation();
@@ -41,32 +23,8 @@ export default function TitleBar(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const openGitHubRepo = () => {
-    setAnchorEl(null);
-    const link = document.createElement("a");
-    link.href = "https://github.com/LastandDevelopment/website";
-    link.target = "_blank";
-    link.rel = "noreferrer noopener";
-    link.click();
-  };
 
   const [openAboutDialog, setOpenAboutDialog] = useState(false);
-
-  const AppearanceIcon =
-    props.themeMode === "dark" ? LightModeRoundedIcon : DarkModeRoundedIcon;
-
-  const [appearanceIconGrowIn, setAppearanceIconGrowIn] = useState(true);
-
-  const handleThemeModeChange = () => {
-    setAppearanceIconGrowIn(false);
-    setTimeout(() => {
-      props.handleThemeModeChange();
-    }, 300);
-  };
-
-  useEffect(() => {
-    setAppearanceIconGrowIn(true);
-  }, [props.themeMode]);
 
   useEffect(() => {
     if (!(i18n.language === "en" || i18n.language === "de")) {
@@ -120,55 +78,12 @@ export default function TitleBar(props) {
             open={open}
             onClose={handleClose}
           >
-            <MenuItem
-              onClick={handleClose}
-              component={Link}
-              to={"/contact"}>
-              <ListItemIcon>
-                <EmailRoundedIcon fontSize="medium" />
-              </ListItemIcon>
-              <ListItemText>
-                <Typography>{t("menu.contact")}</Typography>
-              </ListItemText>
-            </MenuItem>
-            <LanguageMenu
-              handleTopMenuClose={handleClose}
+            <MainMenu
+              handleClose={handleClose}
               themeMode={props.themeMode}
+              handleThemeModeChange={props.handleThemeModeChange}
+              setOpenAboutDialog={setOpenAboutDialog}
             />
-            <MenuItem
-              onClick={() => {
-                handleThemeModeChange();
-              }}
-            >
-              <ListItemIcon>
-                <Grow
-                  timeout={300}
-                  in={appearanceIconGrowIn}>
-                  <AppearanceIcon />
-                </Grow>
-              </ListItemIcon>
-              <ListItemText>
-                <Typography>{t("menu.appearance")}</Typography>
-              </ListItemText>
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                setOpenAboutDialog(true);
-                setAnchorEl(null);
-              }}
-            >
-              <ListItemIcon>
-                <InfoRounded fontSize="medium" />
-              </ListItemIcon>
-              <ListItemText>{t("menu.about")}</ListItemText>
-            </MenuItem>
-            <Divider variant="middle" />
-            <MenuItem onClick={openGitHubRepo}>
-              <ListItemIcon>
-                <CodeRoundedIcon fontSize="medium" />
-              </ListItemIcon>
-              <ListItemText>{t("menu.source")}</ListItemText>
-            </MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

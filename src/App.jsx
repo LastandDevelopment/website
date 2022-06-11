@@ -4,8 +4,7 @@ import "./App.css";
 import getTheme from "./theme";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { useLocation } from "react-router-dom";
 
 import TitleBar from "./components/Titlebar";
 
@@ -17,7 +16,7 @@ import {
 } from "./components/services/SettingsService";
 import BrowserTitle from "./components/BrowserTitle";
 
-import { MyRoutes } from "./Routes";
+import AllRoutes from "./Routes";
 
 function App() {
   const [themeMode, setThemeMode] = useState(getStorageMode);
@@ -119,9 +118,6 @@ function App() {
   function setLocationForTransition() {
     React.startTransition(() => {
       setTransitionLocation(location);
-      setTimeout(() => {
-        setDisplayLocation(location);
-      }, 450);
     });
   }
 
@@ -134,34 +130,14 @@ function App() {
           themeMode={themeMode}
           handleThemeModeChange={handleThemeModeChange}
         />
-        <TransitionGroup>
-          <CSSTransition
-            key={transitionLocation.key}
-            classNames={transitionType}
-            timeout={450}
-            onExited={() => setDisplayLocation(location)}
-          >
-            <Routes location={transitionLocation}>
-              {MyRoutes.map((route) => {
-                return (
-                  <Route
-                    path={route.path}
-                    key={route.path}
-                    element={
-                      <div style={{ position: "absolute", width: "100%" }}>
-                        <route.element
-                          themeMode={themeMode}
-                          displayLocation={displayLocation}
-                          location={location}
-                        />
-                      </div>
-                    }
-                  />
-                );
-              })}
-            </Routes>
-          </CSSTransition>
-        </TransitionGroup>
+        <AllRoutes
+          themeMode={themeMode}
+          displayLocation={displayLocation}
+          location={location}
+          transitionLocation={transitionLocation}
+          transitionType={transitionType}
+          setDisplayLocation={setDisplayLocation}
+        />
       </Suspense>
     </ThemeProvider>
   );
