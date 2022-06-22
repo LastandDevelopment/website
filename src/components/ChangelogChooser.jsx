@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import Alpha01Changelog from "./changelogs/alpha-0.1";
 import Alpha011Changelog from "./changelogs/alpha-0.1.1";
 import Alpha012Changelog from "./changelogs/alpha-0.1.2";
+import Beta02Changelog from "./changelogs/beta-0.2";
 
 export default function ChangelogChooser(props) {
   const [t] = useTranslation();
@@ -35,6 +36,8 @@ export default function ChangelogChooser(props) {
     return <Alpha011Changelog />;
   } else if (versionQuery === "alpha-0.1.2") {
     return <Alpha012Changelog />;
+  } else if (versionQuery === "beta-0.2") {
+    return <Beta02Changelog />;
   } else {
     return (
       <Fragment>

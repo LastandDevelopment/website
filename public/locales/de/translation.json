@@ -9,7 +9,8 @@
         "description3": "Ich hoffe, dass Ihnen sowohl Meteor Extinction als auch Wooden GUI gefällt!",
         "meteorExtinctionDescription": "Das Videospiel von Lastand Development. Beschütze die Erde vor Meteoriten und kaufe Upgrades, um mehr Meteoriten zu zerstören!",
         "woodenGUIDescription": "Das Ressourcen-Paket von Lastand Development für Minecraft: Java Edition. Genieße eine vollständig Holz-basierte Minecraft-Oberfläche!",
-        "moreInfo": "Mehr erfahren"
+        "moreInfo": "Mehr erfahren",
+        "announcement": " ist jetzt verfügbar!"
     },
     "menu": {
         "contact": "Kontakt",
@@ -54,7 +55,8 @@
         "changelog": "Änderungsprotokoll",
         "releaseDateAlpha01": "17.01.2022",
         "releaseDateAlpha011": "18.01.2022",
-        "releaseDateAlpha012": "19.01.2022"
+        "releaseDateAlpha012": "19.01.2022",
+        "releaseDateBeta02": "22.06.2022"
     },
     "meteorExtinctionHome": {
         "text1": "Meteor Extinction ist das erste Spiel von Lastand Development!",
@@ -63,10 +65,10 @@
         "issueReport": "Problem melden"
     },
     "meteorExtinctionImages": {
-        "meteorDestroyed": "Gameplay - Meteorit zerstört",
-        "meteorExplosion": "Gameplay - explodierender Meteorit",
-        "rocket": "Gameplay - Rakete",
-        "rocketExploding": "Gameplay - explodierende Rakete"
+        "gameplay": "Zerstöre alle Meteoriten um die Erde zu beschützen!",
+        "upgrades": "Verbessere dein Schild oder kaufe ein Notfallschild!",
+        "shields": "Kaufe erstaunliche neue Schilder...",
+        "planets": "...und wunderschöne Planeten!"
     },
     "woodenGUIHome": {
         "text1": "Wooden GUI ist ein Ressourcen-Paket für Minecraft: Java Edition.",
@@ -103,6 +105,23 @@
         "p2": "Fehler behoben, der manchmal die korrekte Anzeige der restlichen Versuche verhinderte, wenn das Spiel im Pause-Menü neugestartet wurde",
         "p3": "Fehler behoben, der auftrat, wenn die App-Informationen geöffnet und sehr schnell wieder geschlossen wurden",
         "p4": "Fehler behoben, der während des Countdowns die Anzeige des korrekten Fadenkreuzes verhinderte, wenn das Spiel endete, während es pausiert war"
+    },
+    "changelogBeta02": {
+        "p1": "Level-Modus mit Verbesserungen und Medizin, die nicht zerstört werden darf",
+        "p2": "Cosmetics hinzugefügt: Schilder und Planeten",
+        "p3": "Diamanten zum Kaufen von Cosmetics hinzugefügt",
+        "p4": "Bewegung des Schildes verbessert",
+        "p5": "Buttons verbessert (Übergänge)",
+        "p6": "Szenen-Übergänge hinzugefügt",
+        "p7": "Animationen hinzugefügt und verbessert",
+        "p8": "Musik und Möglichkeit, die Lautstärke von Soundeffekten und Musik individuell anzupassen, hinzugefügt",
+        "p9": "Steuerung für Geräte mit Touchscreens hinzugefügt",
+        "p10": "Sterne im Hintergrund hinzugefügt",
+        "p11": "Möglichkeit, auf Updates zu überprüfen, hinzugefügt",
+        "p12": "Native Unterstützung von nahezu allen Seitenverhältnissen hinzugefügt",
+        "p13": "Problem behoben, dass dazu geführt hat, dass die Explosion und der Krater eines Meteoriten in der Erde angezeigt wurden, wenn die Punktzahl sehr hoch war",
+        "p14": "Inkonsistenz der Schriftart behoben",
+        "p15": "Leistungsverbesserungen"
     },
     "updateME": {
         "title": "Auf Updates überprüfen",

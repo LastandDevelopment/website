@@ -9,7 +9,8 @@
         "description3": "I hope you enjoy both Meteor Extinction and Wooden GUI!",
         "meteorExtinctionDescription": "The video game by Lastand Development. Protect the earth from meteors and buy upgrades to destroy more meteors!",
         "woodenGUIDescription": "The resource pack by Lastand Development for Minecraft: Java Edition. Enjoy a fully wood-based Minecraft interface!",
-        "moreInfo": "Learn More"
+        "moreInfo": "Learn More",
+        "announcement": " is now available!"
     },
     "menu": {
         "contact": "Contact",
@@ -54,7 +55,8 @@
         "changelog": "Changelog",
         "releaseDateAlpha01": "01/17/2022",
         "releaseDateAlpha011": "01/18/2022",
-        "releaseDateAlpha012": "01/19/2022"
+        "releaseDateAlpha012": "01/19/2022",
+        "releaseDateBeta02": "06/22/2022"
     },
     "meteorExtinctionHome": {
         "text1": "Meteor Extinction is the first game by Lastand Development!",
@@ -63,10 +65,10 @@
         "issueReport": "Report an Issue"
     },
     "meteorExtinctionImages": {
-        "meteorDestroyed": "Gameplay - Meteor Destroyed",
-        "meteorExplosion": "Gameplay - Meteor Exploding",
-        "rocket": "Gameplay - Rocket",
-        "rocketExploding": "Gameplay - Rocket Exploding"
+        "gameplay": "Destroy all meteors to protect the earth!",
+        "upgrades": "Upgrade your shield or buy an emergency shield!",
+        "shields": "Buy exciting new shields...",
+        "planets": "...and beautiful planets!"
     },
     "woodenGUIHome": {
         "text1": "Wooden GUI is a resource pack for Minecraft: Java Edition.",
@@ -102,7 +104,24 @@
         "p1": "Crosshair is built in as a native mouse pointer, so it's more direct, no longer lags behind, and can be displayed over the score",
         "p2": "Fixed a bug that sometimes prevented the remaining attempts from being displayed correctly after restarting the game in the pause menu",
         "p3": "Fixed a bug that occurred when app info was opened and then closed again very quickly",
-        "p4": "Fixed a bug that prevented the correct crosshair from being displayed during the countdown if the game ended while being paused"
+        "p4": "Fixed a bug that prevented the correct crosshair from being displayed during the countdown if the game ended while being paused (Level 20+)"
+    },
+    "changelogBeta02": {
+        "p1": "Added Level-Mode with Upgrades and Medicine that may not be Destroyed",
+        "p2": "Added Cosmetics: Shields and Planets",
+        "p3": "Added Diamonds to Buy Cosmetics",
+        "p4": "Improved Shield Movement",
+        "p5": "Improved Buttons (Transitions)",
+        "p6": "Added Scene Transitions",
+        "p7": "Improved and Added Animations",
+        "p8": "Added Music and Volume Adjustment for Music and Sounds",
+        "p9": "Added Mobile Controls",
+        "p10": "Added Stars in the Background",
+        "p11": "Added \"Check for Updates\" Feature",
+        "p12": "Added Native Support for almost all Aspect Ratios",
+        "p13": "Fixed an Issue that Lead the Explosion and the Craters to be Placed Inside the Earth when the Score was Very High",
+        "p14": "Fixed Font Inconsistency",
+        "p15": "Permormance Improvements"
     },
     "updateME": {
         "title": "Check for Updates",

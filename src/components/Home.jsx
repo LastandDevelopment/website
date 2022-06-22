@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-// import CampaignRoundedIcon from "@mui/icons-material/CampaignRounded";
+import CampaignRoundedIcon from "@mui/icons-material/CampaignRounded";
 
 import MEImage from "./icons/MeteorExtinctionBanner.svg";
 import WGUIImage from "./icons/WoodenGUIBanner.svg";
@@ -36,6 +36,7 @@ export default function Home() {
 
   const [hoverButtonOne, setHoverButtonOne] = useState(false);
   const [hoverButtonTwo, setHoverButtonTwo] = useState(false);
+  const [hoverButtonInfo, setHoverButtonInfo] = useState(false);
 
   const checkLanguageClass = (() => {
     if (i18n.language === "de") {
@@ -95,7 +96,7 @@ export default function Home() {
               </AccordionDetails>
             </Accordion>
           </Box>
-          {/* <Paper
+          <Paper
             sx={{ display: "flex", alignItems: "center" }}
             elevation={3}
             style={{ padding: 20 }}
@@ -104,14 +105,37 @@ export default function Home() {
             <Typography
               sx={{ margin: 2 }}
               variant="body1">
-              Description
+              <b>Meteor Extinction Beta 0.2</b>
+              {t("home.announcement")}
             </Typography>
-          </Paper> */}
+            <Button
+              color="primary"
+              variant="contained"
+              endIcon={
+                <LearnMoreIcon
+                  hover={hoverButtonInfo ? 1 : 0}
+                  variant="learnMore"
+                />
+              }
+              sx={{ py: 1, px: 5, my: 2, marginLeft: "auto" }}
+              component={Link}
+              to={"/meteorextinction"}
+              onMouseEnter={() => setHoverButtonInfo(true)}
+              onMouseLeave={() => setHoverButtonInfo(false)}
+              onTouchStart={() => setHoverButtonInfo(true)}
+              onTouchEnd={() => setHoverButtonInfo(false)}
+            >
+              <Typography
+                variant="body1"
+                className="textSmall">
+                {t("home.moreInfo")}
+              </Typography>
+            </Button>
+          </Paper>
           <Grid
             container
             spacing={4}
-            /*sx={{ paddingTop: 4 }}*/
-          >
+            sx={{ paddingTop: 4 }}>
             <Grid
               item
               xs={12}

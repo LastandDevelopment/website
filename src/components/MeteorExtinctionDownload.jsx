@@ -8,16 +8,20 @@ import {
   Paper,
   Button,
   SvgIcon,
+  Menu,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
 import { ReactComponent as WindowsIcon } from "./icons/WindowsIcon.svg";
+import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
 
 import { useTranslation } from "react-i18next";
 import NotSupportedWarning from "./NotSupportedWarning";
-import { isWindows } from "react-device-detect";
+import { isAndroid, isMacOs, isWindows, osName } from "react-device-detect";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+
+import MeteorExtinctionDownloadOSSelection from "./MeteorExtinctionDownloadOSSelection";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -27,6 +31,15 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function MeteorExtinctionDownload(props) {
   const [t] = useTranslation();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const downloadAlpha012 = () => {
     const link = document.createElement("a");
@@ -75,8 +88,102 @@ export default function MeteorExtinctionDownload(props) {
             </Typography>
             <NotSupportedWarning
               program="ME"
-              show={!isWindows} />
+              show={!(isWindows || isAndroid || isMacOs || osName === "Linux")}
+            />
             <Container className="leftTextAlignContainer">
+              <Typography
+                variant="h2"
+                sx={{ paddingBottom: 4, marginLeft: 1 }}>
+                {t("downloadPage.betaVersions")}
+              </Typography>
+              <Grid
+                container
+                spacing={4}
+                sx={{ marginBottom: 8 }}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={4}>
+                  <Item elevation={3}>
+                    <Typography
+                      variant="h2"
+                      sx={{ pt: 3 }}>
+                      Beta 0.2
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ pb: 2, pt: 1 }}>
+                      {t("downloadPage.releaseDateBeta02")}
+                    </Typography>
+                    <Button
+                      color="primary"
+                      variant="contained"
+                      className="downloadButton"
+                      sx={{
+                        py: 1,
+                        mt: 3,
+                      }}
+                      onClick={handleClick}
+                      startIcon={<DownloadRoundedIcon />}
+                    >
+                      <Typography
+                        variant="body1"
+                        className="textSmall">
+                        {t("downloadPage.download")}
+                      </Typography>
+                    </Button>
+                    <Menu
+                      PaperProps={{
+                        style: {
+                          width: 230,
+                        },
+                        elevation: 10,
+                      }}
+                      id="main-menu"
+                      elevation={3}
+                      anchorEl={anchorEl}
+                      open={open}
+                      onClose={handleClose}
+                      anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "center",
+                      }}
+                      transformOrigin={{
+                        vertical: -5,
+                        horizontal: "center",
+                      }}
+                    >
+                      <MeteorExtinctionDownloadOSSelection
+                        handleClose={handleClose}
+                      />
+                    </Menu>
+                    <Box />
+                    <Button
+                      color={
+                        props.themeMode === "dark" ? "secondary" : "primary"
+                      }
+                      variant="text"
+                      className="downloadButton"
+                      sx={{
+                        py: 1,
+                        my: 2,
+                      }}
+                      component={Link}
+                      to={
+                        "/meteorextinction/download/changelog?version=beta-0.2"
+                      }
+                    >
+                      <Typography
+                        variant="body1"
+                        className="textSmall">
+                        {t("downloadPage.changelog")}
+                      </Typography>
+                    </Button>
+                  </Item>
+                </Grid>
+              </Grid>
               <Typography
                 variant="h2"
                 sx={{ paddingBottom: 4, marginLeft: 1 }}>

@@ -3,7 +3,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useMemo } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { isWindows, osName } from "react-device-detect";
+import { isAndroid, isMacOs, isWindows, osName } from "react-device-detect";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
@@ -17,7 +17,7 @@ function useQuery() {
 export default function CheckMEVersion(props) {
   const [t] = useTranslation();
 
-  const mostRecentVersion = "Alpha 0.1.2";
+  const mostRecentVersion = "Beta 0.2";
 
   const query = useQuery();
   const [versionQuery, setVersionQuery] = useState(query.get("version"));
@@ -29,8 +29,13 @@ export default function CheckMEVersion(props) {
 
   const downloadUpdate = () => {
     const link = document.createElement("a");
-    link.href =
-      "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionAlpha0.1.2.zip";
+    link.href = isWindows
+      ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2Windows.zip"
+      : isAndroid
+        ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2Android.apk"
+        : isMacOs
+          ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2macOS.app.zip"
+          : "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2Linux.zip";
     link.click();
   };
 
@@ -42,17 +47,23 @@ export default function CheckMEVersion(props) {
         ? "Alpha 0.1.1"
         : versionNumber === "alpha-0.1.2"
           ? "Alpha 0.1.2"
-          : versionNumber === "" || versionNumber === null
-            ? t("updateME.noVersionGiven")
-            : versionNumber;
+          : versionNumber === "beta-0.2"
+            ? "Beta 0.2"
+            : versionNumber === "" || versionNumber === null
+              ? t("updateME.noVersionGiven")
+              : versionNumber;
 
   const unknownVersionText =
     currentVersion === versionNumber
       ? t("updateME.unknownVersion") + ": " + currentVersion
       : t("updateME.noVersionGiven");
 
-  if (isWindows) {
-    if (versionNumber === "alpha-0.1" || versionNumber === "alpha-0.1.1") {
+  if (isWindows || isMacOs || isAndroid || osName === "Linux") {
+    if (
+      versionNumber === "alpha-0.1" ||
+      versionNumber === "alpha-0.1.1" ||
+      versionNumber === "alpha-0.1.2"
+    ) {
       return (
         <HelmetProvider>
           <div className="insideDiv">

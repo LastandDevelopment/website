@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Typography,
   Button,
@@ -26,25 +26,10 @@ import styles from "./MeteorExtinctionHome.module.css";
 
 import { useSwipeable } from "react-swipeable";
 
-import maingameL from "./imagesME/maingame/L.webp";
-import maingameM from "./imagesME/maingame/M.webp";
-import maingameS from "./imagesME/maingame/S.webp";
-
-import meteorL from "./imagesME/meteor/L.webp";
-import meteorM from "./imagesME/meteor/M.webp";
-import meteorS from "./imagesME/meteor/S.webp";
-
-import meteorexplosionL from "./imagesME/meteorexplosion/L.webp";
-import meteorexplosionM from "./imagesME/meteorexplosion/M.webp";
-import meteorexplosionS from "./imagesME/meteorexplosion/S.webp";
-
-import rocketL from "./imagesME/rocket/L.webp";
-import rocketM from "./imagesME/rocket/M.webp";
-import rocketS from "./imagesME/rocket/S.webp";
-
-import rocketexplosionL from "./imagesME/rocketexplosion/L.webp";
-import rocketexplosionM from "./imagesME/rocketexplosion/M.webp";
-import rocketexplosionS from "./imagesME/rocketexplosion/S.webp";
+import gameplay from "./imagesME/gameplay.webp";
+import upgrades from "./imagesME/upgrades.webp";
+import shields from "./imagesME/shields.webp";
+import planets from "./imagesME/planets.webp";
 
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
@@ -86,12 +71,12 @@ export default function MeteorExtinctionHome(props) {
 
   const nextImage = () => {
     setImageDirection("next");
-    setImageIndex(imageIndex < 5 ? (prev) => prev + 1 : 1);
+    setImageIndex(imageIndex < 4 ? (prev) => prev + 1 : 1);
   };
 
   const previousImage = () => {
     setImageDirection("before");
-    setImageIndex(imageIndex > 1 ? (prev) => prev - 1 : 5);
+    setImageIndex(imageIndex > 1 ? (prev) => prev - 1 : 4);
   };
 
   const handlers = useSwipeable({
@@ -103,31 +88,6 @@ export default function MeteorExtinctionHome(props) {
     trackTouch: true,
     trackMouse: false,
   });
-
-  const [windowDimension, detectHW] = useState({
-    winWidth: window.innerWidth,
-  });
-
-  const detectSize = () => {
-    detectHW({
-      winWidth: window.innerWidth,
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", detectSize);
-
-    return () => {
-      window.removeEventListener("resize", detectSize);
-    };
-  }, [windowDimension]);
-
-  const imageNames =
-    windowDimension.winWidth >= 1200
-      ? [maingameL, meteorL, meteorexplosionL, rocketL, rocketexplosionL]
-      : windowDimension.winWidth >= 756
-        ? [maingameM, meteorM, meteorexplosionM, rocketM, rocketexplosionM]
-        : [maingameS, meteorS, meteorexplosionS, rocketS, rocketexplosionS];
 
   return (
     <HelmetProvider>
@@ -229,8 +189,8 @@ export default function MeteorExtinctionHome(props) {
                     >
                       <img
                         className={styles.ImageCarouselContent}
-                        src={imageNames[0]}
-                        alt="Gameplay"
+                        src={gameplay}
+                        alt={t("meteorExtinctionImages.gameplay")}
                       />
                     </Slide>
                     <Slide
@@ -252,8 +212,8 @@ export default function MeteorExtinctionHome(props) {
                     >
                       <img
                         className={styles.ImageCarouselContent}
-                        src={imageNames[1]}
-                        alt={t("meteorExtinctionImages.meteorDestroyed")}
+                        src={upgrades}
+                        alt={t("meteorExtinctionImages.upgrades")}
                       />
                     </Slide>
                     <Slide
@@ -275,8 +235,8 @@ export default function MeteorExtinctionHome(props) {
                     >
                       <img
                         className={styles.ImageCarouselContent}
-                        src={imageNames[2]}
-                        alt={t("meteorExtinctionImages.meteorExplosion")}
+                        src={shields}
+                        alt={t("meteorExtinctionImages.shields")}
                       />
                     </Slide>
                     <Slide
@@ -298,31 +258,8 @@ export default function MeteorExtinctionHome(props) {
                     >
                       <img
                         className={styles.ImageCarouselContent}
-                        src={imageNames[3]}
-                        alt={t("meteorExtinctionImages.rocket")}
-                      />
-                    </Slide>
-                    <Slide
-                      in={imageIndex === 5}
-                      timeout={500}
-                      easing={{
-                        enter: "cubic-bezier(0.9, 0, 0.1, 1)",
-                        exit: "cubic-bezier(0.9, 0, 0.1, 1)",
-                      }}
-                      direction={
-                        imageIndex === 5
-                          ? imageDirection === "next"
-                            ? "left"
-                            : "right"
-                          : imageDirection === "next"
-                            ? "right"
-                            : "left"
-                      }
-                    >
-                      <img
-                        className={styles.ImageCarouselContent}
-                        src={imageNames[4]}
-                        alt={t("meteorExtinctionImages.rocketExploding")}
+                        src={planets}
+                        alt={t("meteorExtinctionImages.planets")}
                       />
                     </Slide>
                   </Box>
@@ -339,9 +276,6 @@ export default function MeteorExtinctionHome(props) {
                     <Dot
                       theme={props.themeMode}
                       selected={imageIndex === 4} />
-                    <Dot
-                      theme={props.themeMode}
-                      selected={imageIndex === 5} />
                   </div>
                 </Box>
                 <Box
