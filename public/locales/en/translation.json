@@ -121,7 +121,7 @@
         "p12": "Added Native Support for almost all Aspect Ratios",
         "p13": "Fixed an Issue that Lead the Explosion and the Craters to be Placed Inside the Earth when the Score was Very High",
         "p14": "Fixed Font Inconsistency",
-        "p15": "Permormance Improvements"
+        "p15": "Performance Improvements"
     },
     "updateME": {
         "title": "Check for Updates",
