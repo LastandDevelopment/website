@@ -126,7 +126,7 @@
     "updateME": {
         "title": "Check for Updates",
         "updateAvailable": "An Update is available.",
-        "noUpdateAvailable": "The latest is already installed.",
+        "noUpdateAvailable": "The latest version is already installed.",
         "yourVersion": "Installed Version",
         "latestVersion": "Latest Version",
         "loadUpdate": "Update",
