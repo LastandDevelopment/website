@@ -56,7 +56,8 @@
         "releaseDateAlpha01": "01/17/2022",
         "releaseDateAlpha011": "01/18/2022",
         "releaseDateAlpha012": "01/19/2022",
-        "releaseDateBeta02": "06/22/2022"
+        "releaseDateBeta02": "06/22/2022",
+        "releaseDateBeta021": "06/23/2022"
     },
     "meteorExtinctionHome": {
         "text1": "Meteor Extinction is the first game by Lastand Development!",
@@ -122,6 +123,13 @@
         "p13": "Fixed an Issue that Lead the Explosion and the Craters to be Placed Inside the Earth when the Score was Very High",
         "p14": "Fixed Font Inconsistency",
         "p15": "Performance Improvements"
+    },
+    "changelogBeta021": {
+        "p1": "Added Optional Vibration Feedback for Explosions",
+        "p2": "Fixed an Issue that Occured when the Info Window was Closed and then Opened again Very Fast",
+        "p3": "Fixed an Issue that Occured when the Shop Tab (Shields or Planets) was Switched while the Shields or Planets were moved",
+        "p4": "Fixed Positioning of the Pause Button",
+        "p5": "Fixed an Issue that Lead to the Purchase of the \"Modern Dark\" Shield when actually wanting to buy the \"Dark Knight\" Shield"
     },
     "updateME": {
         "title": "Check for Updates",

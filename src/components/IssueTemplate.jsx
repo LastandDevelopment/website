@@ -404,9 +404,11 @@ export default function IssueTemplate(props) {
                   }}
                   sx={{ textAlign: "left", mb: 2 }}
                 >
-                  <MenuItem value="Alpha 0.1">Alpha 0.1</MenuItem>
-                  <MenuItem value="Alpha 0.1.1">Alpha 0.1.1</MenuItem>
+                  <MenuItem value="Beta 0.2.1">Beta 0.2.1</MenuItem>
+                  <MenuItem value="Beta 0.2">Beta 0.2</MenuItem>
                   <MenuItem value="Alpha 0.1.2">Alpha 0.1.2</MenuItem>
+                  <MenuItem value="Alpha 0.1.1">Alpha 0.1.1</MenuItem>
+                  <MenuItem value="Alpha 0.1">Alpha 0.1</MenuItem>
                 </TextField>
               </Fade>
               <Fade

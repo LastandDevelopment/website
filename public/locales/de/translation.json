@@ -56,7 +56,8 @@
         "releaseDateAlpha01": "17.01.2022",
         "releaseDateAlpha011": "18.01.2022",
         "releaseDateAlpha012": "19.01.2022",
-        "releaseDateBeta02": "22.06.2022"
+        "releaseDateBeta02": "22.06.2022",
+        "releaseDateBeta021": "23.06.2022"
     },
     "meteorExtinctionHome": {
         "text1": "Meteor Extinction ist das erste Spiel von Lastand Development!",
@@ -119,9 +120,16 @@
         "p10": "Sterne im Hintergrund hinzugefügt",
         "p11": "Möglichkeit, auf Updates zu überprüfen, hinzugefügt",
         "p12": "Native Unterstützung von nahezu allen Seitenverhältnissen hinzugefügt",
-        "p13": "Problem behoben, dass dazu geführt hat, dass die Explosion und der Krater eines Meteoriten in der Erde angezeigt wurden, wenn die Punktzahl sehr hoch war",
+        "p13": "Fehler behoben, das dazu geführt hat, dass die Explosion und der Krater eines Meteoriten in der Erde angezeigt wurden, wenn die Punktzahl sehr hoch war",
         "p14": "Inkonsistenz der Schriftart behoben",
         "p15": "Leistungsverbesserungen"
+    },
+    "changelogBeta021": {
+        "p1": "Optionales Vibrations-Feedback für Explosionen hinzugefügt",
+        "p2": "Fehler behoben, der auftrat wenn das Informationsfenster geschlossen und sehr schnell wieder geöffnet wurde",
+        "p3": "Fehler behoben, der auftrat wenn der Shop-Tab (Schilder oder Planeten) gewechselt wurde, während die Schilder oder Planeten bewegt wurden",
+        "p4": "Falsche Positionierung des Pause-Buttons behoben",
+        "p5": "Fehler behoben, der zum Kauf des \"Modern Dark\"-Schildes führte wenn der Kauf des \"Dark Knight\"-Schildes durchgeführt wurde"
     },
     "updateME": {
         "title": "Auf Updates überprüfen",

@@ -17,7 +17,7 @@ function useQuery() {
 export default function CheckMEVersion(props) {
   const [t] = useTranslation();
 
-  const mostRecentVersion = "Beta 0.2";
+  const mostRecentVersion = "Beta 0.2.1";
 
   const query = useQuery();
   const [versionQuery, setVersionQuery] = useState(query.get("version"));
@@ -30,12 +30,12 @@ export default function CheckMEVersion(props) {
   const downloadUpdate = () => {
     const link = document.createElement("a");
     link.href = isWindows
-      ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2Windows.zip"
+      ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.1Windows.zip"
       : isAndroid
-        ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2Android.apk"
+        ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.1Android.apk"
         : isMacOs
-          ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2macOS.app.zip"
-          : "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2Linux.zip";
+          ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.1macOS.app.zip"
+          : "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.1Linux.zip";
     link.click();
   };
 
@@ -49,9 +49,11 @@ export default function CheckMEVersion(props) {
           ? "Alpha 0.1.2"
           : versionNumber === "beta-0.2"
             ? "Beta 0.2"
-            : versionNumber === "" || versionNumber === null
-              ? t("updateME.noVersionGiven")
-              : versionNumber;
+            : versionNumber === "beta-0.2.1"
+              ? "Beta 0.2.1"
+              : versionNumber === "" || versionNumber === null
+                ? t("updateME.noVersionGiven")
+                : versionNumber;
 
   const unknownVersionText =
     currentVersion === versionNumber
@@ -62,7 +64,8 @@ export default function CheckMEVersion(props) {
     if (
       versionNumber === "alpha-0.1" ||
       versionNumber === "alpha-0.1.1" ||
-      versionNumber === "alpha-0.1.2"
+      versionNumber === "alpha-0.1.2" ||
+      versionNumber === "beta-0.2"
     ) {
       return (
         <HelmetProvider>

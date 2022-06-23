@@ -105,7 +105,7 @@ export default function Home() {
             <Typography
               sx={{ margin: 2 }}
               variant="body1">
-              <b>Meteor Extinction Beta 0.2</b>
+              <b>Meteor Extinction Beta 0.2.1</b>
               {t("home.announcement")}
             </Typography>
             <Button

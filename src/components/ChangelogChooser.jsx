@@ -7,6 +7,7 @@ import Alpha01Changelog from "./changelogs/alpha-0.1";
 import Alpha011Changelog from "./changelogs/alpha-0.1.1";
 import Alpha012Changelog from "./changelogs/alpha-0.1.2";
 import Beta02Changelog from "./changelogs/beta-0.2";
+import Beta021Changelog from "./changelogs/beta-0.2.1";
 
 export default function ChangelogChooser(props) {
   const [t] = useTranslation();
@@ -38,6 +39,8 @@ export default function ChangelogChooser(props) {
     return <Alpha012Changelog />;
   } else if (versionQuery === "beta-0.2") {
     return <Beta02Changelog />;
+  } else if (versionQuery === "beta-0.2.1") {
+    return <Beta021Changelog />;
   } else {
     return (
       <Fragment>
