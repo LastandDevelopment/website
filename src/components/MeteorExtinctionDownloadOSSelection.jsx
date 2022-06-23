@@ -33,15 +33,15 @@ export default function MeteorExtinctionDownloadOSSelection(props) {
     link.click();
     props.handleClose();
   };
-  const downloadmacOS = () => {
-    const link = document.createElement("a");
-    link.href =
-      "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinction" +
-      props.version +
-      "macOS.app.zip";
-    link.click();
-    props.handleClose();
-  };
+  // const downloadmacOS = () => {
+  //   const link = document.createElement("a");
+  //   link.href =
+  //     "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinction" +
+  //     props.version +
+  //     "macOS.app.zip";
+  //   link.click();
+  //   props.handleClose();
+  // };
   const downloadLinux = () => {
     const link = document.createElement("a");
     link.href =
@@ -121,7 +121,7 @@ export default function MeteorExtinctionDownloadOSSelection(props) {
             <Typography>Android</Typography>
           </ListItemText>
         </MenuItem>
-        <MenuItem onClick={downloadmacOS}>
+        {/* <MenuItem onClick={downloadmacOS}>
           <ListItemIcon>
             <SvgIcon>
               <svg
@@ -134,7 +134,7 @@ export default function MeteorExtinctionDownloadOSSelection(props) {
           <ListItemText>
             <Typography>macOS</Typography>
           </ListItemText>
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem onClick={downloadLinux}>
           <ListItemIcon>
             <SvgIcon>
