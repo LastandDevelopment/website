@@ -129,7 +129,8 @@
         "p2": "Fixed an Issue that Occured when the Info Window was Closed and then Opened again Very Fast",
         "p3": "Fixed an Issue that Occured when the Shop Tab (Shields or Planets) was Switched while the Shields or Planets were moved",
         "p4": "Fixed Positioning of the Pause Button",
-        "p5": "Fixed an Issue that Lead to the Purchase of the \"Modern Dark\" Shield when actually wanting to buy the \"Dark Knight\" Shield"
+        "p5": "Fixed an Issue that Lead to the Purchase of the \"Modern Dark\" Shield when actually wanting to buy the \"Dark Knight\" Shield",
+        "p6": "Fixed an Issue that Prevented the Selection of Items that have already been Purchased when having less Diamonds than the Price of that Item"
     },
     "updateME": {
         "title": "Check for Updates",

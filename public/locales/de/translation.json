@@ -129,7 +129,8 @@
         "p2": "Fehler behoben, der auftrat wenn das Informationsfenster geschlossen und sehr schnell wieder geöffnet wurde",
         "p3": "Fehler behoben, der auftrat wenn der Shop-Tab (Schilder oder Planeten) gewechselt wurde, während die Schilder oder Planeten bewegt wurden",
         "p4": "Falsche Positionierung des Pause-Buttons behoben",
-        "p5": "Fehler behoben, der zum Kauf des \"Modern Dark\"-Schildes führte wenn der Kauf des \"Dark Knight\"-Schildes durchgeführt wurde"
+        "p5": "Fehler behoben, der zum Kauf des \"Modern Dark\"-Schildes führte wenn der Kauf des \"Dark Knight\"-Schildes durchgeführt wurde",
+        "p6": "Fehler behoben, der die Auswahl eines bereits erworbenen Gegenstandes verhindert, wenn der Spieler weniger Diamanten hat als zum Kauf ursprünglich benötigt wurden"
     },
     "updateME": {
         "title": "Auf Updates überprüfen",

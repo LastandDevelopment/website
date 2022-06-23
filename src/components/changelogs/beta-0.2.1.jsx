@@ -51,6 +51,13 @@ export default function Beta021Changelog() {
               {t("changelogBeta021.p5")}
             </Typography>
           </li>
+          <li>
+            <Typography
+              variant="body2"
+              sx={{ marginBottom: 1 }}>
+              {t("changelogBeta021.p6")}
+            </Typography>
+          </li>
         </ul>
       </Box>
     </Container>
