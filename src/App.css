@@ -13,7 +13,8 @@
 }
 
 body {
-  overflow-y: auto;
+  overflow-y: hidden;
+  overflow-y: overlay;
   overflow-x: hidden;
   width: 100vw;
 }
