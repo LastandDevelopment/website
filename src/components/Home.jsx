@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-import CampaignRoundedIcon from "@mui/icons-material/CampaignRounded";
+// import CampaignRoundedIcon from "@mui/icons-material/CampaignRounded";
 
 import MEImage from "./icons/MeteorExtinctionBanner.svg";
 import WGUIImage from "./icons/WoodenGUIBanner.svg";
@@ -36,7 +36,7 @@ export default function Home() {
 
   const [hoverButtonOne, setHoverButtonOne] = useState(false);
   const [hoverButtonTwo, setHoverButtonTwo] = useState(false);
-  const [hoverButtonInfo, setHoverButtonInfo] = useState(false);
+  // const [hoverButtonInfo, setHoverButtonInfo] = useState(false);
 
   const checkLanguageClass = (() => {
     if (i18n.language === "de") {
@@ -96,8 +96,8 @@ export default function Home() {
               </AccordionDetails>
             </Accordion>
           </Box>
-          <Paper
-            sx={{ display: "flex", alignItems: "center" }}
+          {/* <Paper
+            sx={{ display: "flex", alignItems: "center", marginBottom: 4 }}
             elevation={3}
             style={{ padding: 20 }}
           >
@@ -131,11 +131,10 @@ export default function Home() {
                 {t("home.moreInfo")}
               </Typography>
             </Button>
-          </Paper>
+          </Paper> */}
           <Grid
             container
-            spacing={4}
-            sx={{ paddingTop: 4 }}>
+            spacing={4}>
             <Grid
               item
               xs={12}

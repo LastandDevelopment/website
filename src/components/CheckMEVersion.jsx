@@ -3,7 +3,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useMemo } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { isAndroid, isMacOs, isWindows, osName } from "react-device-detect";
+import { isAndroid, isWindows, osName } from "react-device-detect";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
@@ -17,7 +17,7 @@ function useQuery() {
 export default function CheckMEVersion(props) {
   const [t] = useTranslation();
 
-  const mostRecentVersion = "Beta 0.2.1";
+  const mostRecentVersion = "Beta 0.2.2";
 
   const query = useQuery();
   const [versionQuery, setVersionQuery] = useState(query.get("version"));
@@ -30,12 +30,10 @@ export default function CheckMEVersion(props) {
   const downloadUpdate = () => {
     const link = document.createElement("a");
     link.href = isWindows
-      ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.1Windows.zip"
+      ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.2Windows.zip"
       : isAndroid
-        ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.1Android.apk"
-        : isMacOs
-          ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.1macOS.app.zip"
-          : "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.1Linux.zip";
+        ? "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.2Android.apk"
+        : "https://lastanddevelopmentwebsitedownloads.s3.eu-central-1.amazonaws.com/MeteorExtinctionBeta0.2.2Linux.zip";
     link.click();
   };
 
@@ -51,21 +49,24 @@ export default function CheckMEVersion(props) {
             ? "Beta 0.2"
             : versionNumber === "beta-0.2.1"
               ? "Beta 0.2.1"
-              : versionNumber === "" || versionNumber === null
-                ? t("updateME.noVersionGiven")
-                : versionNumber;
+              : versionNumber === "beta-0.2.2"
+                ? "Beta 0.2.2"
+                : versionNumber === "" || versionNumber === null
+                  ? t("updateME.noVersionGiven")
+                  : versionNumber;
 
   const unknownVersionText =
     currentVersion === versionNumber
       ? t("updateME.unknownVersion") + ": " + currentVersion
       : t("updateME.noVersionGiven");
 
-  if (isWindows || isMacOs || isAndroid || osName === "Linux") {
+  if (isWindows || isAndroid || osName === "Linux") {
     if (
       versionNumber === "alpha-0.1" ||
       versionNumber === "alpha-0.1.1" ||
       versionNumber === "alpha-0.1.2" ||
-      versionNumber === "beta-0.2"
+      versionNumber === "beta-0.2" ||
+      versionNumber === "beta-0.2.1"
     ) {
       return (
         <HelmetProvider>

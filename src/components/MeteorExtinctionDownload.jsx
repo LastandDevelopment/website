@@ -99,6 +99,48 @@ export default function MeteorExtinctionDownload(props) {
                     <Typography
                       variant="h2"
                       sx={{ pt: 3 }}>
+                      Beta 0.2.2
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ pb: 2, pt: 1 }}>
+                      {t("downloadPage.releaseDateBeta022")}
+                    </Typography>
+                    <MeteorExtinctionDownloadOSSelection version="Beta0.2.2" />
+                    <Box />
+                    <Button
+                      color={
+                        props.themeMode === "dark" ? "secondary" : "primary"
+                      }
+                      variant="text"
+                      className="downloadButton"
+                      sx={{
+                        py: 1,
+                        my: 2,
+                      }}
+                      component={Link}
+                      to={
+                        "/meteorextinction/download/changelog?version=beta-0.2.2"
+                      }
+                    >
+                      <Typography
+                        variant="body1"
+                        className="textSmall">
+                        {t("downloadPage.changelog")}
+                      </Typography>
+                    </Button>
+                  </Item>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={4}>
+                  <Item elevation={3}>
+                    <Typography
+                      variant="h2"
+                      sx={{ pt: 3 }}>
                       Beta 0.2.1
                     </Typography>
                     <Typography

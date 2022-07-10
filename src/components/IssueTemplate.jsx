@@ -19,6 +19,9 @@ import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+
+import AppSettings from "../AppSettings";
+
 import styles from "./IssueTemplate.module.css";
 
 function useQuery() {
@@ -57,7 +60,7 @@ export default function IssueTemplate(props) {
   const [wGUIDescription, setWGUIDescription] = useState("");
 
   const [browser, setBrowser] = useState("");
-  const [wSVersion, setWSVersion] = useState("");
+  const [wSVersion, setWSVersion] = useState(AppSettings.version);
   const [wSDescription, setWSDescription] = useState(
     query.get("error") === "404" ? "404 in page [URL]" : ""
   );
@@ -404,6 +407,7 @@ export default function IssueTemplate(props) {
                   }}
                   sx={{ textAlign: "left", mb: 2 }}
                 >
+                  <MenuItem value="Beta 0.2.2">Beta 0.2.2</MenuItem>
                   <MenuItem value="Beta 0.2.1">Beta 0.2.1</MenuItem>
                   <MenuItem value="Beta 0.2">Beta 0.2</MenuItem>
                   <MenuItem value="Alpha 0.1.2">Alpha 0.1.2</MenuItem>

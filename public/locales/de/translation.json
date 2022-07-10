@@ -57,7 +57,8 @@
         "releaseDateAlpha011": "18.01.2022",
         "releaseDateAlpha012": "19.01.2022",
         "releaseDateBeta02": "22.06.2022",
-        "releaseDateBeta021": "23.06.2022"
+        "releaseDateBeta021": "23.06.2022",
+        "releaseDateBeta022": "10.07.2022"
     },
     "meteorExtinctionHome": {
         "text1": "Meteor Extinction ist das erste Spiel von Lastand Development!",
@@ -120,7 +121,7 @@
         "p10": "Sterne im Hintergrund hinzugefügt",
         "p11": "Möglichkeit, auf Updates zu überprüfen, hinzugefügt",
         "p12": "Native Unterstützung von nahezu allen Seitenverhältnissen hinzugefügt",
-        "p13": "Fehler behoben, das dazu geführt hat, dass die Explosion und der Krater eines Meteoriten in der Erde angezeigt wurden, wenn die Punktzahl sehr hoch war",
+        "p13": "Fehler behoben, der dazu geführt hat, dass die Explosion und der Krater eines Meteoriten in der Erde angezeigt wurden, wenn die Punktzahl sehr hoch war",
         "p14": "Inkonsistenz der Schriftart behoben",
         "p15": "Leistungsverbesserungen"
     },
@@ -131,6 +132,22 @@
         "p4": "Falsche Positionierung des Pause-Buttons behoben",
         "p5": "Fehler behoben, der zum Kauf des \"Modern Dark\"-Schildes führte wenn der Kauf des \"Dark Knight\"-Schildes durchgeführt wurde",
         "p6": "Fehler behoben, der die Auswahl eines bereits erworbenen Gegenstandes verhindert, wenn der Spieler weniger Diamanten hat als zum Kauf ursprünglich benötigt wurden"
+    },
+    "changelogBeta022": {
+        "p1": "Vibrationsdauer und -qualität verbessert",
+        "p2": "Vibrationen für Raketen und Medizin hinzugefügt",
+        "p3": "Regler zum Anpassen der Größe der Buttons für die mobile Steuerung hinzugefügt",
+        "p4": "Animation für fallende Medizin hinzugefügt",
+        "p5": "Benachrichtigungsicon auf dem Informations-Button, wenn ein Update verfügbar ist, hinzugefügt",
+        "p6": "Möglichkeit, das Schild zu bewegen nachdem der dritte Meteorit die Erde getroffen hat, entfernt",
+        "p7": "FPS-Anzeige verbessert, sodass sie in einer konstanten Geschwindigkeit aktualisiert wird",
+        "p8": "Erscheinen von Diamanten während das Spiel pausiert war behoben",
+        "p9": "Verschwinden des Notfallschildes während das Spiel pausiert war behoben",
+        "p10": "Sofortiges Erscheinen der Medizin nachdem das Spiel für eine längere Zeit pausiert war behoben",
+        "p11": "Verbesserte Landeanimation der Medizin",
+        "p12": "Fehler behoben, der dafür sorgte, dass das Schild sich leicht bewegte, ohne dass der Spieler irgendeinen Button drückte",
+        "p13": "Unterstützung für adaptive Icons auf Android wurde hinzugefügt",
+        "p14": "Verbessertes Schießen einer Rakete auf Geräten mit einem Touchscreen durch die hinzugefügte Unterstützung von Multi-Touch"
     },
     "updateME": {
         "title": "Auf Updates überprüfen",

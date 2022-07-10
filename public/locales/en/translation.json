@@ -57,7 +57,8 @@
         "releaseDateAlpha011": "01/18/2022",
         "releaseDateAlpha012": "01/19/2022",
         "releaseDateBeta02": "06/22/2022",
-        "releaseDateBeta021": "06/23/2022"
+        "releaseDateBeta021": "06/23/2022",
+        "releaseDateBeta022": "07/10/2022"
     },
     "meteorExtinctionHome": {
         "text1": "Meteor Extinction is the first game by Lastand Development!",
@@ -105,7 +106,7 @@
         "p1": "Crosshair is built in as a native mouse pointer, so it's more direct, no longer lags behind, and can be displayed over the score",
         "p2": "Fixed a bug that sometimes prevented the remaining attempts from being displayed correctly after restarting the game in the pause menu",
         "p3": "Fixed a bug that occurred when app info was opened and then closed again very quickly",
-        "p4": "Fixed a bug that prevented the correct crosshair from being displayed during the countdown if the game ended while being paused (Level 20+)"
+        "p4": "Fixed a bug that prevented the correct crosshair from being displayed during the countdown if the game ended while being paused"
     },
     "changelogBeta02": {
         "p1": "Added Level-Mode with Upgrades and Medicine that may not be Destroyed",
@@ -131,6 +132,22 @@
         "p4": "Fixed Positioning of the Pause Button",
         "p5": "Fixed an Issue that Lead to the Purchase of the \"Modern Dark\" Shield when actually wanting to buy the \"Dark Knight\" Shield",
         "p6": "Fixed an Issue that Prevented the Selection of Items that have already been Purchased when having less Diamonds than the Price of that Item"
+    },
+    "changelogBeta022": {
+        "p1": "Improved Vibration Duration and Quality",
+        "p2": "Added Vibrations for Rockets and Medicine Kits",
+        "p3": "Added Slider to Adjust the Size of Mobile Control Buttons",
+        "p4": "Added Medicine Animation when Falling",
+        "p5": "Added Notification Icon on Info Button when an Update is Available",
+        "p6": "Removed the Possibility to Move after the third Meteor Hit the Planet",
+        "p7": "Improved FPS Display to Update at a Constant Speed",
+        "p8": "Fixed Diamonds Spawning while Game was Paused",
+        "p9": "Fixed Emergency Shield Disappearing while Game was Paused",
+        "p10": "Fixed Medicine Appearing Immediately after the Game was Paused for a Longer Period of Time",
+        "p11": "Fixed and Improved Medicine Landing Animation",
+        "p12": "Fixed Shield Moving although the Player did not Press any Button",
+        "p13": "Added Support for Adaptive Icons on Android",
+        "p14": "Improved Shooting a Rocket on Touch Screen Devices by Adding Support for Multi Touch"
     },
     "updateME": {
         "title": "Check for Updates",
